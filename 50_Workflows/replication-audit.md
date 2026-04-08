@@ -259,7 +259,7 @@ the restricted data. Both are legitimate — but be honest in
 the report about which one you did.
 
 Run the new dataset intake procedure (see
-`New dataset intake.md`) on each acquired dataset. The
+`new-dataset-intake.md`) on each acquired dataset. The
 resulting cards become evidence in the reconstruction report.
 
 ### Stage 3c — Reconstruct the data pipeline
