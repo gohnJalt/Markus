@@ -527,10 +527,9 @@ demands them. Don't speculatively expand this file.
   parallel-trends-honesty section is the structural sibling of
   this file's "pick a story and defend it" posture. Same move,
   different setting.
-- `10_Methods/Econometrics/local-projections.md` — *to be
-  written*. Shift-share instruments sometimes enter
-  macroeconomic LP-IV settings as the external instrument, and
-  that intersection will be covered there.
+- `10_Methods/Econometrics/local-projections.md` — shift-share 
+  instruments sometimes enter macroeconomic LP-IV settings as 
+  the external instrument, and that intersection will be covered there.
 - `50_Workflows/run-a-regression-properly.md` — Stage 4
   ("specify identification, not just the equation") is where
   the GPSS-vs-BHJ choice belongs in a real analysis.

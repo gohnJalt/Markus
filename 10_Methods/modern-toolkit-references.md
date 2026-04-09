@@ -206,6 +206,8 @@ shares; Borusyak-Hull-Jaravel show an alternative rests on the
 exogeneity of the shocks. These are different assumptions and
 the researcher should be explicit about which one is being made.
 
+See: Econometrics/shift-share-instruments.md for the deep note.
+
 ### Judge fixed effects, examiner designs
 
 **Canonical references**: Kling (2006), Doyle (2007), Aizer and
@@ -393,6 +395,8 @@ misspecification at long horizons, and they extend cleanly to
 state-dependent IRFs (Auerbach and Gorodnichenko 2012, 2013).
 The cost is efficiency loss when the VAR is correctly
 specified.
+
+See: Econometrics/local-projections.md for the deep note
 
 ### State space and filtering
 
