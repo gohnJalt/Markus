@@ -572,8 +572,8 @@ demands them. Don't speculatively expand this file.
   this note slots into. The "specify identification, not just
   the equation" stage in the workflow refers to the kind of
   reasoning this note teaches.
-- `10_Methods/Econometrics/instrumental-variables.md` — *to be
-  written*. The natural next file. The LATE/compliers framing
+- `10_Methods/Econometrics/instrumental-variables.md` — the 
+  natural next file. The LATE/compliers framing
   there will pick up where this note's discussion of
   treatment-effect heterogeneity leaves off.
 

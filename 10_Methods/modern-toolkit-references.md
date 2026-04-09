@@ -31,7 +31,8 @@ between roughly 2018 and 2023. The revolution is now consolidated,
 and Markus uses heterogeneity-robust estimators by default for any
 staggered design. Two-way fixed effects on staggered treatment is
 deprecated except in specific cases where the researcher knows
-the homogeneity assumption holds.
+the homogeneity assumption holds. 
+See: Econometrics/difference-in-differences.md for the deep note.
 
 ### Two-period, two-group (canonical DiD)
 
@@ -183,6 +184,8 @@ the source of most IV controversies).
   compliers, who may not be the population of interest.
 - Defending exclusion with a story rather than an argument; the
   story should specify what would falsify it.
+
+See: Econometrics/instrumental-variables.md for the deep note
 
 ### Shift-share / Bartik instruments
 
