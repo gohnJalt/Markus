@@ -2,10 +2,12 @@
 
 **A research assistant brain kit for economists.**
 
-> ⚠️ **Alpha.** Markus is under active construction. The identity,
-> methodology, and workflow layers are stable; the econometrics,
-> math, and writing layers are being built out. Expect things to
-> change. Feedback and issues welcome.
+> ⚠️ **v0.2-in-progress.** Markus is under active construction. The
+> identity, knowledge, workflow, and project layers are stable. The
+> econometrics depth layer (Tier 1 complete, Tier 2 started) and the
+> math depth layer (five files complete) are being built out. The
+> writing layer is planned for v0.3. Expect things to change. Feedback
+> and issues welcome.
 
 ---
 
@@ -44,6 +46,11 @@ Markus runs on Claude via the **Claude Project** feature.
 - **Workflow files** and **templates** live in the vault and are
   invoked explicitly when needed (e.g., *"Run the regression —
   full workflow per `run-a-regression-properly.md`"*).
+- **Econometrics and math depth notes** are too long to all live
+  as standing context. Markus reaches for them via explicit
+  invocation (*"we're doing a shift-share design, load
+  `shift-share-instruments.md`"*) or by the researcher pasting
+  the relevant file at the start of a session.
 - **Continuity across sessions** is handled by a project layer:
   each ongoing project has a `README.md` (the brief), a `log.md`
   (reverse-chronological session log), and a session-start
@@ -66,8 +73,17 @@ Markus/
 ├── 10_Methods/
 │   ├── modern-toolkit-references.md                ← method-to-tool bridge
 │   └── Econometrics/                               ← deep method notes
-│       └── difference-in-differences.md            ← (in progress)
-├── 20_Math/                                        ← (planned)
+│       ├── difference-in-differences.md            ← DiD (template setter)
+│       ├── instrumental-variables.md               ← IV and 2SLS (Tier 1)
+│       ├── shift-share-instruments.md              ← Bartik/shift-share (Tier 1)
+│       ├── local-projections.md                    ← LPs and LP-IV (Tier 1)
+│       └── regression-discontinuity.md             ← RDD (Tier 2)
+├── 20_Math/                                        ← math depth layer
+│   ├── real-analysis.md                            ← foundations
+│   ├── measure-theory.md                           ← Lebesgue integration
+│   ├── optimization.md                             ← convexity, KKT, duality
+│   ├── functional-analysis.md                      ← Banach/Hilbert, operators
+│   └── linear-algebra.md                           ← projections, decompositions
 ├── 30_Data/
 │   └── AI-accessible-data-sources.md               ← where data comes from
 ├── 40_Code/
@@ -81,12 +97,12 @@ Markus/
 │       ├── README.md                               ← project brief template
 │       ├── log.md                                  ← session log template
 │       └── session-start.md                        ← continuity ritual
-└── 70_Writing/                                     ← (planned)
+└── 70_Writing/                                     ← (planned, v0.3)
 ```
 
 ---
 
-## Current features (v0.1-alpha)
+## Current features (v0.2-in-progress)
 
 ### Identity layer
 
@@ -147,81 +163,169 @@ Markus/
   **session-start ritual** — the continuity mechanism for
   multi-session projects.
 
-### Econometrics depth (in progress)
+### Econometrics depth layer (`10_Methods/Econometrics/`)
 
-- **`Econometrics/difference-in-differences.md`** — Deep note on
-  the post-2018 DiD literature. Covers the TWFE problem
-  (Goodman-Bacon decomposition), the five modern estimators
+Deep, opinionated notes (~3,500–5,000 words each) on methods that
+show up in macro/labor/distribution work. Each follows the same
+structure: estimand first, naive approach critiqued, modern
+estimators covered, decision tree, load-bearing assumption treated
+honestly, failure modes, what to report, and implementation by
+language (R as default).
+
+- **`difference-in-differences.md`** — The template-setter for
+  the layer. Covers the TWFE problem (Goodman-Bacon
+  decomposition), the five modern DiD estimators
   (Callaway-Sant'Anna, de Chaisemartin-D'Haultfœuille,
   Sun-Abraham, Borusyak-Jaravel-Spiess, Gardner two-stage), a
-  decision tree for choosing between them, parallel-trends
-  sensitivity analysis (Rambachan-Roth), inference, common
-  failure modes, and implementation by language.
+  decision tree, parallel-trends sensitivity analysis
+  (Rambachan-Roth), and inference.
+
+- **`instrumental-variables.md`** — LATE and compliers as the
+  estimand (refusing the constant-effects fiction). Modern
+  weak-instrument inference (the F > 10 rule is dead;
+  Lee-McCrary-Moreira-Porter, Olea-Pflueger effective F,
+  Anderson-Rubin intervals). Judge/examiner designs. Honest
+  treatment of overidentification under heterogeneous effects.
+  Plausibly-exogenous bounds (Conley-Hansen-Rossi). Includes a
+  TS2SLS subsection for two-sample IV — relevant when Y and D
+  live in different datasets.
+
+- **`shift-share-instruments.md`** — The Goldsmith-Pinkham-
+  Sorkin-Swift (exogenous shares) and Borusyak-Hull-Jaravel
+  (exogenous shocks) camps treated as substantively different
+  identification stories, not stylistic preferences.
+  Adão-Kolesár-Morales inference treated as mandatory. Turkish
+  context section on why both stories are harder to defend in
+  small-economy settings.
+
+- **`local-projections.md`** — Jordà (2005) and why. The
+  Plagborg-Møller–Wolf (2021) equivalence result (LP and VAR
+  target the same IRF in population; the choice is a
+  finite-sample question). The Montiel Olea–Plagborg-Møller
+  (2021) long-horizon bias correction. LP-IV horizon by horizon.
+  State-dependent LPs. Panel LPs with Nickell bias. Turkish
+  context on single-country vs panel LP trade-offs.
+
+- **`regression-discontinuity.md`** — The CCT
+  (Calonico-Cattaneo-Titiunik 2014, *Econometrica*)
+  bias-corrected inference procedure as the centerpiece: always
+  report the "Robust" CI, not the "Conventional" one. Density
+  tests (McCrary 2008; Cattaneo-Jansson-Ma 2020 `rddensity` as
+  the modern standard). Fuzzy RDD as local Wald / LATE for
+  compliers at the cutoff. "Continuity assumption, honestly."
+  Decision tree (Q1–Q6), ten failure modes, seven-item what to
+  report.
+
+### Math depth layer (`20_Math/`)
+
+Working mathematical notes (~5,000–8,000 words each) connecting
+the math to its uses in economics. Proofs of non-trivial theorems
+included inline — the kit is meant to be self-contained, not a
+pointer to textbooks.
+
+- **`real-analysis.md`** — Real numbers and completeness, metric
+  spaces and topology, continuity, differentiation, the inverse
+  and implicit function theorems, the contraction mapping
+  theorem, uniform convergence. Proofs of Bolzano-Weierstrass,
+  the extreme value theorem, the mean value theorem, Taylor's
+  theorem, the implicit function theorem, and the contraction
+  mapping theorem.
+
+- **`measure-theory.md`** — Why the Riemann integral breaks.
+  Lebesgue measure and measurable functions. The Lebesgue
+  integral. Full proofs of the monotone convergence theorem,
+  Fatou's lemma, and the dominated convergence theorem. Five
+  modes of convergence. Measure-theoretic foundations of
+  probability.
+
+- **`optimization.md`** — Convexity, KKT conditions (proved via
+  Farkas' lemma), Lagrangian duality (weak and strong, Slater's
+  condition), the envelope theorem (proved), Shephard's lemma,
+  Roy's identity. Econometric applications (OLS, MLE, GMM,
+  structural estimation). Numerical optimization with a detailed
+  failure-modes section.
+
+- **`functional-analysis.md`** — Banach and Hilbert spaces.
+  $L^p$ completeness (Riesz-Fischer, proved via MCT). The
+  projection theorem (proved via parallelogram law; OLS as
+  finite-dimensional projection). The Riesz representation
+  theorem (proved). The big four theorems (Baire category,
+  uniform boundedness, open mapping, closed graph, Hahn-Banach).
+  Radon-Nikodym proved via Riesz representation. Compact
+  operators and the spectral theorem. Conditional expectation as
+  $L^2$ projection.
+
+- **`linear-algebra.md`** — Projection geometry and OLS (hat
+  matrix, FWL theorem, leverage). Spectral theorem for real
+  symmetric matrices (full proof). PCA and VAR stability. QR
+  via Gram-Schmidt (proved). SVD (Eckart-Young, low-rank
+  approximation). Moore-Penrose pseudoinverse. Cholesky.
+  Numerical linear algebra: condition numbers, the never-invert
+  rule, decomposition guide, floating-point pathologies.
 
 ---
 
-## Coming soon
+## Coming in v0.2
 
-The next three layers, in order:
+### Econometrics depth (Tier 2 and beyond)
 
-### Econometrics depth (`10_Methods/Econometrics/`)
+- **`panel-methods.md`** — Within transformations, FE vs RE,
+  Mundlak/correlated random effects, dynamic panels
+  (Arellano-Bond and its fragility), cluster-robust inference,
+  bootstrap for few clusters. Full treatment of Nickell bias.
+- **`time-series-beyond-lp.md`** — Cointegration, structural
+  VARs (recursive, sign restrictions, narrative identification,
+  proxy SVAR), state-space and Kalman filtering, unit root
+  testing honestly.
+- **`structural-labor.md`** — AKM (Abowd-Kramarz-Margolis) and
+  the leave-out estimators (Kline-Saggio-Sølvsten 2020) for
+  limited mobility bias.
+- **`distributional-methods.md`** — Quantile regression, RIF
+  (Firpo-Fortin-Lemieux), distributional decompositions
+  (DiNardo-Fortin-Lemieux, the Oaxaca-Blinder family),
+  distributional treatment effects.
+- **`double-machine-learning.md`** — Chernozhukov et al. (2018),
+  orthogonality condition, regularization bias, sample
+  splitting, when DML is and isn't a license for ML in causal
+  inference.
 
-Deep, opinionated notes on the methods that show up in
-macro/labor/distribution work. Each note will be longer and more
-opinionated than its directory entry in
-`modern-toolkit-references.md`, with decision trees, common
-failure modes, and implementation guidance.
+### Math depth (continuing)
 
-**Planned next:**
-- **Instrumental variables and 2SLS** — modern weak-instrument
-  inference, shift-share / Bartik (the Borusyak-Hull-Jaravel
-  and Goldsmith-Pinkham-Sorkin-Swift camps), judge/examiner
-  designs, the LATE/compliers framing.
-- **Local projections** — Jordà (2005), the LP-vs-VAR debate,
-  Plagborg-Møller and Wolf (2021), and LP-IV.
-- **Regression discontinuity** — Cattaneo, Idrobo, and Titiunik
-  treatment, bandwidth selection, density tests, fuzzy RDD.
-- **Panel methods** — fixed effects, modern cluster-robust
-  inference, Mundlak, correlated random effects.
-- **Time series** — beyond local projections: cointegration,
-  structural VARs, identification by sign restrictions.
-- **Structural labor** — AKM and the leave-out estimators.
+- **`probability.md`** — Laws of large numbers, central limit
+  theorems (classical through dependent-data extensions), the
+  delta method, characteristic functions, the asymptotic
+  foundations that underpin econometrics.
+- **`stochastic-processes.md`** — Stationarity and ergodicity,
+  Markov chains, Brownian motion, Wold decomposition, ARMA,
+  long-memory processes.
+- **`dynamic-programming.md`** — Principle of optimality,
+  Blackwell sufficient conditions, value function iteration,
+  curse of dimensionality, heterogeneous-agent models (HANK).
 
-### Math depth (`20_Math/`)
+---
 
-Working mathematical notes that connect the math to its uses in
-economics — not textbook substitutes. Planned order:
-optimization → linear algebra → probability → dynamic
-programming. Written at the level of a serious applied
-econometrician.
+## Coming in v0.3
+
+### Literature search
+
+A literature search workflow (`50_Workflows/literature-search.md`)
+built as a unit with an accumulating literature notes file
+(`80_Literature/notes.md`). Handles tiered access, defends
+against AI-search failure modes (hallucinated citations, recency
+bias, Anglophone bias), and produces annotated bibliographies,
+literature review drafts, or prioritized reading lists.
 
 ### Writing skills (`70_Writing/`)
 
 Built with reference to `hanlulong/econ-writing-skill`. Likely
 components: paper structure, referee management, tables and
 figures, honest interpretation, and a style note on voice.
-Curated rather than copied, with the same critical posture
-applied to the source material as the tools file.
-
-### And then
-
-- Method-specific workflow files (literature review, paper
-  draft, conference presentation, referee report).
-- A literature notes file — running one-paragraph entries on
-  papers actively shaping the researcher's thinking.
-- Context packs in `99_Context-packs/` — ready-to-paste bundles
-  for common task types.
-- Consolidation of refusals/guardrails if the implicit ones
-  scattered through the kit need a single home.
-
-These get built as gaps appear in real use, not speculatively.
 
 ---
 
 ## Design commitments
 
-These thread through every file. They are not up for
-relitigation:
+These thread through every file and are not up for relitigation:
 
 - **Honesty over agreement.** Markus's job is to surface what's
   true, not to soften findings or flatter the researcher.
@@ -262,9 +366,10 @@ relitigation:
    `60_Projects/_templates/` into a new project folder and run
    the session-start ritual at the beginning of each working
    session.
-6. Invoke workflows explicitly when you need them:
-   *"Run the regression on this dataset — full workflow per
-   `run-a-regression-properly.md`."*
+6. Invoke workflows and depth notes explicitly when you need
+   them: *"Run the regression on this dataset — full workflow
+   per `run-a-regression-properly.md`"* or *"We're doing a
+   shift-share design — load `shift-share-instruments.md`."*
 
 The kit is opinionated for a specific researcher's fields and
 commitments. If your fields are different, **fork it and
@@ -275,15 +380,18 @@ a generic econ assistant; he isn't one.
 
 ## Status
 
-**v0.1-alpha** — Identity, knowledge, workflow, and project
-layers are stable. Econometrics depth is being built (DiD note
-drafted; IV, local projections, and others next). Math and
-writing layers are planned but not started.
+**v0.2-in-progress** — Identity, knowledge, workflow, and project
+layers are stable. Econometrics depth layer: Tier 1 is complete
+(DiD, IV, shift-share, local projections); Tier 2 has begun
+(regression discontinuity). Math depth layer: five files complete
+(real analysis, measure theory, optimization, functional analysis,
+linear algebra). Literature search and writing layers are planned
+for v0.3.
 
-Things will change. Files will be revised as the
-methodological literatures move (especially DiD, which is still
-unsettled in its continuous-treatment and spillover branches).
-Breaking changes to file structure are possible during alpha.
+Things will change. Files will be revised as the methodological
+literatures move (especially DiD, which is still unsettled in its
+continuous-treatment and spillover branches). Breaking changes to
+file structure are possible before v1.0.
 
 ---
 
@@ -312,8 +420,9 @@ Built with reference to:
   independently).
 - `hanlulong/econ-writing-skill` (writing layer, planned).
 - The methodological papers cited throughout the econometrics
-  notes — especially the post-2018 DiD literature, which made
-  this kit feel necessary.
+  notes — especially the post-2018 DiD literature and the
+  modern RD inference literature, which made this kit feel
+  necessary.
 
 And built in collaboration with Claude, 
 which is also what runs it.

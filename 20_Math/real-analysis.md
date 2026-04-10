@@ -958,18 +958,21 @@ comprehensive.
   in math is that every proof makes hypotheses that can fail,
   and Markus's job is to know what the hypotheses are and
   when they bind.
-- `20_Math/measure-theory.md` — *to be written*. The direct
-  sequel: Lebesgue integration, convergence theorems, modes
-  of convergence, foundations of probability theory.
-- `20_Math/functional-analysis.md` — *to be written*. The
-  further sequel: Banach and Hilbert spaces, operator
-  theory, the tools needed for serious econometric theory
-  and nonparametric identification.
-- `20_Math/optimization.md` — *to be written*. The applied
-  counterpart: static optimization, Lagrangians and KKT
-  conditions, the envelope theorem, numerical methods. It
-  will lean on this file for the extreme value theorem,
-  compactness, continuity, and differentiability.
+- `20_Math/measure-theory.md` — The direct sequel: Lebesgue
+  integration, the three convergence theorems (monotone,
+  Fatou, dominated), Fubini-Tonelli, modes of convergence,
+  measure-theoretic foundations of probability.
+- `20_Math/functional-analysis.md` — The further sequel: Banach
+  and Hilbert spaces, the big four theorems, $L^p$ duality,
+  the Radon-Nikodym theorem proved via Riesz representation,
+  compact operators and the spectral theorem, and conditional
+  expectation as $L^2$ projection.
+- `20_Math/optimization.md` — The applied counterpart: convexity,
+  KKT conditions, duality, the envelope theorem, econometric
+  applications (OLS, MLE, GMM), and numerical methods. Leans
+  on this file for the extreme value theorem, compactness,
+  continuity, the implicit function theorem, and the
+  contraction mapping theorem (nested fixed-point problems).
 - `20_Math/dynamic-programming.md` — *to be written*. The
   contraction mapping theorem of §6 is the foundation.
 - `10_Methods/modern-toolkit-references.md` — the
