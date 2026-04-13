@@ -674,11 +674,14 @@ Not covered.
   duality here (§4); the $L^2$ projection and Riesz
   representation underlie the semiparametric efficiency
   framework that grounds the MLE and GMM asymptotic theory.
-- `20_Math/dynamic-programming.md` — *to be written*. Bellman
-  equation as a fixed-point-plus-optimization problem; value
-  function iteration; HANK model solution.
-- `20_Math/probability.md` — *to be written*. Uniform LLN
-  and consistency of MLE and GMM; stochastic optimization.
+- `20_Math/dynamic-programming.md` — Bellman equation as
+  a fixed-point-plus-optimization problem; value function
+  iteration; HANK model solution.
+- `20_Math/probability.md` — Uniform LLN and consistency of
+  MLE and GMM (§§7.1-7.2 there); the score function and
+  information matrix in MLE asymptotics; the Cramér-Rao lower
+  bound as $I(\theta_0)^{-1}$; stochastic order notation
+  for tracking remainder terms in asymptotic proofs.
 - `10_Methods/Econometrics/instrumental-variables.md` — the
   overidentified GMM objective (§3.3 of that file) is a
   constrained optimization problem whose structure is covered

@@ -953,14 +953,16 @@ version requires additional regularity.
   theorem is proved there via the Riesz representation theorem.
   The $L^2$ projection characterization of conditional
   expectation is developed there in full.
-- `20_Math/probability.md` — *to be written*. The direct
-  sequel for probabilistic limit theorems: LLNs, CLTs, the
-  delta method, characteristic functions. The modes of
+- `20_Math/probability.md` — The direct sequel for
+  probabilistic limit theorems: LLNs (Chebyshev, Kolmogorov,
+  ergodic, mixing), CLTs (classical, Lindeberg-Feller,
+  multivariate, dependent-data), the delta method, and the
+  $o_P/O_P$ asymptotic framework. The modes of
   convergence of §8 and the probability foundations of §9
   here are its prerequisites.
-- `20_Math/stochastic-processes.md` — *to be written*.
-  Martingale theory and stochastic integration build on
-  conditional expectation (§9) and a.s./in-probability
+- `20_Math/stochastic-processes.md` — Martingale theory and
+  stochastic integration build on conditional expectation
+  (§9) and a.s./in-probability
   convergence (§8).
 - `20_Math/optimization.md` — The applied counterpart to the
   foundational math layer: convexity, KKT, duality, envelope

@@ -4,10 +4,10 @@
 
 > ⚠️ **v0.2-in-progress.** Markus is under active construction. The
 > identity, knowledge, workflow, and project layers are stable. The
-> econometrics depth layer (Tier 1 complete, Tier 2 started) and the
-> math depth layer (five files complete) are being built out. The
-> writing layer is planned for v0.3. Expect things to change. Feedback
-> and issues welcome.
+> econometrics depth layer (Tier 1 and Tier 2 complete, four Tier 3
+> files complete) and the math depth layer (ten files complete) are
+> being built out. The writing layer is planned for v0.3. Expect things
+> to change. Feedback and issues welcome.
 
 ---
 
@@ -77,13 +77,24 @@ Markus/
 │       ├── instrumental-variables.md               ← IV and 2SLS (Tier 1)
 │       ├── shift-share-instruments.md              ← Bartik/shift-share (Tier 1)
 │       ├── local-projections.md                    ← LPs and LP-IV (Tier 1)
-│       └── regression-discontinuity.md             ← RDD (Tier 2)
+│       ├── regression-discontinuity.md             ← RDD (Tier 2)
+│       ├── panel-methods.md                        ← FE/RE, dynamic panels (Tier 2)
+│       ├── var-identification.md                   ← SVAR identification (Tier 2)
+│       ├── non-stationary-time-series.md           ← unit roots, cointegration (Tier 2)
+│       ├── distributional-methods.md              ← QR, RIF, decompositions (Tier 3)
+│       ├── double-machine-learning.md             ← DML, Neyman orthogonality (Tier 3)
+│       └── structural-labor.md                    ← AKM, KSS leave-out, earnings decomp (Tier 3)
 ├── 20_Math/                                        ← math depth layer
 │   ├── real-analysis.md                            ← foundations
 │   ├── measure-theory.md                           ← Lebesgue integration
 │   ├── optimization.md                             ← convexity, KKT, duality
 │   ├── functional-analysis.md                      ← Banach/Hilbert, operators
-│   └── linear-algebra.md                           ← projections, decompositions
+│   ├── linear-algebra.md                           ← projections, decompositions
+│   ├── probability.md                              ← LLNs, CLTs, delta method
+│   ├── calculus.md                                 ← multivariate, matrix, variations
+│   ├── differential-equations.md                  ← ODEs, HJB, viscosity solutions
+│   ├── stochastic-processes.md                    ← martingales, BM, Itô, ARMA
+│   └── dynamic-programming.md                     ← Bellman, VFI, HANK
 ├── 30_Data/
 │   └── AI-accessible-data-sources.md               ← where data comes from
 ├── 40_Code/
@@ -216,6 +227,48 @@ language (R as default).
   Decision tree (Q1–Q6), ten failure modes, seven-item what to
   report.
 
+- **`panel-methods.md`** — Within vs between variation as the
+  core estimand framing. FE geometry (demeaning as projection,
+  FWL theorem, HDFE). Hausman test critique — Mundlak regression
+  as the correct test. Correlated random effects (Chamberlain
+  1982). Nickell bias derived and quantified: plim(ρ̂_FE) − ρ
+  ≈ −(1+ρ)/(T−1). Arellano-Bond (1991) and Blundell-Bond
+  (1998) with instrument proliferation fragility (Roodman 2009
+  discipline). Cluster-robust inference, few-clusters wild
+  bootstrap, Driscoll-Kraay, CCE (Pesaran 2006). Decision tree
+  (Q1–Q6), strict exogeneity as load-bearing assumption.
+
+- **`distributional-methods.md`** — Conditional vs marginal
+  (unconditional) distributional estimands stated and
+  distinguished up front. Quantile regression (Koenker-Bassett
+  1978): check function, equivariance, quantile process with
+  uniform bands. Recentered influence functions (Firpo-Fortin-
+  Lemieux 2009): the RIF construction, unconditional partial
+  effects, and a QR-vs-RIF comparison. Distributional
+  decompositions: Oaxaca-Blinder at the mean,
+  DiNardo-Fortin-Lemieux reweighting, RIF-based decompositions
+  (FFL 2018), reweighting-then-RIF as current best practice.
+  Causal distributional effects: Callaway-Li (2019) QTT with
+  distributional parallel trends, Chernozhukov-Hansen (2005)
+  IVQR with rank invariance assumption stated honestly.
+
+- **`structural-labor.md`** — AKM (Abowd-Kramarz-Margolis 1999)
+  as a two-way FE model decomposing log earnings into portable
+  worker effects, firm pay premia, and assortative matching.
+  The limited mobility bias problem (Andrews et al. 2008): why
+  OLS variance components are upward-biased when few workers
+  connect each firm pair. The Kline-Saggio-Sølvsten (2020)
+  leave-out estimator: the leave-one-out principle applied to
+  two-way FE, efficient leverage computation via
+  Sherman-Morrison-Woodbury, KSS standard errors for variance
+  components. Connected sets and identification. What AKM does
+  and doesn't tell you about firm pay premia: variance
+  decomposition is identified, causal effects of firm
+  characteristics are not. The exogenous mobility assumption
+  stated honestly with the pre-/post-move residual diagnostic.
+  Implementation: `LeaveOutTwoWay` (Matlab) and `pytwoway`
+  (Python); R and Stata for exploratory work only.
+
 ### Math depth layer (`20_Math/`)
 
 Working mathematical notes (~5,000–8,000 words each) connecting
@@ -263,44 +316,105 @@ pointer to textbooks.
   Numerical linear algebra: condition numbers, the never-invert
   rule, decomposition guide, floating-point pathologies.
 
+- **`probability.md`** — Characteristic functions and Lévy's
+  continuity theorem. Cramér-Wold device. Laws of large numbers
+  (Chebyshev WLLN proved, Kolmogorov SLLN, ergodic and mixing
+  for dependent data). CLTs (classical proved via CFs,
+  Lindeberg-Feller, multivariate, Gordin and martingale
+  difference). Delta method (scalar and vector, proved).
+  $o_P/O_P$ notation. Donsker's theorem stated. The standard
+  asymptotic argument, ULLN, triangular arrays, and when
+  standard asymptotics breaks.
+
+- **`calculus.md`** — Multivariate calculus grounding for
+  econometrics. Clairaut's theorem (proved). Chain rule for
+  vector maps (proved). Multivariate Taylor to second order
+  (proved). Change of variables with Jacobian determinant.
+  Matrix calculus: gradient tables, ∂log det A/∂A = A⁻ᵀ
+  (proved), score-information matrix equality (proved). Calculus
+  of variations: Euler-Lagrange equation (proved via integration
+  by parts), transversality conditions, Pontryagin maximum
+  principle stated, Legendre transformation.
+
+- **`differential-equations.md`** — Picard-Lindelöf existence
+  and uniqueness (proved as contraction mapping on C([t₀−b,
+  t₀+b])). Gronwall inequality (proved). Linear ODE systems
+  and the matrix exponential (proved). Duhamel's formula
+  (proved). Phase portrait analysis and Lyapunov stability
+  (proved). Method of characteristics and the HJB-Pontryagin
+  equivalence. Viscosity solutions: definition via test
+  functions, verification theorem (proved sketch). Kolmogorov
+  backward and forward equations with HANK application.
+
+- **`stochastic-processes.md`** — Filtrations, adapted
+  processes, martingale theory (Doob decomposition proved, L²
+  convergence proved). Stationarity, ergodicity, mixing, and
+  Gordin's CLT. Wold decomposition (proved via Hilbert space
+  projection). ARMA processes, VAR, state-space representations.
+  Brownian motion and Itô calculus (Itô's lemma proved sketch).
+  Unit roots and cointegration (DF distribution as functional
+  of Brownian motion). Markov chains and stationary
+  distributions.
+
+- **`dynamic-programming.md`** — Principle of optimality and
+  the Bellman equation. Blackwell's sufficient conditions
+  (monotonicity and discounting, both proved). Stochastic
+  Bellman equation. Theorem of the maximum (proved sketch).
+  Benveniste-Scheinkman differentiability (proved via envelope
+  theorem). Value function iteration (VFI) and policy function
+  iteration (PFI; policy improvement theorem proved). Curse of
+  dimensionality; EGM, sparse grids, perturbation methods.
+  Heterogeneous-agent models: Bewley-Aiyagari, HANK,
+  Krusell-Smith, continuous-time HJB-Fokker-Planck.
+
 ---
 
 ## Coming in v0.2
 
-### Econometrics depth (Tier 2 and beyond)
+### Econometrics depth — new in this build
 
-- **`panel-methods.md`** — Within transformations, FE vs RE,
-  Mundlak/correlated random effects, dynamic panels
-  (Arellano-Bond and its fragility), cluster-robust inference,
-  bootstrap for few clusters. Full treatment of Nickell bias.
-- **`time-series-beyond-lp.md`** — Cointegration, structural
-  VARs (recursive, sign restrictions, narrative identification,
-  proxy SVAR), state-space and Kalman filtering, unit root
-  testing honestly.
-- **`structural-labor.md`** — AKM (Abowd-Kramarz-Margolis) and
-  the leave-out estimators (Kline-Saggio-Sølvsten 2020) for
-  limited mobility bias.
-- **`distributional-methods.md`** — Quantile regression, RIF
-  (Firpo-Fortin-Lemieux), distributional decompositions
-  (DiNardo-Fortin-Lemieux, the Oaxaca-Blinder family),
-  distributional treatment effects.
-- **`double-machine-learning.md`** — Chernozhukov et al. (2018),
-  orthogonality condition, regularization bias, sample
-  splitting, when DML is and isn't a license for ML in causal
-  inference.
+- **`var-identification.md`** — Structural VAR identification:
+  Cholesky (Wold-causal ordering, ordering dependence),
+  sign restrictions (Uhlig 2005; Arias-Rubio-Waggoner-Zha 2018;
+  Fry-Pagan median-target correction; narrative sign
+  restrictions), narrative identification (Romer-Romer,
+  Ramey, Miranda-Agrippino-Ricco information-channel
+  correction), proxy SVARs / SVAR-IV (Mertens-Ravn 2013;
+  Stock-Watson 2018; connection to LP-IV; weak proxy
+  diagnostics), state-space representations and the Kalman
+  filter (TVP-VARs, FAVAR). Decision tree, honest treatment
+  of each identification assumption, failure modes, what to
+  report, implementation by language.
 
-### Math depth (continuing)
+- **`non-stationary-time-series.md`** — Unit roots and
+  cointegration: spurious regression (Granger-Newbold 1974),
+  Dickey-Fuller distribution as Brownian-motion functional,
+  ADF / DF-GLS / KPSS / Zivot-Andrews in practice (the power
+  problem stated honestly), Engle-Granger two-step procedure,
+  Johansen VECM (trace and max-eigenvalue tests, rank
+  identification, weak exogeneity, small-sample corrections),
+  ARDL bounds testing (Pesaran-Shin-Smith 2001; preferred for
+  uncertain integration orders and small Turkish samples).
+  Turkish-context section on structural breaks. Decision tree,
+  integration-order-as-maintained-hypothesis honesty section,
+  failure modes, what to report.
 
-- **`probability.md`** — Laws of large numbers, central limit
-  theorems (classical through dependent-data extensions), the
-  delta method, characteristic functions, the asymptotic
-  foundations that underpin econometrics.
-- **`stochastic-processes.md`** — Stationarity and ergodicity,
-  Markov chains, Brownian motion, Wold decomposition, ARMA,
-  long-memory processes.
-- **`dynamic-programming.md`** — Principle of optimality,
-  Blackwell sufficient conditions, value function iteration,
-  curse of dimensionality, heterogeneous-agent models (HANK).
+### Econometrics depth — new in this build
+
+- **`double-machine-learning.md`** — Regularization bias and
+  why naive plug-in ML fails. Neyman orthogonality as a Gateaux
+  derivative condition: the score is insensitive to first-order
+  nuisance error. K-fold cross-fitting. The partially linear
+  regression model (DML as nonparametric FWL). The interactive
+  regression model with AIPW doubly-robust score. DML with
+  instruments (PLIV). Conditional average treatment effects
+  (CATE) and causal forests. Product-rate condition on nuisance
+  estimators; which ML methods satisfy it and for what sample
+  sizes. The identification assumption stated honestly —
+  unconfoundedness is not relaxed by DML; sensitivity analysis
+  (Cinelli-Hazlett) is the companion. Decision tree, failure
+  modes, what to report. Implementation: Python `DoubleML` and
+  `EconML`; R `DoubleML` and `grf`.
 
 ---
 
@@ -381,12 +495,16 @@ a generic econ assistant; he isn't one.
 ## Status
 
 **v0.2-in-progress** — Identity, knowledge, workflow, and project
-layers are stable. Econometrics depth layer: Tier 1 is complete
-(DiD, IV, shift-share, local projections); Tier 2 has begun
-(regression discontinuity). Math depth layer: five files complete
-(real analysis, measure theory, optimization, functional analysis,
-linear algebra). Literature search and writing layers are planned
-for v0.3.
+layers are stable. Econometrics depth layer: Tier 1 complete (DiD,
+IV, shift-share, local projections); Tier 2 complete (regression
+discontinuity, panel methods, SVAR identification, non-stationary
+time series); four Tier 3 files complete (distributional methods,
+double machine learning, structural labor / AKM). The v0.2 core
+econometrics build is now complete. Math depth layer: ten files
+complete (real analysis, measure theory, optimization, functional
+analysis, linear algebra, probability, calculus, differential
+equations, stochastic processes, dynamic programming). Literature
+search and writing layers are planned for v0.3.
 
 Things will change. Files will be revised as the methodological
 literatures move (especially DiD, which is still unsettled in its

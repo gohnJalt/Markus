@@ -875,29 +875,32 @@ A possible future addition to the math layer.
   numerical linear algebra. The projection geometry of §3
   here (OLS as $L^2$ projection) is given its matrix form
   there.
-- `20_Math/probability.md` — *to be written*. Builds directly
-  on §9 here (conditional expectation as $L^2$ projection) for
-  its treatment of the conditional expectation in probability
+- `20_Math/probability.md` — Builds directly on §9 here
+  (conditional expectation as $L^2$ projection): LLNs, CLTs,
+  the delta method (proved via MVT + Slutsky), $o_P/O_P$
+  notation, Prokhorov and weak convergence, and the asymptotic
+  foundations of the standard econometric argument. The
+  conditional expectation in probability
   theory, and on §6 (weak convergence) for convergence in
   distribution.
-- `20_Math/stochastic-processes.md` — *to be written*.
-  Martingale theory uses the $L^2$ projection characterization
-  of conditional expectation (§9 here); the quadratic variation
-  of a martingale lives in $L^1$.
-- `20_Math/dynamic-programming.md` — *to be written*. The
-  Bellman operator acts on the Banach space of bounded functions
-  (sup-norm); the Neumann series (§4.2 here) and the
-  contraction mapping theorem (`real-analysis.md` §6) jointly
-  establish existence and uniqueness of the value function.
+- `20_Math/stochastic-processes.md` — Martingale theory uses
+  the $L^2$ projection characterization of conditional
+  expectation (§9 here); the quadratic variation of a
+  martingale lives in $L^1$.
+- `20_Math/dynamic-programming.md` — The Bellman operator
+  acts on the Banach space of bounded functions (sup-norm);
+  the Neumann series (§4.2 here) and the contraction mapping
+  theorem (`real-analysis.md` §6) jointly establish existence
+  and uniqueness of the value function.
 - `10_Methods/Econometrics/distributional-methods.md` —
-  *to be written*. Recentered influence functions are elements
-  of $L^2$; the semiparametric efficiency bound is the squared
-  $L^2$-norm of the efficient influence function (§9 here).
+  Recentered influence functions are elements of $L^2$; the
+  semiparametric efficiency bound is the squared $L^2$-norm of
+  the efficient influence function (§9 here).
 - `10_Methods/Econometrics/double-machine-learning.md` —
-  *to be written*. Neyman-orthogonal scores are defined via the
-  Gateaux derivative in the direction of the nuisance function
-  — a functional derivative in $L^2$ whose analysis uses the
-  projection and Riesz representation structure of §3 here.
+  Neyman-orthogonal scores are defined via the Gateaux derivative
+  in the direction of the nuisance function — a functional
+  derivative in $L^2$ whose analysis uses the projection and
+  Riesz representation structure of §3 here.
 - `10_Methods/modern-toolkit-references.md` — the asymptotic
   theory entries (empirical process theory, uniform LLN,
   functional CLT) depend on the Banach-space LLN/CLT framework

@@ -374,7 +374,7 @@ cross-country samples where `T` is 40–60 years, it is
 non-trivial. The standard fix — differencing out the unit
 effects and instrumenting with further lags — creates its
 own problems (see the Arellano-Bond discussion in
-`panel-methods.md`, to be written).
+`panel-methods.md`).
 
 **Cross-sectional dependence.** Countries are not
 independent. Shocks to the US transmit to other countries,
@@ -671,9 +671,7 @@ publication-quality inference machinery is in R.
 
 **Structural VARs in detail.** Sign restrictions, recursive
 identification, proxy SVARs beyond their connection to
-LP-IV. These belong in a dedicated SVAR note (not yet
-written; part of the `time-series-beyond-lp.md` slot in
-Tier 2 of the econometrics library).
+LP-IV. These are in `var-identification.md`.
 
 **Narrative identification of shocks.** Romer-Romer, Ramey,
 Mertens-Ravn. The narrative side of shock identification is

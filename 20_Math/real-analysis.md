@@ -973,7 +973,7 @@ comprehensive.
   on this file for the extreme value theorem, compactness,
   continuity, the implicit function theorem, and the
   contraction mapping theorem (nested fixed-point problems).
-- `20_Math/dynamic-programming.md` — *to be written*. The
+- `20_Math/dynamic-programming.md` — The
   contraction mapping theorem of §6 is the foundation.
 - `10_Methods/modern-toolkit-references.md` — the
   econometrics directory. Many results in the econometric

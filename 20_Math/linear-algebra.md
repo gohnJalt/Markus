@@ -632,33 +632,34 @@ demands it.
   second-order condition (PD Hessian iff unique minimizer);
   the QR-based solve (§4.3 here) is the numerically correct
   implementation of the OLS formula in §6.1 there.
-- `20_Math/probability.md` — *to be written*. The covariance
-  matrix is the key symmetric PSD matrix in probability; the
-  Cramér-Rao bound is stated in terms of the information
-  matrix (a PSD matrix) and its inverse; the delta method
-  requires matrix multiplication of Jacobians; the CLT for
-  vectors uses the multivariate normal, whose density involves
-  $\Sigma^{-1}$ (computed via Cholesky).
-- `20_Math/stochastic-processes.md` — *to be written*. VAR
-  stability via eigenvalues of the companion matrix (§3.4
-  here); the state-space representation of ARMA processes uses
-  matrix exponentiation; the Kalman filter involves Cholesky
+- `20_Math/probability.md` — The covariance matrix is the key
+  symmetric PSD matrix in probability; the Cramér-Rao bound
+  is $I(\theta_0)^{-1}$ (inverse of the information matrix,
+  a PSD matrix); the vector delta method (§4.2 there) uses
+  Jacobian matrix multiplication $G\Sigma G^\top$ (the
+  sandwich formula); the multivariate CLT (§3.3 there) uses
+  the multivariate normal, whose density involves $\Sigma^{-1}$
+  (computed via Cholesky, §7 here).
+- `20_Math/stochastic-processes.md` — VAR stability via
+  eigenvalues of the companion matrix (§3.4 here); the
+  state-space representation of ARMA processes uses matrix
+  exponentiation; the Kalman filter involves Cholesky
   (§7 here) for the covariance prediction step.
 - `10_Methods/Econometrics/panel-methods.md` — *to be written*.
   The within-transformation (demeaning) is a projection matrix
   $M_{D_\alpha}$ where $D_\alpha$ is the matrix of group
   indicators; Arellano-Bond uses a specific weighting matrix
   for the GMM objective.
-- `10_Methods/Econometrics/structural-labor.md` — *to be
-  written*. AKM estimation requires solving a large sparse
-  linear system (the normal equations for the two-way fixed
-  effects model); the leave-out estimator uses the diagonal
+- `10_Methods/Econometrics/structural-labor.md` — AKM
+  estimation requires solving a large sparse linear system
+  (the normal equations for the two-way fixed effects model);
+  the leave-out estimator uses the diagonal
   of the hat matrix (leverages, §2.4 here).
-- `10_Methods/Econometrics/double-machine-learning.md` — *to
-  be written*. The Frisch-Waugh-Lovell theorem (§2.3 here)
-  is the linear-algebra motivation for the DML partialling-out
-  approach: DML generalizes Frisch-Waugh from linear residuals
-  to nonparametric residuals.
+- `10_Methods/Econometrics/double-machine-learning.md` —
+  The Frisch-Waugh-Lovell theorem (§2.3 here) is the
+  linear-algebra motivation for the DML partialling-out approach:
+  DML generalizes Frisch-Waugh from linear residuals to
+  nonparametric residuals.
 - `50_Workflows/run-a-regression-properly.md` — Stage 3
   (specification) of the regression workflow uses the FWL
   theorem (§2.3) for thinking about partial effects; Stage 7
