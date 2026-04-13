@@ -7,13 +7,13 @@ related: [real-analysis, calculus, optimization, stochastic-processes, functiona
 
 This file covers the ODE and PDE theory that the rest of the
 math library either uses without proof or explicitly defers.
-`calculus.md` derived the Euler-Lagrange equation and the
+[[`calculus.md`]] derived the Euler-Lagrange equation and the
 Hamilton-Jacobi-Bellman equation as variational conditions —
 both are differential equations, and what makes them solvable,
 what makes their solutions unique, and when classical solutions
-fail are questions that belong here. `stochastic-processes.md`
+fail are questions that belong here. [[`stochastic-processes.md`]]
 introduced the Kolmogorov forward and backward equations as
-bridges between SDEs and PDEs. `dynamic-programming.md` will
+bridges between SDEs and PDEs. [[`dynamic-programming.md`]] will
 use the Bellman operator and its continuous-time version; both
 rest on the stability theory developed here.
 
@@ -28,12 +28,12 @@ method of characteristics, the HJB equation, viscosity
 solutions, and the Kolmogorov equations for continuous-time
 distributional dynamics (§§5-7).
 
-Prerequisites: `real-analysis.md` (§6, contraction mapping
-theorem — the engine of §1 here); `calculus.md` (§§2-3,
+Prerequisites: [[`real-analysis.md`]] (§6, contraction mapping
+theorem — the engine of §1 here); [[`calculus.md`]] (§§2-3,
 chain rule and Taylor; §§5-6, matrix calculus and the
-Hamiltonian/HJB); `linear-algebra.md` (§§3-4, eigenvalues
+Hamiltonian/HJB); [[`linear-algebra.md`]] (§§3-4, eigenvalues
 and the spectral theorem — used in §§3-4 here);
-`stochastic-processes.md` (§7, Itô calculus — background for
+[[`stochastic-processes.md`]] (§7, Itô calculus — background for
 §§6-7 here).
 
 ---
@@ -88,7 +88,7 @@ We work on the closed ball $X = \{x \in C([t_0-b,t_0+b],
 \mathbb{R}^n) : \|x - x_0\|_\infty \leq r\}$, where
 $\|\cdot\|_\infty$ is the sup norm. The space
 $(C([t_0-b,t_0+b], \mathbb{R}^n), \|\cdot\|_\infty)$ is
-complete (`real-analysis.md` §7), and $X$ is a closed subset,
+complete ([[`real-analysis.md`]] §7), and $X$ is a closed subset,
 hence also complete.
 
 **Step 1: $T$ maps $X$ to $X$.** For $x \in X$:
@@ -106,7 +106,7 @@ By choosing $b \leq \min(a, r/M, 1/(2L))$, we get $Lb \leq 1/2 < 1$,
 so $T$ is a contraction.
 
 **Step 3: apply the contraction mapping theorem.** The
-theorem (`real-analysis.md` §6) guarantees a unique fixed
+theorem ([[`real-analysis.md`]] §6) guarantees a unique fixed
 point $x^* \in X$: $Tx^* = x^*$. This fixed point is the
 unique solution to the integral equation, hence to the IVP.
 $\blacksquare$
@@ -219,7 +219,7 @@ So $\dot x(t) = A e^{At} x_0 = Ax(t)$, and $x(0) = e^0 x_0
 ### 3.2 Computing $e^{At}$ via diagonalization
 
 When $A$ is diagonalizable over $\mathbb{R}$ (which holds for
-symmetric $A$ by the spectral theorem, `linear-algebra.md`
+symmetric $A$ by the spectral theorem, [[`linear-algebra.md`]]
 §3.2, and for $A$ with distinct eigenvalues in general):
 $A = P\Lambda P^{-1}$ with $\Lambda = \mathrm{diag}(\lambda_1,
 \ldots, \lambda_n)$. Then
@@ -365,7 +365,7 @@ for an unknown function $u: \mathbb{R} \times \mathbb{R}^n
 $$F(t, x, u, \partial_t u, \nabla_x u) = 0.$$
 The HJB equation is of this type:
 $$-\partial_t V + H(t, x, \nabla_x V) = 0,$$
-where $H$ is the Hamiltonian (`calculus.md` §6.4). First-order
+where $H$ is the Hamiltonian ([[`calculus.md`]] §6.4). First-order
 PDEs differ from higher-order ones (the heat equation, wave
 equation) in that their solutions can be constructed by
 integrating along characteristic curves, reducing the PDE
@@ -394,7 +394,7 @@ $$\dot t = 1, \quad \dot x = \nabla_p H(x, p), \quad
 \dot p = -\nabla_x H(x, p), \quad \dot V = p \cdot \nabla_p H - H,$$
 where $p = \nabla_x V$ is the costate. These are exactly the
 **canonical equations** of the Pontryagin maximum principle
-(`calculus.md` §6.4): the state equation $\dot x = \nabla_p H$
+([[`calculus.md`]] §6.4): the state equation $\dot x = \nabla_p H$
 and the costate equation $\dot p = -\nabla_x H$. The method
 of characteristics for the HJB equation *is* the maximum
 principle — both approaches produce the same system of ODEs.
@@ -480,7 +480,7 @@ the HJB holds with equality along the path. $\blacksquare$
 
 **Benveniste-Scheinkman.** When the value function is
 differentiable at the optimal state $x^*$, the envelope
-theorem (`optimization.md` §5) applied to the Bellman
+theorem ([[`optimization.md`]] §5) applied to the Bellman
 equation gives $\nabla_x V(t, x^*) = \lambda(t)$ — the
 gradient of the value function is the costate (the shadow
 price). This connects the PDE approach (HJB) to the ODE
@@ -497,7 +497,7 @@ the HJB combined with the verification theorem.
 
 Consider a diffusion process $dX_t = \mu(X_t)\,dt +
 \sigma(X_t)\,dW_t$ (a stochastic differential equation
-as in `stochastic-processes.md` §7). Kolmogorov's two
+as in [[`stochastic-processes.md`]] §7). Kolmogorov's two
 equations describe how functions of $X_t$ and how
 distributions of $X_t$ evolve over time.
 
@@ -507,7 +507,7 @@ $$\mathcal{A}f(x) = \mu(x)^\top \nabla_x f(x) +
 \frac{1}{2}\mathrm{tr}\!\bigl(\sigma(x)\sigma(x)^\top
 \nabla^2_x f(x)\bigr),$$
 which acts on $C^2$ functions $f$. By Itô's formula
-(`stochastic-processes.md` §7.2), $df(X_t) = \mathcal{A}f(X_t)\,dt
+([[`stochastic-processes.md`]] §7.2), $df(X_t) = \mathcal{A}f(X_t)\,dt
 + \nabla f(X_t)^\top \sigma(X_t)\,dW_t$, so $\mathcal{A}f$
 is the drift of $f(X_t)$. Dynkin's formula states
 $E[f(X_T)] = f(X_0) + E\!\left[\int_0^T \mathcal{A}f(X_t)\,dt\right]$
@@ -531,7 +531,7 @@ in time from the terminal date $T$ toward the initial date
 $0$ — it computes what the expected payoff is, conditional
 on the current state, as a function of time remaining. This
 is the same direction as the Bellman equation in dynamic
-programming (`dynamic-programming.md`): the value function
+programming ([[`dynamic-programming.md`]]): the value function
 is computed from the terminal condition backward.
 
 **The Feynman-Kac formula** is the converse: if $u$ satisfies
@@ -559,7 +559,7 @@ satisfies $\mathcal{A}^* p_\infty = 0$ — the time derivative
 is zero. For the Ornstein-Uhlenbeck process ($\mu(x) =
 -\kappa x$, $\sigma$ constant), the stationary density is
 Gaussian with mean 0 and variance $\sigma^2/(2\kappa)$
-(`stochastic-processes.md` §7.2).
+([[`stochastic-processes.md`]] §7.2).
 
 **Application to HANK.** In heterogeneous-agent models
 (Bewley-Huggett-Aiyagari, HANK), the distribution of agents
@@ -575,8 +575,8 @@ framework), the equilibrium is a coupled system:
 
 This system is the continuous-time generalization of the
 discrete-time Bewley model's value function iteration plus
-distribution iteration (`stochastic-processes.md` §9.3 and
-`dynamic-programming.md`). The mathematical structure —
+distribution iteration ([[`stochastic-processes.md`]] §9.3 and
+[[`dynamic-programming.md`]]). The mathematical structure —
 two PDEs of opposite "time direction" coupled through a
 fixed point — is what makes HANK models computationally
 demanding.
@@ -596,7 +596,7 @@ Differential Equations* is the standard reference.
 in macro (the HJB with non-smooth data, the Fokker-Planck
 on non-compact domains) require solutions in Sobolev spaces
 $W^{k,p}$ rather than classical $C^k$ spaces. The functional-
-analytic framework is in `functional-analysis.md`; the PDE
+analytic framework is in [[`functional-analysis.md`]]; the PDE
 applications are not developed here.
 
 **Numerical methods for ODEs and PDEs.** Euler's method,
@@ -622,47 +622,47 @@ here.
 
 ## Cross-references
 
-- `20_Math/real-analysis.md` — the contraction mapping
+- [[`20_Math/real-analysis.md`]] — the contraction mapping
   theorem (§6 there) is the engine of the Picard-Lindelöf
   proof (§1.2 here); completeness of $C([a,b])$ under
   the sup norm (§7 there) is the function space in which
   the Picard iteration lives.
-- `20_Math/calculus.md` — the Euler-Lagrange equation
+- [[`20_Math/calculus.md`]] — the Euler-Lagrange equation
   (§6.2 there) is the ODE studied in §1 here; the HJB
   (§6.4 there) is the first-order PDE of §§5-6 here; the
   chain rule (§2 there) is used in the verification theorem
   proof; the Legendre transformation (§6.5 there) connects
   the Lagrangian and Hamiltonian formulations.
-- `20_Math/optimization.md` — the envelope theorem (§5
+- [[`20_Math/optimization.md`]] — the envelope theorem (§5
   there) gives Benveniste-Scheinkman (§6.2 here); the
-  Pontryagin necessary conditions (restated in `calculus.md`
+  Pontryagin necessary conditions (restated in [[`calculus.md`]]
   §6.4) and the verification theorem here are two directions
   of the same characterization.
-- `20_Math/linear-algebra.md` — the matrix exponential
+- [[`20_Math/linear-algebra.md`]] — the matrix exponential
   (§3 here) is computed via diagonalization using the
   spectral theorem (§3.2 there); the stability classification
   (§4.2 here) uses eigenvalue real parts; Cholesky of
   $\sigma\sigma^\top$ (§7 there) appears in the Fokker-Planck
   operator $\mathcal{A}^*$.
-- `20_Math/stochastic-processes.md` — Itô's formula (§7.2
+- [[`20_Math/stochastic-processes.md`]] — Itô's formula (§7.2
   there) is what the backward Kolmogorov equation is a
   consequence of (via Dynkin's formula, §7.1 there); the
   Ornstein-Uhlenbeck process (§7.2 there) is an example
   whose stationary density is found via Fokker-Planck (§7.3
   here); the HJB for optimal stopping (§8 there) is the
   specific form of the general HJB (§6 here).
-- `20_Math/functional-analysis.md` — the Lyapunov function
+- [[`20_Math/functional-analysis.md`]] — the Lyapunov function
   method (§4.3 here) is related to the $L^2$ energy
   dissipation argument; viscosity solutions are weak
   solutions in a sense analogous to the weak formulations
   developed via the Riesz representation theorem (§3 there).
-- `20_Math/dynamic-programming.md` — The
+- [[`20_Math/dynamic-programming.md`]] — The
   Bellman operator is the discrete-time analogue of the HJB;
   its contraction property (Blackwell sufficient conditions)
   mirrors the Picard-Lindelöf contraction here; the saddle-
   path stability of §4.2 here is the continuous-time version
   of the stable manifold that selects the optimal policy.
-- `10_Methods/Econometrics/local-projections.md` — the VAR
+- [[`10_Methods/Econometrics/local-projections.md`]] — the VAR
   companion matrix and impulse responses are the discrete-
   time analogue of the linear system $\dot x = Ax$ (§3 here);
   VAR stability (spectral radius $< 1$) corresponds to all

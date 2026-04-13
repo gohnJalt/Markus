@@ -5,9 +5,9 @@ related: [real-analysis, measure-theory, functional-analysis, probability, linea
 
 # Stochastic Processes
 
-This file is the direct sequel to `probability.md` and the
+This file is the direct sequel to [[`probability.md`]] and the
 bridge between the foundational math layer and the time series
-and structural macro work that Markus actually does. `probability.md`
+and structural macro work that Markus actually does. [[`probability.md`]]
 built the limit theorems for sequences of i.i.d. or weakly
 dependent random variables: LLNs, CLTs, the delta method,
 $o_P/O_P$ notation, Prokhorov, and Donsker stated. This file
@@ -28,15 +28,15 @@ stopping problems, and continuous-time structural models rest
 on (§§6-7); and unit root asymptotics with the Dickey-Fuller
 distribution as a functional of Brownian motion, which is where
 the local-to-unity framework lives (§8). Section 9 covers
-Markov chains at the working level that `dynamic-programming.md`
+Markov chains at the working level that [[`dynamic-programming.md`]]
 needs.
 
-Prerequisites: `probability.md` (the full file, especially
-§§3-6 on CLTs, weak convergence, and Donsker), `measure-theory.md`
+Prerequisites: [[`probability.md`]] (the full file, especially
+§§3-6 on CLTs, weak convergence, and Donsker), [[`measure-theory.md`]]
 (§§1-4 for the integral and modes of convergence), and
-`functional-analysis.md` (§§2-3 for Hilbert spaces and the
+[[`functional-analysis.md`]] (§§2-3 for Hilbert spaces and the
 projection theorem — the Wold decomposition is a projection
-argument). `linear-algebra.md` §3.4 (VAR stability via
+argument). [[`linear-algebra.md`]] §3.4 (VAR stability via
 eigenvalues of the companion matrix) and §5 (SVD) are useful
 background for the ARMA and state-space sections.
 
@@ -47,7 +47,7 @@ background for the ARMA and state-space sections.
 ### 1.1 The framework
 
 The probability space $(\Omega, \mathcal{F}, P)$ from
-`measure-theory.md` §8 is a single static object. To model
+[[`measure-theory.md`]] §8 is a single static object. To model
 a system that evolves in time, we need to add structure that
 tracks what information is available at each point in time.
 
@@ -79,7 +79,7 @@ smallest filtration to which the process is adapted.
 The conditional expectation $E[X | \mathcal{F}_t]$ is the
 $L^2$ projection of $X$ onto the closed subspace of
 $\mathcal{F}_t$-measurable functions, as developed in
-`functional-analysis.md` §9 and `measure-theory.md` §9. In
+[[`functional-analysis.md`]] §9 and [[`measure-theory.md`]] §9. In
 the filtration context:
 
 - $E[X | \mathcal{F}_s] = E[E[X|\mathcal{F}_t]|\mathcal{F}_s]$
@@ -181,7 +181,7 @@ standard localization). $\blacksquare$
 
 The most important CLT for time-series econometrics: the
 central limit theorem for martingale difference sequences
-(MDS). This is the result deferred from `probability.md` §3.4.
+(MDS). This is the result deferred from [[`probability.md`]] §3.4.
 
 **Definition.** A sequence $(\xi_t, \mathcal{F}_t)$ is a
 **martingale difference sequence** if $\xi_t$ is
@@ -356,7 +356,7 @@ space $H = \overline{\text{sp}}\{X_t : t \in \mathbb{Z}\}$
 with inner product $\langle X_t, X_s \rangle = E[X_t X_s] =
 \gamma(t-s)$. Define the linear past at time $t$ as
 $H_t = \overline{\text{sp}}\{X_s : s \leq t\}$. The
-projection theorem (`functional-analysis.md` §3.1) gives a
+projection theorem ([[`functional-analysis.md`]] §3.1) gives a
 unique decomposition of $X_t$ into its projection onto
 $H_{t-1}$ (the predictable part) and the orthogonal
 complement (the innovation $\varepsilon_t = X_t -
@@ -445,11 +445,11 @@ I & 0 & \cdots & 0 \\ \vdots & \ddots & & \vdots \\
 
 Stability (covariance-stationarity) requires all eigenvalues
 of the companion matrix $C$ to satisfy $|\lambda_i| < 1$ —
-i.e., spectral radius $\rho(C) < 1$ (`linear-algebra.md` §3.4).
+i.e., spectral radius $\rho(C) < 1$ ([[`linear-algebra.md`]] §3.4).
 The impulse response function at horizon $h$ is the $(1,1)$
 block of $C^h$; this is computable via matrix exponentiation
 and is the object that local projections also estimate
-(`local-projections.md`).
+([[`local-projections.md`]]).
 
 ### 5.3 State-space representation
 
@@ -486,7 +486,7 @@ the denominator in the Kalman gain. State-space estimation
 via maximum likelihood optimizes the Gaussian likelihood
 written in terms of these prediction errors (the *prediction-
 error decomposition*); Cholesky on the innovation covariance
-(`linear-algebra.md` §7) makes the computation stable.
+([[`linear-algebra.md`]] §7) makes the computation stable.
 
 ---
 
@@ -507,7 +507,7 @@ Properties 1-3 determine the finite-dimensional distributions
 uniquely: by properties 2 and 3, the joint distribution of
 $(W_{t_1}, W_{t_2} - W_{t_1}, \ldots, W_{t_k} - W_{t_{k-1}})$
 is a multivariate Gaussian with independent components. The
-Kolmogorov extension theorem (`measure-theory.md` §6) gives
+Kolmogorov extension theorem ([[`measure-theory.md`]] §6) gives
 a probability space on which such a consistent family of
 finite-dimensional distributions exists; property 4 is
 then established by Kolmogorov's continuity criterion (the
@@ -517,7 +517,7 @@ the Gaussian fourth moment).
 
 **Donsker's theorem as construction.** The constructive
 existence proof of Brownian motion is exactly Donsker's
-theorem (`probability.md` §6.3): the normalized partial-sum
+theorem ([[`probability.md`]] §6.3): the normalized partial-sum
 process of i.i.d. mean-zero variance-1 random variables
 converges weakly to Brownian motion in $C[0,1]$. Donsker is
 both a CLT for the path as a whole and an existence proof for
@@ -769,7 +769,7 @@ matrix $\Pi$ in a VECM equals the number of cointegrating
 vectors. Johansen's trace test and max-eigenvalue test are
 likelihood ratio tests for the rank of $\Pi$; their
 distributions are multivariate Brownian-motion functionals.
-The full treatment belongs in `non-stationary-time-series.md`.
+The full treatment belongs in [[`non-stationary-time-series.md`]].
 
 ---
 
@@ -791,7 +791,7 @@ matrix $P \in \mathbb{R}^{|\mathcal{S}| \times |\mathcal{S}|}$
 with rows summing to 1. The chain's distribution at time $n$
 is $\mu_0 P^n$ where $\mu_0$ is the initial distribution.
 VAR stability (spectral radius of the companion matrix,
-`linear-algebra.md` §3.4) is the analogue for AR chains in
+[[`linear-algebra.md`]] §3.4) is the analogue for AR chains in
 continuous state spaces.
 
 ### 9.2 Stationary distributions and ergodicity
@@ -821,8 +821,8 @@ ensemble averages — the Markov-chain analogue of §3.2.
 
 ### 9.3 Connections to dynamic programming
 
-The contraction mapping theorem (`real-analysis.md` §6) and
-the Blackwell sufficient conditions (`dynamic-programming.md`)
+The contraction mapping theorem ([[`real-analysis.md`]] §6) and
+the Blackwell sufficient conditions ([[`dynamic-programming.md`]])
 establish that value function iteration converges for
 discounted dynamic programming problems. The underlying
 process is a Markov chain: the state variable $(X_t)$
@@ -856,7 +856,7 @@ extreme-event models. Not covered here.
 classes, VC dimension and covering numbers, bootstrap
 consistency as a consequence of the functional CLT. These
 tools are needed for the asymptotic theory of DML and
-semiparametric estimators; they belong in a future `double-machine-learning.md`
+semiparametric estimators; they belong in a future [[`double-machine-learning.md`]]
 section or a dedicated file. Van der Vaart and Wellner is
 the reference.
 
@@ -869,7 +869,7 @@ satisfied by the transition densities of diffusion processes.
 These are the bridge between Itô calculus and structural
 continuous-time macro (Bewley models in continuous time,
 Hamilton-Jacobi-Bellman equations). The treatment belongs
-in `dynamic-programming.md`, which will cover the HJB
+in [[`dynamic-programming.md`]], which will cover the HJB
 equation.
 
 **The full Johansen trace test and VECM estimation.** The
@@ -877,7 +877,7 @@ detailed econometric implementation of cointegration
 analysis — reduced rank regression, the VECM, lag selection,
 deterministic terms, and the full distribution theory for
 the trace and max-eigenvalue statistics — belongs in
-`non-stationary-time-series.md`.
+[[`non-stationary-time-series.md`]].
 
 **Fractional Brownian motion and long memory.** ARFIMA
 processes, the Hurst exponent, and the self-similar processes
@@ -889,68 +889,68 @@ foundational math.
 
 ## Cross-references
 
-- `20_Math/probability.md` — the direct prerequisite. The
+- [[`20_Math/probability.md`]] — the direct prerequisite. The
   MDS CLT (§2.4 here) was deferred from §3.4 there; Donsker's
   theorem (§6.3 there) is the constructive existence proof
   for Brownian motion (§6.1 here); mixing CLTs (§3.3 here)
   complete the dependent-data CLTs begun in §3.4 there; unit
   root asymptotics (§8.3 here) is the broken-standard-asymptotics
   case signaled in §7.4 there.
-- `20_Math/measure-theory.md` — the Kolmogorov extension
+- [[`20_Math/measure-theory.md`]] — the Kolmogorov extension
   theorem (§6 there) underwrites the existence of the
   stochastic process as a probability measure on path space;
   the dominated convergence theorem (§5 there) is used in
   the $L^2$ martingale convergence proof; Radon-Nikodym
-  (§10 there, proved in `functional-analysis.md`) underlies
+  (§10 there, proved in [[`functional-analysis.md`]]) underlies
   the change-of-measure arguments in Itô calculus.
-- `20_Math/functional-analysis.md` — the Hilbert space
+- [[`20_Math/functional-analysis.md`]] — the Hilbert space
   projection theorem (§3 there) is the engine of the Wold
   decomposition (§4 here); the spectral theorem for compact
   self-adjoint operators (§8 there) underlies the spectral
   density representation; $L^2$ completeness (§2 there) gives
   the space in which the Itô integral is defined.
-- `20_Math/real-analysis.md` — the contraction mapping
+- [[`20_Math/real-analysis.md`]] — the contraction mapping
   theorem (§6 there) gives the fixed-point argument for
   stationary distributions of contraction kernels; Cauchy
   completeness (§1 there) is used in the Itô integral's
   $L^2$-limit construction; uniform convergence (§7 there)
   controls the ARMA approximation to MA(∞).
-- `20_Math/optimization.md` — the contraction mapping /
+- [[`20_Math/optimization.md`]] — the contraction mapping /
   Blackwell sufficient conditions (§6 there and in
-  `dynamic-programming.md`) connect to the ergodic theory
+  [[`dynamic-programming.md`]]) connect to the ergodic theory
   of Markov chains (§9 here); the Kalman filter prediction-
   error decomposition (§5.3 here) is a Cholesky-based
-  optimization (`linear-algebra.md` §7).
-- `20_Math/linear-algebra.md` — VAR stability via eigenvalues
+  optimization ([[`linear-algebra.md`]] §7).
+- [[`20_Math/linear-algebra.md`]] — VAR stability via eigenvalues
   of the companion matrix (§3.4 there) is the discrete-state
   analogue of §§5-8 here; Cholesky for the Kalman gain (§7
   there); the state-space and matrix exponential formulation
   of ARMA (§3 here) uses the companion matrix from §3.4 there.
-- `20_Math/dynamic-programming.md` — Markov chains (§9 here)
+- [[`20_Math/dynamic-programming.md`]] — Markov chains (§9 here)
   are the underlying processes;
   the Bellman equation is a Markov operator fixed-point;
   the HJB equation is the continuous-time (Itô calculus,
   §7 here) counterpart.
-- `10_Methods/Econometrics/local-projections.md` — the
+- [[`10_Methods/Econometrics/local-projections.md`]] — the
   impulse response function estimated by LPs is the $(1,1)$
   block of $C^h$ for the companion matrix $C$ (§5.2 here);
   the Plagborg-Møller-Wolf equivalence result is an
   equivalence in population between the LP IRF and the VAR
   IRF, both defined via the Wold representation (§4 here).
-- `10_Methods/Econometrics/non-stationary-time-series.md` —
+- [[`10_Methods/Econometrics/non-stationary-time-series.md`]] —
   the Johansen procedure, VECM estimation, cointegration
   testing, and the ARDL bounds approach. This file provides
   the theoretical foundations they rest on: the DF
   distribution as a Brownian-motion functional (§8.3 here),
   the unit root asymptotics, and the Wold representation
   underlying the ECM.
-- `10_Methods/Econometrics/var-identification.md` — structural
+- [[`10_Methods/Econometrics/var-identification.md`]] — structural
   identification of shocks in reduced-form VARs and VECMs
   (Cholesky, sign restrictions, proxy SVARs). The state-space
   representation and Kalman filter developed there build on
   the companion-matrix and ARMA-state-space material in §5
   here.
-- `10_Methods/Econometrics/panel-methods.md` — the Nickell
+- [[`10_Methods/Econometrics/panel-methods.md`]] — the Nickell
   bias in dynamic panels is a fixed-$T$ bias from unit-root-
   adjacent dynamics (autoregressive structure in the panel);
   the panel unit-root tests (IPS, Levin-Lin-Chu) aggregate

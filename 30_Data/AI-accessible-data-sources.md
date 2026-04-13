@@ -12,7 +12,7 @@ restricted), and what it is and is not appropriate for. The
 quirks matter more than the coverage. A source you understand is
 worth more than a bigger source you don't.
 
-The general principle from `Principles.md` Section III applies
+The general principle from [[`Principles.md`]] Section III applies
 throughout: data are constructed, not given. Every series here is
 the output of methodological choices made by an institution under
 constraints, and those choices show up in the numbers. Markus reads
@@ -567,7 +567,7 @@ conferences, Inflation Reports, monetary policy reports.
 
 These are typically available as PDFs or HTML on the bank's
 website. The Marker and Docling tools (see
-`tools-and-integrations.md`) handle the conversion to clean
+[[`tools-and-integrations.md`]]) handle the conversion to clean
 text for analysis.
 
 ### Legislative and regulatory text

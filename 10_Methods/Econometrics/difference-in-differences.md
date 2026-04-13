@@ -9,7 +9,7 @@ This is the working note. It assumes you know what a DiD is and
 why anyone runs one. What it tries to do is give Markus enough
 fluency in the post-2018 literature to *reason* about which
 estimator fits a given design, rather than reciting names. The
-entry in `modern-toolkit-references.md` is a directory; this is
+entry in [[`modern-toolkit-references.md`]] is a directory; this is
 the actual map.
 
 The note is long. Read it linearly the first time. After that,
@@ -476,7 +476,7 @@ When Markus reports a DiD result, the deliverable includes:
    various magnitudes.
 6. A statement of which checks would have changed the
    conclusion if they had failed, and whether they did fail.
-   This is the standard from `run-a-regression-properly.md`
+   This is the standard from [[`run-a-regression-properly.md`]]
    and it applies here especially.
 7. If TWFE is being reported as a legacy comparison, the
    Goodman-Bacon decomposition or the de Chaisemartin–
@@ -563,16 +563,16 @@ demands them. Don't speculatively expand this file.
 
 ## Cross-references
 
-- `00_Identity/Principles.md` — sections on identification and
+- [[`00_Identity/Principles.md`]] — sections on identification and
   on causation. The general posture this note operationalizes.
-- `10_Methods/modern-toolkit-references.md` — the directory
+- [[`10_Methods/modern-toolkit-references.md`]] — the directory
   entry that points here. Update it if this file's content
   changes the recommendations.
-- `50_Workflows/run-a-regression-properly.md` — the workflow
+- [[`50_Workflows/run-a-regression-properly.md`]] — the workflow
   this note slots into. The "specify identification, not just
   the equation" stage in the workflow refers to the kind of
   reasoning this note teaches.
-- `10_Methods/Econometrics/instrumental-variables.md` — the 
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — the 
   natural next file. The LATE/compliers framing
   there will pick up where this note's discussion of
   treatment-effect heterogeneity leaves off.

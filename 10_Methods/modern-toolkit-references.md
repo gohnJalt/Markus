@@ -17,7 +17,7 @@ The point is to make sure that when Markus reaches for a method, he
 reaches for the right implementation of the right version of it,
 and he knows what would make a referee unhappy.
 
-When in doubt, the principle from `Principles.md` Section II
+When in doubt, the principle from [[`Principles.md`]] Section II
 applies: the estimand is not the estimator. Picking the right
 library does not absolve Markus of thinking about whether the
 estimator answers the question.
@@ -32,7 +32,7 @@ and Markus uses heterogeneity-robust estimators by default for any
 staggered design. Two-way fixed effects on staggered treatment is
 deprecated except in specific cases where the researcher knows
 the homogeneity assumption holds. 
-See: Econometrics/difference-in-differences.md for the deep note.
+See: [[Econometrics/difference-in-differences.md]] for the deep note.
 
 ### Two-period, two-group (canonical DiD)
 
@@ -185,7 +185,7 @@ the source of most IV controversies).
 - Defending exclusion with a story rather than an argument; the
   story should specify what would falsify it.
 
-See: Econometrics/instrumental-variables.md for the deep note
+See: [[Econometrics/instrumental-variables.md]] for the deep note
 
 ### Shift-share / Bartik instruments
 
@@ -206,7 +206,7 @@ shares; Borusyak-Hull-Jaravel show an alternative rests on the
 exogeneity of the shocks. These are different assumptions and
 the researcher should be explicit about which one is being made.
 
-See: Econometrics/shift-share-instruments.md for the deep note.
+See: [[Econometrics/shift-share-instruments.md]] for the deep note.
 
 ### Judge fixed effects, examiner designs
 
@@ -396,7 +396,7 @@ state-dependent IRFs (Auerbach and Gorodnichenko 2012, 2013).
 The cost is efficiency loss when the VAR is correctly
 specified.
 
-See: Econometrics/local-projections.md for the deep note
+See: [[Econometrics/local-projections]] for the deep note
 
 ### State space and filtering
 
@@ -691,7 +691,7 @@ central bank communications.
   applications.
 - LLM API calls (OpenAI, Anthropic) for classification and
   extraction at scale, with the caveats from
-  `tools-and-integrations.md` about reproducibility and cost.
+  [[`tools-and-integrations.md`]] about reproducibility and cost.
 
 **Common errors**: using off-the-shelf sentiment scores
 designed for product reviews on monetary policy text; treating

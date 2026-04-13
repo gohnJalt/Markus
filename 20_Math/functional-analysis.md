@@ -33,14 +33,14 @@ projection theorem, the Riesz representation theorem, bounded
 linear operators, the big four theorems (Baire category,
 uniform boundedness, open mapping, closed graph, Hahn-Banach),
 dual spaces and weak convergence, the Radon-Nikodym theorem
-proved via Riesz (deferred from `measure-theory.md`), compact
+proved via Riesz (deferred from [[`measure-theory.md`]]), compact
 operators and the spectral theorem, and conditional expectation
 as $L^2$ projection.
 
-Prerequisites: `real-analysis.md` (metric spaces, compactness,
-completeness) and `measure-theory.md` ($L^p$ functions, modes
+Prerequisites: [[`real-analysis.md`]] (metric spaces, compactness,
+completeness) and [[`measure-theory.md`]] ($L^p$ functions, modes
 of convergence, measure-theoretic probability foundations).
-`optimization.md` is useful background for the duality
+[[`optimization.md`]] is useful background for the duality
 sections but not formally required.
 
 This file is long enough that it may eventually split into
@@ -65,7 +65,7 @@ satisfying:
 3. $\|x + y\| \leq \|x\| + \|y\|$ (triangle inequality).
 
 Every normed space is a metric space under $d(x, y) = \|x - y\|$,
-so all of the metric-space machinery from `real-analysis.md`
+so all of the metric-space machinery from [[`real-analysis.md`]]
 (convergence, Cauchy sequences, completeness, compactness)
 applies directly.
 
@@ -146,7 +146,7 @@ $$g_N = \sum_{k=1}^N |f_{n_{k+1}} - f_{n_k}|.$$
 By Minkowski's inequality, $\|g_N\|_p \leq \sum_{k=1}^N 2^{-k}
 \leq 1$. The sequence $g_N$ is nonneg and increasing, with
 $L^p$ norms bounded above. By the monotone convergence theorem
-(`measure-theory.md` §6.1), $g := \lim g_N$ satisfies $\|g\|_p
+([[`measure-theory.md`]] §6.1), $g := \lim g_N$ satisfies $\|g\|_p
 \leq 1$. In particular, $g$ is finite $\mu$-a.e.
 
 Where $g < \infty$, the telescoping series
@@ -363,7 +363,7 @@ small perturbations — if $T$ is invertible and $\|S - T\| <
 \|T^{-1}\|^{-1}$, then $S$ is invertible); the finite-sample
 approximation of the Beveridge-Nelson decomposition in time
 series; and the contraction mapping argument from
-`real-analysis.md` §6 (which is the Neumann series for the
+[[`real-analysis.md`]] §6 (which is the Neumann series for the
 fixed-point iterate).
 
 ---
@@ -513,7 +513,7 @@ exists a bounded linear functional $\ell$ and a constant $c$
 such that $\ell(x_0) > c \geq \ell(x)$ for all $x \in C$.
 Closed convex sets can be separated from exterior points by
 hyperplanes. This is the geometric heart of duality theory in
-optimization (`optimization.md` §4): the Lagrangian dual
+optimization ([[`optimization.md`]] §4): the Lagrangian dual
 function lower-bounds the primal via this separation.
 
 **Applications.** Hahn-Banach is the non-constructive workhorse
@@ -595,7 +595,7 @@ convergence in probability at the scalar level.
 
 ## 7. The Radon-Nikodym theorem via Riesz
 
-This is the proof deferred from `measure-theory.md` §9.4. The
+This is the proof deferred from [[`measure-theory.md`]] §9.4. The
 Hilbert space machinery makes it clean.
 
 **Theorem (Radon-Nikodym).** Let $(\Omega, \mathcal{F}, \mu)$
@@ -841,8 +841,8 @@ distributional methods or nonparametric work demands it.
 **LLN and CLT in Banach spaces.** The laws of large numbers
 and central limit theorems for Banach-space-valued random
 variables — including the functional CLT (Donsker's theorem)
-in $\ell^\infty(\mathcal{F})$ — are in `probability.md` and
-`stochastic-processes.md`.
+in $\ell^\infty(\mathcal{F})$ — are in [[`probability.md`]] and
+[[`stochastic-processes.md`]].
 
 **Optimal transport.** The Wasserstein distance and optimal
 transport maps use the Kantorovich duality, whose proof uses
@@ -853,29 +853,29 @@ A possible future addition to the math layer.
 
 ## Cross-references
 
-- `20_Math/real-analysis.md` — foundational prerequisite.
+- [[`20_Math/real-analysis.md`]] — foundational prerequisite.
   Metric spaces, Cauchy completeness, and compactness (§§2-3
   there) are the prerequisites for Banach spaces (§§1-2 here);
   the contraction mapping theorem (§6 there) is the special
   case of the Neumann series (§4.2 here) for the Banach space
   of bounded functions.
-- `20_Math/measure-theory.md` — the $L^p$ spaces here (§2)
+- [[`20_Math/measure-theory.md`]] — the $L^p$ spaces here (§2)
   are the function spaces defined there. The convergence
   theorems there (MCT, DCT) appear in the Riesz-Fischer proof
   (§2.2). The Radon-Nikodym theorem is stated without proof in
-  `measure-theory.md` §9.4 and is proved here in §7.
-- `20_Math/optimization.md` — the Hahn-Banach theorem (§5.5
+  [[`measure-theory.md`]] §9.4 and is proved here in §7.
+- [[`20_Math/optimization.md`]] — the Hahn-Banach theorem (§5.5
   here) is the infinite-dimensional engine behind the duality
-  theory in `optimization.md` §4; the separation theorem here
+  theory in [[`optimization.md`]] §4; the separation theorem here
   generalizes the Farkas-lemma argument used there for KKT.
-- `20_Math/linear-algebra.md` — The finite-dimensional
+- [[`20_Math/linear-algebra.md`]] — The finite-dimensional
   companion: spectral theorem for real symmetric matrices
   (specialization of the compact self-adjoint theorem),
   QR (Gram-Schmidt), SVD, pseudoinverse, Cholesky, and
   numerical linear algebra. The projection geometry of §3
   here (OLS as $L^2$ projection) is given its matrix form
   there.
-- `20_Math/probability.md` — Builds directly on §9 here
+- [[`20_Math/probability.md`]] — Builds directly on §9 here
   (conditional expectation as $L^2$ projection): LLNs, CLTs,
   the delta method (proved via MVT + Slutsky), $o_P/O_P$
   notation, Prokhorov and weak convergence, and the asymptotic
@@ -883,29 +883,29 @@ A possible future addition to the math layer.
   conditional expectation in probability
   theory, and on §6 (weak convergence) for convergence in
   distribution.
-- `20_Math/stochastic-processes.md` — Martingale theory uses
+- [[`20_Math/stochastic-processes.md`]] — Martingale theory uses
   the $L^2$ projection characterization of conditional
   expectation (§9 here); the quadratic variation of a
   martingale lives in $L^1$.
-- `20_Math/dynamic-programming.md` — The Bellman operator
+- [[`20_Math/dynamic-programming.md`]] — The Bellman operator
   acts on the Banach space of bounded functions (sup-norm);
   the Neumann series (§4.2 here) and the contraction mapping
-  theorem (`real-analysis.md` §6) jointly establish existence
+  theorem ([[`real-analysis.md`]] §6) jointly establish existence
   and uniqueness of the value function.
-- `10_Methods/Econometrics/distributional-methods.md` —
+- [[`10_Methods/Econometrics/distributional-methods.md`]] —
   Recentered influence functions are elements of $L^2$; the
   semiparametric efficiency bound is the squared $L^2$-norm of
   the efficient influence function (§9 here).
-- `10_Methods/Econometrics/double-machine-learning.md` —
+- [[`10_Methods/Econometrics/double-machine-learning.md`]] —
   Neyman-orthogonal scores are defined via the Gateaux derivative
   in the direction of the nuisance function — a functional
   derivative in $L^2$ whose analysis uses the projection and
   Riesz representation structure of §3 here.
-- `10_Methods/modern-toolkit-references.md` — the asymptotic
+- [[`10_Methods/modern-toolkit-references.md`]] — the asymptotic
   theory entries (empirical process theory, uniform LLN,
   functional CLT) depend on the Banach-space LLN/CLT framework
   that this file sets up.
-- `00_Identity/Principles.md` — §5 (estimation) and §6
+- [[`00_Identity/Principles.md`]] — §5 (estimation) and §6
   (causation) are grounded in the geometric view of OLS and
   conditional expectation developed in §§3 and 9 here.
 

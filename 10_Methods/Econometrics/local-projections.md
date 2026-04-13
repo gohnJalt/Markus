@@ -12,7 +12,7 @@ local projections literature — and the LP-vs-VAR debate that
 has shaped it since 2021 — to *reason* about which estimator
 fits a given macro question, rather than defaulting to either
 the VAR or the LP out of habit. The entry in
-`modern-toolkit-references.md` is a directory; this is the
+[[`modern-toolkit-references.md`]] is a directory; this is the
 actual map.
 
 The note is long. Read it linearly the first time. After
@@ -21,9 +21,9 @@ the long-horizon bias discussion, or the LP-IV section as
 needed.
 
 This file is the endpoint of Tier 1 of the econometrics
-library. It draws on the IV note (`instrumental-variables.md`)
+library. It draws on the IV note ([[`instrumental-variables.md`]])
 for the LP-IV section and on the DiD note
-(`difference-in-differences.md`) for the heterogeneous-effects
+([[`difference-in-differences.md`]]) for the heterogeneous-effects
 framing that shows up in state-dependent LPs.
 
 ---
@@ -240,7 +240,7 @@ Canonical applications:
 - **Oil and commodity shocks**: Känzig (2021) on OPEC
   announcements.
 
-Everything in `instrumental-variables.md` about the IV
+Everything in [[`instrumental-variables.md`]] about the IV
 machinery applies here, with three extensions specific to LP-
 IV.
 
@@ -340,7 +340,7 @@ optional.
 
 **State dependence is not the same as heterogeneous effects
 in DiD.** The DiD literature's heterogeneity discussion
-(see `difference-in-differences.md`) is about treatment
+(see [[`difference-in-differences.md`]]) is about treatment
 effects that vary across units with different baseline
 characteristics. State-dependent LPs are about responses that
 vary across aggregate states of the macroeconomy. Both are
@@ -374,7 +374,7 @@ cross-country samples where `T` is 40–60 years, it is
 non-trivial. The standard fix — differencing out the unit
 effects and instrumenting with further lags — creates its
 own problems (see the Arellano-Bond discussion in
-`panel-methods.md`).
+[[`panel-methods.md`]]).
 
 **Cross-sectional dependence.** Countries are not
 independent. Shocks to the US transmit to other countries,
@@ -448,7 +448,7 @@ about something else?**
 LPs are a tool for estimating IRFs. If the question is about
 a level relationship, a trend, a cointegration structure, or
 a distributional outcome, LP is not the right tool. Go to the
-relevant section of `modern-toolkit-references.md`.
+relevant section of [[`modern-toolkit-references.md`]].
 
 **Q2: Do you have a credible shock, or do you need an
 instrument for one?**
@@ -456,7 +456,7 @@ instrument for one?**
   variable on the right-hand side. Identification comes from
   the shock's design.
 - Endogenous shock, good instrument → LP-IV. Everything in
-  `instrumental-variables.md` applies, plus the horizon-by-
+  [[`instrumental-variables.md`]] applies, plus the horizon-by-
   horizon considerations above.
 - No clean shock, no instrument → the question is not
   identified as a causal IRF in this data. An LP can still
@@ -555,7 +555,7 @@ common-correlated-effects is the more serious treatment. Do
 one of them; do not ignore the problem.
 
 **Forgetting that LP is still a regression.** Everything in
-`50_Workflows/run-a-regression-properly.md` applies: name the
+[[`50_Workflows/run-a-regression-properly.md`]] applies: name the
 estimand, specify identification, discuss what variation the
 estimator is using, choose the right inference. LP does not
 escape the workflow just because it is a macro tool.
@@ -575,7 +575,7 @@ includes:
 2. **The identification**, spelled out. For a standard LP,
    what makes the shock exogenous. For LP-IV, the instrument
    and the exclusion restriction, with the same honesty
-   standards as `instrumental-variables.md`.
+   standards as [[`instrumental-variables.md`]].
 3. **The LP specification**, including the lag length, the
    control set, and whether lag augmentation is being used.
    If not lag-augmented, a defense of why not (usually: short
@@ -583,7 +583,7 @@ includes:
 4. **The IRF plot.** Point estimates across horizons with
    confidence bands. Clean axes, horizons on the x-axis, a
    zero line, and the response units on the y-axis. No stars,
-   per `Principles.md`.
+   per [[`Principles.md`]].
 5. **Inference**, computed correctly for the horizon. Standard
    HAC for short horizons, Montiel Olea–Plagborg-Møller for
    long horizons. State which is being used and why.
@@ -671,7 +671,7 @@ publication-quality inference machinery is in R.
 
 **Structural VARs in detail.** Sign restrictions, recursive
 identification, proxy SVARs beyond their connection to
-LP-IV. These are in `var-identification.md`.
+LP-IV. These are in [[`var-identification.md`]].
 
 **Narrative identification of shocks.** Romer-Romer, Ramey,
 Mertens-Ravn. The narrative side of shock identification is
@@ -698,8 +698,8 @@ depth here.
 conditional forecasting rather than impulse-response
 estimation. The machinery is the same; the interpretation
 is different. See the forecasting section of
-`tools-and-integrations.md` and the
-`modern-toolkit-references.md` entry on time series ML for
+[[`tools-and-integrations.md`]] and the
+[[`modern-toolkit-references.md`]] entry on time series ML for
 the broader forecasting landscape.
 
 These extensions get their own treatment when a project
@@ -709,32 +709,32 @@ actually demands them. Don't speculatively expand this file.
 
 ## Cross-references
 
-- `00_Identity/Principles.md` — sections on identification,
+- [[`00_Identity/Principles.md`]] — sections on identification,
   causation, and uncertainty. The general posture this note
   operationalizes, especially the commitment that "every
   identification strategy makes assumptions you cannot test"
   and the refusal to treat long-horizon IRFs as more certain
   than the data support.
-- `10_Methods/modern-toolkit-references.md` — the directory
+- [[`10_Methods/modern-toolkit-references.md`]] — the directory
   entry that points here. Update it if this file's content
   changes the recommendations.
-- `10_Methods/Econometrics/instrumental-variables.md` — the
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — the
   parent note for the LP-IV section. The LATE framing, the
   weak-instrument machinery, and the exclusion-restriction
   honesty all carry over and are not rederived here. Read
   that file first if you are approaching LP-IV.
-- `10_Methods/Econometrics/difference-in-differences.md` —
+- [[`10_Methods/Econometrics/difference-in-differences.md]]` —
   the heterogeneous-effects framing in the state-dependent
   LP section is the sibling of the treatment-effect-
   heterogeneity discussion in DiD. Different settings, same
   underlying posture: heterogeneity is the rule, not the
   exception.
-- `10_Methods/Econometrics/shift-share-instruments.md` —
+- [[`10_Methods/Econometrics/shift-share-instruments.md`]] —
   shift-share instruments can enter LP-IV as the external
   instrument when the shock is constructed from sectoral
   variation. The identification-story discipline from the
   shift-share note applies when this is being done.
-- `50_Workflows/run-a-regression-properly.md` — LPs are
+- [[`50_Workflows/run-a-regression-properly.md`]] — LPs are
   still regressions. Stage 4 (specify identification, not
   just the equation) and Stage 1 (name the estimand) apply.
 

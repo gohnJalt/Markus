@@ -8,10 +8,10 @@ related: [real-analysis, optimization, calculus, differential-equations, stochas
 This file is the applied endpoint of the math layer for macro
 and structural economics. The foundational results it rests on
 are already in place: the contraction mapping theorem
-(`real-analysis.md` §6), the envelope theorem (`optimization.md`
-§5), Markov chain theory (`stochastic-processes.md` §9), the
-HJB equation and verification theorem (`differential-equations.md`
-§§5-6), and the Bellman equation introduced in `calculus.md`
+([[`real-analysis.md`]] §6), the envelope theorem ([[`optimization.md`]]
+§5), Markov chain theory ([[`stochastic-processes.md`]] §9), the
+HJB equation and verification theorem ([[`differential-equations.md`]]
+§§5-6), and the Bellman equation introduced in [[`calculus.md`]]
 §6.4. Dynamic programming is what happens when those pieces
 are assembled into a coherent theory of sequential decision
 making under uncertainty.
@@ -30,12 +30,12 @@ heterogeneous-agent models (Bewley-Huggett-Aiyagari and HANK)
 as the structural macro application that draws on all of the
 above (§7).
 
-Prerequisites: `real-analysis.md` §6 (contraction mapping
-theorem — the engine of §2); `optimization.md` §§2-5 (FOC,
-SOC, envelope theorem); `calculus.md` §§2-3 (chain rule and
+Prerequisites: [[`real-analysis.md`]] §6 (contraction mapping
+theorem — the engine of §2); [[`optimization.md`]] §§2-5 (FOC,
+SOC, envelope theorem); [[`calculus.md`]] §§2-3 (chain rule and
 Taylor — used in Benveniste-Scheinkman and perturbation
-methods); `stochastic-processes.md` §9 (Markov chains and
-their ergodic theory); `differential-equations.md` §§5-7
+methods); [[`stochastic-processes.md`]] §9 (Markov chains and
+their ergodic theory); [[`differential-equations.md`]] §§5-7
 (HJB, verification theorem, Fokker-Planck — the continuous-
 time counterparts).
 
@@ -119,10 +119,10 @@ A solution to the Bellman equation is a fixed point of $T$:
 $V^* = TV^*$.
 
 The space $(B(\mathcal{X}), \|\cdot\|_\infty)$ is a complete
-metric space (`real-analysis.md` §7 — uniform limits of
+metric space ([[`real-analysis.md`]] §7 — uniform limits of
 bounded functions are bounded; uniform Cauchy sequences
 converge uniformly). If $T$ is a contraction on this space,
-the contraction mapping theorem (`real-analysis.md` §6)
+the contraction mapping theorem ([[`real-analysis.md`]] §6)
 guarantees: a unique fixed point $V^*$, convergence of
 the sequence $T^n V_0 \to V^*$ from any starting $V_0$,
 and geometric rate of convergence with constant $\beta$.
@@ -170,7 +170,7 @@ $T(V+c) = TV + \beta c \leq TV + \beta c$. $\checkmark$
 
 Both conditions hold, so the Bellman operator is a
 contraction with modulus $\beta$. The contraction mapping
-theorem (`real-analysis.md` §6) gives:
+theorem ([[`real-analysis.md`]] §6) gives:
 
 1. **Existence and uniqueness of $V^*$**: there is a unique
    bounded function satisfying the Bellman equation.
@@ -192,7 +192,7 @@ $$(TV)(x) = \max_{u \in \Gamma(x)}\bigl\{r(x, u) + \beta
 Blackwell's conditions hold identically: monotonicity because
 $V \leq W$ implies $\int V\, dP \leq \int W\, dP$
 (monotonicity of the Lebesgue integral,
-`measure-theory.md` §4); discounting because the integral
+[[`measure-theory.md`]] §4); discounting because the integral
 of a constant is the constant. So the stochastic Bellman
 operator is also a contraction with modulus $\beta$, and all
 of §2.2 carries over.
@@ -260,7 +260,7 @@ $$\nabla_x V^*(x) = \nabla_x r(x, g(x)) + \beta\,
 Df(x, g(x))^\top \nabla_x V^*(f(x, g(x))).$$
 
 **Proof.** The key observation: by the envelope theorem
-(`optimization.md` §5), the derivative of $V^*$ with respect
+([[`optimization.md`]] §5), the derivative of $V^*$ with respect
 to $x$ at a point where $g(x)$ is optimal does not account
 for the change in $g$ (the indirect effect through the
 optimizer vanishes at the optimum). Define $h(x) =
@@ -397,7 +397,7 @@ which is $O(N)$.
 The **Chebyshev nodes** $x_k = \cos(\pi(2k-1)/(2K))$ are
 the optimal approximation points (they minimize the Runge's
 phenomenon that plagues equally-spaced nodes — the same
-issue flagged in `regression-discontinuity.md` §4 for
+issue flagged in [[`regression-discontinuity.md`]] §4 for
 global polynomial regression). Convergence is exponential
 in $K$ for smooth $V$. This is the workhorse of projection
 methods for smooth problems.
@@ -444,7 +444,7 @@ Dynare software implements this for DSGE models.
 and risk premia by taking a second-order Taylor expansion
 of the equilibrium conditions. Third-order and higher-order
 perturbation captures larger departures from the steady state.
-The connection to Taylor's theorem in `calculus.md` §3 is
+The connection to Taylor's theorem in [[`calculus.md`]] §3 is
 direct: each order of perturbation corresponds to one more
 term in the expansion of the policy function around the
 steady state.
@@ -464,12 +464,12 @@ A **stationary Markov policy** $g: \mathcal{X} \to \mathcal{U}$
 induces a Markov chain on $\mathcal{X}$ with transition
 kernel $P_g(dx' \mid x) = P(dx' \mid x, g(x))$. Under
 conditions that guarantee this chain is ergodic
-(`stochastic-processes.md` §9.2), it has a unique stationary
+([[`stochastic-processes.md`]] §9.2), it has a unique stationary
 distribution $\pi_g$ — the long-run distribution of states
 under the policy $g$.
 
 The ergodic theorem for Markov chains
-(`stochastic-processes.md` §9.2) then gives:
+([[`stochastic-processes.md`]] §9.2) then gives:
 $$\frac{1}{T}\sum_{t=0}^{T-1} r(x_t, g(x_t)) \xrightarrow{a.s.}
 \int r(x, g(x))\,\pi_g(dx).$$
 The time-average payoff under policy $g$ converges to the
@@ -486,7 +486,7 @@ satisfies:
 $$\pi^*(A) = \int_\mathcal{X} P_{g^*}(A \mid x)\,\pi^*(dx)
 \quad \text{for all measurable } A.$$
 This is the discrete-time analogue of the stationary
-Fokker-Planck equation (`differential-equations.md` §7.3).
+Fokker-Planck equation ([[`differential-equations.md`]] §7.3).
 Computing $\pi^*$ is needed for calibration, for matching
 moments in the data (the stationary distribution of earnings,
 wealth, employment status, etc.), and for equilibrium in
@@ -571,7 +571,7 @@ models with strong distributional dynamics.
 **The continuous-time approach (Achdou-Han-Lasry-Lions-Moll
 2022).** In continuous time, the equilibrium is characterized
 by the coupled HJB-Fokker-Planck system described in
-`differential-equations.md` §7.3:
+[[`differential-equations.md`]] §7.3:
 $$-\partial_t V + \rho V = r(a,y) + \mu^*(a,y) \partial_a V
 + \lambda(y)[\bar V(a) - V(a,y)] + \frac{\sigma^2}{2}
 \partial_{aa} V,$$
@@ -602,7 +602,7 @@ first-order concern for monetary policy analysis.
 
 **Continuous-time dynamic programming in full.** The HJB
 equation, the verification theorem, and Dynkin's formula
-are covered in `differential-equations.md` §§5-7. The
+are covered in [[`differential-equations.md`]] §§5-7. The
 connection between the discrete-time Bellman equation
 (this file) and the continuous-time HJB (that file) is the
 limit $\Delta t \to 0$ of the Bellman equation.
@@ -635,54 +635,54 @@ is the reference.
 
 ## Cross-references
 
-- `20_Math/real-analysis.md` — the contraction mapping
+- [[`20_Math/real-analysis.md`]] — the contraction mapping
   theorem (§6 there) is the engine of §2 here; completeness
   of $B(\mathcal{X})$ under the sup norm (uniform convergence,
   §7 there) is the function space in which the Bellman
   operator acts.
-- `20_Math/optimization.md` — the envelope theorem (§5
+- [[`20_Math/optimization.md`]] — the envelope theorem (§5
   there) is the proof mechanism behind the Benveniste-
   Scheinkman result (§3.2 here); the convexity and FOC/SOC
   machinery (§§1-3 there) governs the inner maximization
   in the Bellman equation.
-- `20_Math/calculus.md` — the chain rule (§2 there) is
+- [[`20_Math/calculus.md`]] — the chain rule (§2 there) is
   used in the Benveniste-Scheinkman formula; the Taylor
   expansion (§3 there) is the foundation for perturbation
   methods (§5.3 here); the Hamiltonian and Bellman equation
   connection (§6.4 there) is the continuous-time limit of
   the discrete-time Bellman equation here.
-- `20_Math/differential-equations.md` — the continuous-time
+- [[`20_Math/differential-equations.md`]] — the continuous-time
   HJB equation (§6 there) is the limit of the discrete-time
   Bellman equation as $\Delta t \to 0$; the verification
   theorem (§6.2 there) is the PDE analogue of the policy
   improvement theorem (§4.2 here); the Fokker-Planck equation
   (§7.3 there) governs the distribution dynamics in HANK
   (§7.2 here).
-- `20_Math/stochastic-processes.md` — Markov chains and
+- [[`20_Math/stochastic-processes.md`]] — Markov chains and
   their stationary distributions (§9 there) are the building
   blocks of MDPs (§6 here); the ergodic theorem for Markov
   chains (§9.2 there) connects the lifetime-utility Bellman
   equation to the long-run average behavior; the HANK model
   (§7.2 here) is the heterogeneous-agent application
   mentioned in §9.3 there.
-- `20_Math/linear-algebra.md` — the Schur decomposition
+- [[`20_Math/linear-algebra.md`]] — the Schur decomposition
   and eigenvalue calculations (§§3-4 there) underlie the
   perturbation method's Riccati equation; the stationary
   distribution as the unit-eigenvector of the transition
   matrix (§6.2 here) is an eigenvalue computation; sparse
   LU for policy evaluation (§4.2 here) uses the
   decomposition guide from §8.3 there.
-- `20_Math/probability.md` — the ULLN (§7.2 there)
+- [[`20_Math/probability.md`]] — the ULLN (§7.2 there)
   underlies the consistency of simulation-based estimators
   of the stationary distribution; the ergodic theorem for
-  Markov chains (§9.2, `stochastic-processes.md`) is the
+  Markov chains (§9.2, [[`stochastic-processes.md`]]) is the
   time-average form of the LLN.
-- `10_Methods/Econometrics/structural-labor.md` — Search and
+- [[`10_Methods/Econometrics/structural-labor.md`]] — Search and
   matching models are MDPs: the worker's value function satisfies
   a Bellman equation over employment states; the Mortensen-
   Pissarides model is a continuous-time
   optimal stopping and matching problem.
-- `10_Methods/Econometrics/double-machine-learning.md` —
+- [[`10_Methods/Econometrics/double-machine-learning.md`]] —
   Structural estimation of dynamic models often proceeds by
   matching simulated moments from the model's stationary
   distribution to data moments; the DML approach can handle

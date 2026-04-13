@@ -35,9 +35,9 @@ equivalent, and serves as the working reference afterward.
 The file stops before measure theory — Lebesgue integration,
 the convergence theorems (dominated, monotone), Fubini, and
 the measure-theoretic treatment of probability all go in
-`measure-theory.md`. It also stops before functional analysis
+[[`measure-theory.md`]]. It also stops before functional analysis
 — Banach spaces, Hilbert spaces, operator theory go in
-`functional-analysis.md`. This file is the prerequisite for
+[[`functional-analysis.md`]]. This file is the prerequisite for
 both.
 
 ---
@@ -822,7 +822,7 @@ properties.** The central facts are:
 3. **Uniform convergence interchanges with Riemann
    integration** on compact intervals (the analogous result
    for Lebesgue integration — the dominated convergence
-   theorem — lives in `measure-theory.md`).
+   theorem — lives in [[`measure-theory.md`]]).
 
 The pointwise versions of all three fail. Standard
 counterexample: $f_n(x) = x^n$ on $[0, 1]$. These are
@@ -867,7 +867,7 @@ alone.
   of events, and it is what justifies using sample averages
   to estimate population expectations. The formal treatment
   uses functional-analytic tools that belong in
-  `functional-analysis.md`.
+  [[`functional-analysis.md`]].
 - **M-estimation.** The consistency of M-estimators
   (maximum likelihood, GMM, quantile regression, and so on)
   requires uniform convergence of the sample objective
@@ -884,7 +884,7 @@ The deeper treatment of convergence modes — in particular,
 almost sure convergence, convergence in probability, and
 convergence in distribution, which are the convergence modes
 that probability and econometrics actually use — requires
-measure theory and belongs in `measure-theory.md`. The point
+measure theory and belongs in [[`measure-theory.md`]]. The point
 here is just that "uniform" and "pointwise" are the starting
 distinction, and that uniform is the mode that preserves
 continuity and integrability.
@@ -894,7 +894,7 @@ continuity and integrability.
 ## 8. What this file doesn't cover, and where to find it
 
 **Riemann integration.** Covered briefly in
-`measure-theory.md` as the intuition pump that Lebesgue
+[[`measure-theory.md`]] as the intuition pump that Lebesgue
 integration generalizes. The Riemann-to-Lebesgue transition
 is easier to teach when both are in the same file, so
 Riemann lives there rather than here.
@@ -903,11 +903,11 @@ Riemann lives there rather than here.
 σ-algebras, measurable functions, construction of the
 Lebesgue integral, dominated and monotone convergence,
 Fubini-Tonelli, modes of convergence (a.s., in probability,
-in $L^p$) — belongs in `measure-theory.md`. That file builds
+in $L^p$) — belongs in [[`measure-theory.md`]]. That file builds
 on this one.
 
 **Banach and Hilbert spaces, operator theory.** All
-functional analysis goes in `functional-analysis.md`. That
+functional analysis goes in [[`functional-analysis.md`]]. That
 file builds on both this one and measure theory. Specific
 topics waiting there: $L^p$ spaces, dual spaces, bounded
 linear operators, the Hahn-Banach theorem, the open mapping
@@ -952,37 +952,37 @@ comprehensive.
 
 ## Cross-references
 
-- `00_Identity/Principles.md` — the section on uncertainty
+- [[`00_Identity/Principles.md`]] — the section on uncertainty
   and honesty, and the commitment that "every identification
   strategy makes assumptions you cannot test." The parallel
   in math is that every proof makes hypotheses that can fail,
   and Markus's job is to know what the hypotheses are and
   when they bind.
-- `20_Math/measure-theory.md` — The direct sequel: Lebesgue
+- [[`20_Math/measure-theory.md`]] — The direct sequel: Lebesgue
   integration, the three convergence theorems (monotone,
   Fatou, dominated), Fubini-Tonelli, modes of convergence,
   measure-theoretic foundations of probability.
-- `20_Math/functional-analysis.md` — The further sequel: Banach
+- [[`20_Math/functional-analysis.md`]] — The further sequel: Banach
   and Hilbert spaces, the big four theorems, $L^p$ duality,
   the Radon-Nikodym theorem proved via Riesz representation,
   compact operators and the spectral theorem, and conditional
   expectation as $L^2$ projection.
-- `20_Math/optimization.md` — The applied counterpart: convexity,
+- [[`20_Math/optimization.md`]] — The applied counterpart: convexity,
   KKT conditions, duality, the envelope theorem, econometric
   applications (OLS, MLE, GMM), and numerical methods. Leans
   on this file for the extreme value theorem, compactness,
   continuity, the implicit function theorem, and the
   contraction mapping theorem (nested fixed-point problems).
-- `20_Math/dynamic-programming.md` — The
+- [[`20_Math/dynamic-programming.md`]] — The
   contraction mapping theorem of §6 is the foundation.
-- `10_Methods/modern-toolkit-references.md` — the
+- [[`10_Methods/modern-toolkit-references.md`]] — the
   econometrics directory. Many results in the econometric
   theory underlying the modern toolkit (consistency and
   asymptotic normality of estimators, uniform laws of large
   numbers, empirical process bounds) rest on the machinery
-  introduced here and extended in `measure-theory.md` and
-  `functional-analysis.md`.
-- `50_Workflows/run-a-regression-properly.md` — Stage 4 on
+  introduced here and extended in [[`measure-theory.md`]] and
+  [[`functional-analysis.md`]].
+- [[`50_Workflows/run-a-regression-properly.md`]] — Stage 4 on
   identification uses the language of "assumptions" in a way
   that parallels the role of hypotheses in mathematical
   theorems. Different domain, same discipline.

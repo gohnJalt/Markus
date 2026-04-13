@@ -13,8 +13,8 @@ regression is actually identifying, when fixed effects are
 right and when they are not, and how to handle the problems
 that arise when the model is dynamic — particularly the
 Nickell bias that the local projections note
-(`local-projections.md`) forwards here. The entry in
-`modern-toolkit-references.md` is a directory; this is the
+([[`local-projections.md`]]) forwards here. The entry in
+[[`modern-toolkit-references.md`]] is a directory; this is the
 actual map.
 
 Read it linearly the first time. After that, treat it as a
@@ -82,7 +82,7 @@ The within estimator demeans all variables by their unit mean:
 $$\tilde Y_{it} = Y_{it} - \bar Y_i, \qquad
 \tilde X_{it} = X_{it} - \bar X_i,$$
 and runs OLS of $\tilde Y$ on $\tilde X$. The Frisch-Waugh-
-Lovell theorem (`linear-algebra.md` §2.3) guarantees this
+Lovell theorem ([[`linear-algebra.md`]] §2.3) guarantees this
 gives the same coefficient as including unit dummies
 explicitly: the within estimator is OLS after projecting out
 the unit-fixed-effect subspace.
@@ -342,7 +342,7 @@ instrument proliferation. With many instruments:
   the first-step residuals. With many instruments, this
   matrix is large and potentially near-singular, making
   the two-step estimator unstable. This is the GMM many-
-  instruments bias (`instrumental-variables.md` §4.2).
+  instruments bias ([[`instrumental-variables.md`]] §4.2).
 - The mean stationarity assumption in BB is untestable and
   often implausible in growth regressions (where initial
   conditions are precisely what drives long-run levels).
@@ -707,7 +707,7 @@ typically call the R `pgmm` or `xtabond2` equivalents through
 **Synthetic control.** When there is a single treated unit
 or a small treated group, synthetic control methods
 (Abadie-Diamond-Hainmueller, synth-DiD) replace the panel
-FE estimator. These belong in `synthetic-control.md` (Tier
+FE estimator. These belong in [[`synthetic-control.md`]] (Tier
 4 if needed).
 
 **Interactive fixed effects and factor models.** The Bai
@@ -725,40 +725,40 @@ X_{iT}$. Not covered here.
 **Quantile regression for panels.** Fixed-effects quantile
 regression (Canay 2011, Rosen-Powell 2012) with within
 estimators at quantiles other than the mean. Connects to
-`distributional-methods.md` (Tier 3).
+[[`distributional-methods.md`]] (Tier 3).
 
 ---
 
 ## Cross-references
 
-- `10_Methods/Econometrics/difference-in-differences.md` —
+- [[`10_Methods/Econometrics/difference-in-differences.md]]` —
   the two-way FE estimator (DiD note §2 and passim) is a
   panel FE estimator; the Nickell bias is not a concern in
   DiD because the lagged dependent variable is typically not
   included, but the cluster inference section of DiD note
   maps directly to §6 here.
-- `10_Methods/Econometrics/local-projections.md` — the panel
+- [[`10_Methods/Econometrics/local-projections.md`]] — the panel
   LP section defers the Nickell bias discussion here; the
   cross-sectional dependence and heterogeneous-response
   issues in panel LPs (Pesaran-Smith mean-group, Pesaran CCE)
   are the same issues in §6 here.
-- `10_Methods/Econometrics/instrumental-variables.md` —
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] —
   Arellano-Bond uses GMM moment conditions; the instrument
   proliferation problem in §4 here is the same as in
   the IV note's many-instruments discussion; Windmeijer's
   correction for two-step GMM SEs belongs to the same
   family as the IV note's weak-instrument literature.
-- `20_Math/linear-algebra.md` — the within transformation
+- [[`20_Math/linear-algebra.md`]] — the within transformation
   is an orthogonal projection (§2.1 there); the FWL theorem
   (§2.3 there) is the algebraic foundation of partialling
   out fixed effects; the HDFE algorithm is an alternating-
   projections algorithm.
-- `20_Math/dynamic-programming.md` — dynamic panel models
+- [[`20_Math/dynamic-programming.md`]] — dynamic panel models
   are reduced-form analogs of the dynamic programming
   models in that file; the persistence parameter $\rho$ in
   a dynamic panel is the analog of the discount factor in
   the Bellman equation.
-- `50_Workflows/run-a-regression-properly.md` — Stage 4
+- [[`50_Workflows/run-a-regression-properly.md`]] — Stage 4
   (identification) of the regression workflow applies
   directly: in panel regressions, the identification comes
   from within-unit variation, and strict exogeneity is the

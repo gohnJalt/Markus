@@ -13,7 +13,7 @@ tries to do is give Markus enough fluency in the modern IV
 literature to *reason* about whether a given IV design is
 credible, what its estimand actually is, and which of the
 post-2019 weak-instrument tools apply, rather than reciting
-names. The entry in `modern-toolkit-references.md` is a
+names. The entry in [[`modern-toolkit-references.md`]] is a
 directory; this is the actual map.
 
 The note is long. Read it linearly the first time. After that,
@@ -248,7 +248,7 @@ The canonical examples:
 - **Shift-share instruments** (Bartik), where the exogeneity of
   either the shares or the shocks is the identifying
   assumption. These get their own file
-  (`shift-share-instruments.md`) because the two camps
+  ([[`shift-share-instruments.md`]]) because the two camps
   (Goldsmith-Pinkham-Sorkin-Swift and Borusyak-Hull-Jaravel)
   give different interpretations and the choice matters.
 
@@ -373,7 +373,7 @@ and being explicit about which compliers are being moved.
 
 ## Two-sample IV, when Y and D live in different datasets
 
-Insert this section into `instrumental-variables.md` between
+Insert this section into [[`instrumental-variables.md`]] between
 "Overidentification tests, honestly" and "The decision tree."
 
 ---
@@ -587,7 +587,7 @@ variables problem, because the IV launders the uncertainty.
   judge-design IV with leave-one-out severity; run Frandsen-
   Lefgren-Leslie monotonicity tests.
 - Exogenous shocks interacted with shares of exposure → shift-
-  share design; go to `shift-share-instruments.md` because the
+  share design; go to [[`shift-share-instruments.md`]] because the
   identification argument is subtle.
 - Policy discontinuity in eligibility → consider whether RDD
   is actually the right tool; IV with a policy instrument is
@@ -716,7 +716,7 @@ choice to keep the interpretation vague.
 settings.** In dynamic panel and other GMM contexts, more
 instruments means more overidentification and also more finite-
 sample bias. The Roodman critique of instrument proliferation
-in dynamic panels (see the `panel-methods.md` note) applies
+in dynamic panels (see the [[`panel-methods.md`]] note) applies
 across GMM-based IV settings.
 
 **Ignoring the reduced form.** The reduced-form effect of Z on
@@ -781,7 +781,7 @@ design-based work. The packages that matter:
 - `ivmodel` — Anderson-Rubin and related weak-instrument-robust
   inference in the just-identified and overidentified cases.
 - `ShiftShareSE` — Adão-Kolesár-Morales inference for
-  shift-share designs (also used in `shift-share-instruments.md`).
+  shift-share designs (also used in [[`shift-share-instruments.md`]]).
 - `sensemakr` and related — sensitivity-to-unobservables tools
   that extend to IV contexts.
 
@@ -796,7 +796,7 @@ lives:
   (AR, CLR, LM, K tests), by Finlay and Magnusson.
 - `rdrobust` is for RDD, not IV, but shows up adjacent to IV
   in fuzzy designs.
-- `xtabond2` for dynamic panel GMM (see `panel-methods.md`).
+- `xtabond2` for dynamic panel GMM (see [[`panel-methods.md`]]).
 
 **Python** has caught up substantially:
 
@@ -827,22 +827,22 @@ built in, and the package authors are the methodologists.
 Pinkham-Sorkin-Swift 2020 and Borusyak-Hull-Jaravel 2022) give
 different identifying assumptions, and the choice between them
 matters enough to deserve its own file. See
-`shift-share-instruments.md`.
+[[`shift-share-instruments.md`]].
 
 **IV in dynamic panels and GMM more broadly.** Arellano-Bond,
 Blundell-Bond, and the instrument-proliferation problem belong
-in `panel-methods.md` because the issues are panel-specific.
+in [[`panel-methods.md`]] because the issues are panel-specific.
 
 **Fuzzy regression discontinuity.** FRD is IV-in-RDD-clothing,
 with the discontinuity as the instrument. The weak-instrument
 concerns transfer, but the bandwidth and bias-correction
-machinery is RDD-specific. See `regression-discontinuity.md`.
+machinery is RDD-specific. See [[`regression-discontinuity.md`]].
 
 **IV with machine-learning first stages.** Double/debiased ML
 in the IV setting (Chernozhukov et al. 2018) handles
 high-dimensional controls and nonparametric first stages. This
 is a DML topic (see the DML section in
-`modern-toolkit-references.md`) rather than an IV topic in the
+[[`modern-toolkit-references.md`]]) rather than an IV topic in the
 classical sense.
 
 **Nonlinear IV.** Control function approaches for nonlinear
@@ -862,24 +862,24 @@ demands them. Don't speculatively expand this file.
 
 ## Cross-references
 
-- `00_Identity/Principles.md` — sections on identification and
+- [[`00_Identity/Principles.md`]] — sections on identification and
   on causation. The general posture this note operationalizes,
   especially the line that "every identification strategy makes
   assumptions you cannot test" and the warning against "method
   laundering."
-- `10_Methods/modern-toolkit-references.md` — the directory
+- [[`10_Methods/modern-toolkit-references.md`]] — the directory
   entry that points here. Update it if this file's content
   changes the recommendations.
-- `10_Methods/Econometrics/difference-in-differences.md` — the
+- [[`10_Methods/Econometrics/difference-in-differences.md`]] — the
   LATE/compliers framing here picks up from the DiD note's
   discussion of treatment-effect heterogeneity. The two notes
   share the posture that estimators target specific estimands
   under specific assumptions, and that the assumptions must be
   probed rather than asserted.
-- `10_Methods/Econometrics/shift-share-instruments.md` — the 
+- [[`10_Methods/Econometrics/shift-share-instruments.md`]] — the 
   natural next file, building on the exclusion-restriction and 
   exogenous-shock framing from this note.
-- `50_Workflows/run-a-regression-properly.md` — the workflow
+- [[`50_Workflows/run-a-regression-properly.md`]] — the workflow
   this note slots into. Stage 4 ("specify identification, not
   just the equation") refers to the kind of reasoning this
   note teaches, and Stage 1 (naming the estimand) is where the

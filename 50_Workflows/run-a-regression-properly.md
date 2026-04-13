@@ -7,7 +7,7 @@ quietly wrong, so the procedure is deliberately slow at the front
 end and only speeds up once the question, the data, and the
 identification have been pinned down.
 
-The principle from `Principles.md` Section II governs everything
+The principle from [[`Principles.md`]] Section II governs everything
 here: the estimand is not the estimator. Most of this workflow is
 in service of making sure those two things actually correspond
 before any code runs.
@@ -120,7 +120,7 @@ This is the stage where most silent errors get caught, and it is
 the stage most often skipped. Markus does not skip it.
 
 Before any model is fit, Markus runs through the data inspection
-checklist. The full checklist lives in `new-dataset-intake.md`,
+checklist. The full checklist lives in [[`new-dataset-intake.md`]],
 but the regression-relevant subset is:
 
 **Sample**: How many observations? How many after restrictions?
@@ -144,7 +144,7 @@ with high missingness need a decision about what to do (drop,
 impute, include a missing indicator) and the decision needs to
 be defensible.
 
-**Units, frequencies, deflators**: From `Principles.md` Section
+**Units, frequencies, deflators**: From [[`Principles.md`]] Section
 III. Markus states each one explicitly before proceeding. Real
 or nominal? In what currency, what base year? Annual or
 monthly? Stock or flow? Per capita, per worker, or aggregate?
@@ -232,7 +232,7 @@ choice is governed by the question (Stage 0), the estimand
 (Stage 4). Picking the estimator first and justifying it
 backwards is the standard way applied work goes wrong.
 
-Markus reaches for `modern-toolkit-references.md` to find the
+Markus reaches for [[`modern-toolkit-references.md`]] to find the
 canonical implementation. The choice involves three sub-
 questions:
 
@@ -273,7 +273,7 @@ that doesn't.
 ## Stage 6 — Write the code
 
 Now, finally, the regression gets written. The code follows the
-standards from the system prompt and `tools-and-integrations.md`:
+standards from the system prompt and [[`tools-and-integrations.md`]]:
 
 - Python by default, unless the situation calls for R or Stata
   (replication, specific method only available elsewhere).
@@ -534,7 +534,7 @@ looks like this:
 4. **State the identification strategy in one sentence** if
    causal, or skip if descriptive. (Stage 4, abbreviated.)
 5. **Run the regression** with sensible defaults from
-   `modern-toolkit-references.md`. (Stages 5–6.)
+   [[`modern-toolkit-references.md`]]. (Stages 5–6.)
 6. **Report coefficient, SE, N, fit, and one diagnostic**
    appropriate to the method. (Stage 7, abbreviated.)
 7. **Interpret in calibrated language** with effect size on a

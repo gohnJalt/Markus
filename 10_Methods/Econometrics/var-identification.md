@@ -7,10 +7,10 @@ related: [modern-toolkit-references, local-projections, non-stationary-time-seri
 
 This note assumes you know what a reduced-form VAR is — a system of
 equations where each variable is regressed on lags of all variables.
-The mathematical foundations live in `stochastic-processes.md`: the
+The mathematical foundations live in [[`stochastic-processes.md`]]: the
 Wold decomposition, companion-matrix stability, state-space
 representations of ARMA systems. The LP-vs-VAR equivalence debate
-lives in `local-projections.md`. What this note addresses is the
+lives in [[`local-projections.md`]]. What this note addresses is the
 *identification problem*: a reduced-form VAR describes the statistical
 structure of the data but cannot, on its own, say anything about the
 causal effect of a structural shock — a monetary policy surprise, an
@@ -182,7 +182,7 @@ identifying them econometrically from the VAR residuals.
 
 The resulting shock series is then used in one of two ways:
 - As the shock variable in an LP or LP-IV (the more common modern
-  approach, described in `local-projections.md`).
+  approach, described in [[`local-projections.md`]]).
 - As an external instrument for a proxy SVAR (described below).
 
 **What narrative identification buys.** It bypasses the identification-
@@ -249,7 +249,7 @@ discuss any disagreement. Agreement is a robustness result. Disagreement
 is a finding worth explaining.
 
 **The LATE framing applies.** Just as in LP-IV (see
-`local-projections.md`), the proxy SVAR estimates the structural IRF
+[[`local-projections.md`]]), the proxy SVAR estimates the structural IRF
 for periods during which the proxy moves the target shock. This is a
 LATE in the Imbens-Angrist sense. For high-frequency monetary
 identification, the compliers are FOMC announcement windows; the
@@ -258,7 +258,7 @@ those windows, not the response to "monetary policy" in general.
 
 **Weak proxy.** The first-stage $F$-statistic for projecting $u_{1t}$
 on $m_t$ is the standard weak-instruments diagnostic. The same
-discipline as in `instrumental-variables.md` applies: effective
+discipline as in [[`instrumental-variables.md`]] applies: effective
 $F < 10$ (Olea-Pflueger criterion) is a problem, and Anderson-Rubin
 weak-instrument-robust confidence sets are the fix. Reporting proxy
 SVAR results with a weak proxy and standard SEs is the SVAR analogue
@@ -396,7 +396,7 @@ $F$) and exogeneity of the proxy with respect to other structural
 shocks (untestable). The honest approach: describe the proxy's
 construction and what makes it plausibly exogenous; acknowledge what
 contamination would violate exogeneity; apply Conley-Hansen-Rossi style
-partial-exogeneity bounds from `instrumental-variables.md` where
+partial-exogeneity bounds from [[`instrumental-variables.md`]] where
 relevant. The proxy is not an escape from the identification problem; it
 relocates it.
 
@@ -473,7 +473,7 @@ spanning multiple monetary regimes.
 6. **Comparison to LP-IV** whenever an external instrument is used.
 7. **Parameter stability check** for samples spanning multiple regimes.
 8. **A statement of which robustness checks would have changed the
-   conclusion**, per `run-a-regression-properly.md`.
+   conclusion**, per [[`run-a-regression-properly.md`]].
 
 ---
 
@@ -521,13 +521,13 @@ reduced-form VAR work but the SVAR-specific packages are less mature.
 
 **LP-vs-VAR equivalence and LP-IV.** The Plagborg-Møller–Wolf (2021)
 result and the LP side of the proxy comparison are in
-`local-projections.md`.
+[[`local-projections.md`]].
 
 **Non-stationary VARs and cointegration.** When the variables are I(1)
 and cointegrated, the correct specification is a VECM (Vector Error
 Correction Model), not a VAR in levels. Unit root testing, the
 Engle-Granger procedure, the Johansen procedure, and the VECM
-structure are in `non-stationary-time-series.md`. The identification
+structure are in [[`non-stationary-time-series.md`]]. The identification
 content of this note applies to VECMs as well, but the non-stationarity
 layer must be handled first.
 
@@ -544,27 +544,27 @@ Not covered here.
 
 ## Cross-references
 
-- `10_Methods/Econometrics/local-projections.md` — the LP side of
+- [[`10_Methods/Econometrics/local-projections.md`]] — the LP side of
   the proxy SVAR comparison. Plagborg-Møller–Wolf equivalence: the
   proxy SVAR and LP-IV using the same instrument identify the same
   structural IRF in population. The LATE framing and weak-instrument
   machinery from the LP-IV discussion apply directly here.
-- `10_Methods/Econometrics/instrumental-variables.md` — the full IV
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — the full IV
   machinery (effective $F$, Anderson-Rubin intervals,
   Conley-Hansen-Rossi plausibly-exogenous bounds) applies when the
   proxy is the instrument. Import that machinery; do not rederive it.
-- `10_Methods/Econometrics/non-stationary-time-series.md` — the VECM
+- [[`10_Methods/Econometrics/non-stationary-time-series.md`]] — the VECM
   is the correct VAR specification for cointegrated I(1) variables.
   Read that file before specifying any VAR in levels with trending
   macro series.
-- `20_Math/stochastic-processes.md` — reduced-form VAR, stationarity,
+- [[`20_Math/stochastic-processes.md`]] — reduced-form VAR, stationarity,
   Wold decomposition, companion-matrix stability, state-space and
   ARMA representations. The structural identification layer built here
   rests on those foundations.
-- `00_Identity/Principles.md` — sections on identification and
+- [[`00_Identity/Principles.md`]] — sections on identification and
   uncertainty. The general posture: identification assumptions must be
   argued, their robustness explored, their limits acknowledged.
-- `50_Workflows/run-a-regression-properly.md` — SVARs are multivariate
+- [[`50_Workflows/run-a-regression-properly.md`]] — SVARs are multivariate
   regressions and the identification stage of the workflow applies.
   Stage 4 (specify identification, not just the equation) is where
   the content of this note lives in practice.

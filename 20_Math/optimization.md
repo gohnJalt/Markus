@@ -6,7 +6,7 @@ related: [real-analysis, measure-theory, functional-analysis, dynamic-programmin
 # Optimization
 
 This file is the applied counterpart to the foundational math
-layer. `real-analysis.md` built the structural results —
+layer. [[`real-analysis.md`]] built the structural results —
 completeness, compactness, continuity, the implicit function
 theorem, the contraction mapping theorem. This file puts those
 results to work in optimization: when problems have solutions,
@@ -24,7 +24,7 @@ theorem, where having the argument in hand helps with applying
 the theorem correctly. Results whose proofs require machinery
 not yet built (infinite-dimensional duality, subdifferential
 calculus in Banach spaces) are stated with a pointer forward to
-`functional-analysis.md`.
+[[`functional-analysis.md`]].
 
 Econometric connections run throughout: OLS is a convex
 quadratic problem and has no local-optima problem. MLE is
@@ -35,11 +35,11 @@ Comparative-statics arguments rest on the implicit function
 theorem and the envelope theorem. All of this machinery lives
 here.
 
-Prerequisite: `real-analysis.md`, particularly §2 (metric
+Prerequisite: [[`real-analysis.md`]], particularly §2 (metric
 spaces and compactness), §3 (continuity, extreme value
 theorem), §4 (differentiation), §5 (inverse and implicit
 function theorems), and §6 (contraction mapping). Most
-sections do not require `measure-theory.md` directly, but the
+sections do not require [[`measure-theory.md`]] directly, but the
 information-matrix discussion in §6.2 uses the dominated
 convergence theorem to differentiate under the integral.
 
@@ -132,7 +132,7 @@ problems.
 ### 2.1 Existence
 
 The baseline existence result is the extreme value theorem
-(`real-analysis.md` §3): a continuous function on a compact
+([[`real-analysis.md`]] §3): a continuous function on a compact
 set attains its minimum and maximum. For problems over
 unbounded domains, the standard workaround is *coercivity*:
 $f(x) \to +\infty$ as $\|x\| \to \infty$. A continuous
@@ -410,7 +410,7 @@ p(X; \theta_0)] = 0$. This follows from differentiating the
 identity $\int p(x; \theta)\,dx = 1$ with respect to $\theta$
 (an envelope-theorem-style calculation) — the interchange of
 differentiation and integration is justified by dominated
-convergence (`measure-theory.md` §6.3).
+convergence ([[`measure-theory.md`]] §6.3).
 
 ---
 
@@ -469,9 +469,9 @@ insufficiently informative to pin down all components of
 $\theta$ uniquely. When the global minimum has a small value
 of $Q$ but so do several local minima, the parameter is
 likely weakly identified. This connects to the
-identification-first posture in `00_Identity/Principles.md`
+identification-first posture in [[`00_Identity/Principles.md`]]
 and the weak-instrument discussion in
-`10_Methods/Econometrics/instrumental-variables.md`.
+[[`10_Methods/Econometrics/instrumental-variables.md`]].
 
 ### 6.4 Structural estimation and constrained optimization
 
@@ -481,7 +481,7 @@ problem to recover market-share contraction, then matching
 those shares to data. The outer loop over $\theta$ is a
 non-convex optimization; the inner loop is guaranteed to
 converge by the contraction mapping theorem
-(`real-analysis.md` §6). This structure — contraction in
+([[`real-analysis.md`]] §6). This structure — contraction in
 the inner loop, gradient-based search in the outer loop —
 is common in structural estimation.
 
@@ -626,16 +626,16 @@ variations (minimizing functionals over function spaces,
 Euler-Lagrange equations) and infinite-dimensional Lagrangian
 duality require functional analysis — Banach and Hilbert
 spaces, dual spaces, the Hahn-Banach theorem. These go in
-`functional-analysis.md`. Stochastic control and optimal
+[[`functional-analysis.md`]]. Stochastic control and optimal
 stopping also sit here.
 
 **Dynamic programming.** The Bellman equation is a fixed-point
-problem (contraction mapping argument from `real-analysis.md`
+problem (contraction mapping argument from [[`real-analysis.md`]]
 §6) combined with an optimization step (the Bellman
 maximization). Value function iteration, policy function
 iteration, projection methods, the curse of dimensionality,
 and the connection to HANK models go in
-`dynamic-programming.md`.
+[[`dynamic-programming.md`]].
 
 **Stochastic optimization.** Objectives of the form
 $\min_\theta E[f(x, \theta)]$ underlie MLE and semiparametric
@@ -643,7 +643,7 @@ estimation as population problems. The uniform LLN — that
 the sample objective converges uniformly to the population
 objective — is what licenses replacing expectations with
 sample averages and finding the argmin. This is in
-`probability.md`.
+[[`probability.md`]].
 
 **Subgradients and non-smooth optimization.** Convex functions
 need not be differentiable everywhere ($\ell^1$ norm, lasso
@@ -651,7 +651,7 @@ penalty). Subgradient methods, proximal algorithms, and
 ADMM handle non-smooth convex objectives. These arise in
 lasso, ridge, and regularized estimators. The treatment of
 subdifferential calculus in Banach spaces is in
-`functional-analysis.md`.
+[[`functional-analysis.md`]].
 
 **Integer programming.** Not used in standard econometrics.
 Not covered.
@@ -660,40 +660,40 @@ Not covered.
 
 ## Cross-references
 
-- `20_Math/real-analysis.md` — prerequisite. Compactness and
+- [[`20_Math/real-analysis.md`]] — prerequisite. Compactness and
   the extreme value theorem (§2–3) underlie existence of
   optima; the implicit function theorem (§5) underlies
   comparative statics and the structure of first-order
   conditions; the contraction mapping theorem (§6) underlies
   nested fixed-point problems in structural estimation.
-- `20_Math/measure-theory.md` — the dominated convergence
+- [[`20_Math/measure-theory.md`]] — the dominated convergence
   theorem, used to justify differentiating under the integral
   in the score and information matrix discussion (§6.2).
-- `20_Math/functional-analysis.md` — The Hahn-Banach theorem
+- [[`20_Math/functional-analysis.md`]] — The Hahn-Banach theorem
   there (§5.5) is the infinite-dimensional engine behind the
   duality here (§4); the $L^2$ projection and Riesz
   representation underlie the semiparametric efficiency
   framework that grounds the MLE and GMM asymptotic theory.
-- `20_Math/dynamic-programming.md` — Bellman equation as
+- [[`20_Math/dynamic-programming.md`]] — Bellman equation as
   a fixed-point-plus-optimization problem; value function
   iteration; HANK model solution.
-- `20_Math/probability.md` — Uniform LLN and consistency of
+- [[`20_Math/probability.md`]] — Uniform LLN and consistency of
   MLE and GMM (§§7.1-7.2 there); the score function and
   information matrix in MLE asymptotics; the Cramér-Rao lower
   bound as $I(\theta_0)^{-1}$; stochastic order notation
   for tracking remainder terms in asymptotic proofs.
-- `10_Methods/Econometrics/instrumental-variables.md` — the
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — the
   overidentified GMM objective (§3.3 of that file) is a
   constrained optimization problem whose structure is covered
   here in §6.3.
-- `10_Methods/Econometrics/local-projections.md` — HAC and
+- [[`10_Methods/Econometrics/local-projections.md`]] — HAC and
   Newey-West variance estimators are GMM-adjacent; the LP
   long-horizon bias correction is an MLE-style correction.
-- `50_Workflows/run-a-regression-properly.md` — Stage 4
+- [[`50_Workflows/run-a-regression-properly.md`]] — Stage 4
   (identification) and Stage 7 (estimation) of the regression
   workflow presuppose the GMM and MLE optimization structure
   covered here.
-- `00_Identity/Principles.md` — §5 (estimation) discusses
+- [[`00_Identity/Principles.md`]] — §5 (estimation) discusses
   when structural optimization matters and when reduced-form
   estimation is preferable; this file provides the
   mathematical backing.

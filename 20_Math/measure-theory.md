@@ -5,7 +5,7 @@ related: [real-analysis, functional-analysis, optimization, probability, stochas
 
 # Measure Theory
 
-This file is the direct sequel to `real-analysis.md`. It picks
+This file is the direct sequel to [[`real-analysis.md`]]. It picks
 up where that file stops: at the boundary where the Riemann
 integral runs out. The central move is to replace the
 partition-based definition of integration with a
@@ -26,12 +26,12 @@ distribution) and the relationships between them, and the
 measure-theoretic foundations of probability.
 
 It stops before $L^p$ spaces treated as Banach and Hilbert
-spaces — that goes in `functional-analysis.md`. It stops
+spaces — that goes in [[`functional-analysis.md`]]. It stops
 before the full treatment of conditional expectation as an
 $L^2$ projection — also there. It stops before the CLT, LLN,
-and other limit theorems — those go in `probability.md`. And
+and other limit theorems — those go in [[`probability.md`]]. And
 it stops before martingales and stochastic integration, which
-belong in `stochastic-processes.md`.
+belong in [[`stochastic-processes.md`]].
 
 This file is a prerequisite for all three of those. It is
 also the technical foundation for asymptotic econometrics:
@@ -48,7 +48,7 @@ engine of the MCT proof. Fubini-Tonelli is stated without
 full proof; the complete construction-based argument adds
 length without adding to the working understanding. The
 Radon-Nikodym theorem is stated with the proof deferred to
-`functional-analysis.md`, where the Hilbert space machinery
+[[`functional-analysis.md`]], where the Hilbert space machinery
 it requires is developed.
 
 For a first reading, Royden and Fitzpatrick's *Real Analysis*
@@ -72,7 +72,7 @@ The function is Riemann-integrable if $\inf_P U(f,P) =
 \sup_P L(f,P)$, and the common value is the Riemann integral.
 
 This works well for continuous functions on bounded intervals,
-and the results from `real-analysis.md` — particularly §7
+and the results from [[`real-analysis.md`]] — particularly §7
 on uniform convergence — characterize exactly when the Riemann
 integral and limits can be exchanged. But that exchange
 requires **uniform convergence**: for every $\varepsilon > 0$,
@@ -831,7 +831,7 @@ functional $\Phi(g) = \int g \, d\nu$ on $L^2(\mu + \nu)$,
 which is bounded; the Riesz theorem gives an $h \in L^2$
 with $\Phi(g) = \int gh \, d(\mu + \nu)$; algebraic
 manipulation then yields $f = h/(1-h)$. This proof belongs
-in `functional-analysis.md` because it requires $L^2$
+in [[`functional-analysis.md`]] because it requires $L^2$
 Hilbert space structure developed there.
 
 **What Radon-Nikodym underpins in probability and statistics.**
@@ -880,7 +880,7 @@ The essential properties:
 The geometric interpretation — $E[X|\mathcal{G}]$ as the
 $L^2(P)$ projection of $X$ onto the closed subspace of
 $\mathcal{G}$-measurable square-integrable functions — belongs
-in `functional-analysis.md`. That perspective makes all four
+in [[`functional-analysis.md`]]. That perspective makes all four
 properties above obvious from the geometry of projections in
 Hilbert spaces, but requires the $L^2$ structure developed
 there.
@@ -893,26 +893,26 @@ there.
 of $L^p(\mu)$ (the Riesz-Fischer theorem), the identification
 $(L^p)^* \cong L^q$ for $1 < p < \infty$ (Hölder duality),
 the inner product structure of $L^2$ and the $L^2$ projection
-theorem — all belong in `functional-analysis.md`. The $L^2$
+theorem — all belong in [[`functional-analysis.md`]]. The $L^2$
 projection characterization of conditional expectation, which
 makes the tower property and regression geometry obvious, also
 belongs there.
 
 **Proof of the Radon-Nikodym theorem.** Stated here (§9);
-proved in `functional-analysis.md` where the $L^2$ Hilbert
+proved in [[`functional-analysis.md`]] where the $L^2$ Hilbert
 space machinery is available.
 
 **Probability theory proper.** The weak law of large numbers,
 the strong law, the central limit theorem, characteristic
 functions, the delta method as a formal result, and weak
 convergence of probability measures on $\mathbb{R}^k$ all go
-in `probability.md`. The modes of convergence defined in §8
+in [[`functional-analysis.md`]]. The modes of convergence defined in §8
 are the vocabulary for that file; the probability foundations
 of §9 are the setup.
 
 **Martingale theory.** Filtrations, adapted processes, the
 optional stopping theorem, martingale convergence theorems —
-belong in `stochastic-processes.md`. The connection to this
+belong in [[`stochastic-processes.md`]]. The connection to this
 file: conditional expectation (§9) and its tower property are
 the foundation of the martingale definition
 ($E[X_{n+1} | \mathcal{F}_n] = X_n$), and almost sure
@@ -921,12 +921,12 @@ convergence (§8) is the mode used in martingale convergence.
 **Ergodic theory.** The ergodic theorem (the time-average
 equals the space-average for stationary ergodic processes) is
 the right version of the law of large numbers for dependent
-data and belongs in `stochastic-processes.md`. It is what
+data and belongs in [[`stochastic-processes.md`]]. It is what
 underpins the asymptotics of time-series estimators.
 
 **Stochastic integration.** Itô integrals and SDEs build on
 both Brownian motion and the measure-theoretic foundations
-here. They belong in `stochastic-processes.md`.
+here. They belong in [[`stochastic-processes.md`]].
 
 **Disintegration of measures.** For conditioning on an event
 of probability zero (e.g., $Y = y$ for a continuous $Y$),
@@ -941,53 +941,53 @@ version requires additional regularity.
 
 ## Cross-references
 
-- `20_Math/real-analysis.md` — the direct prerequisite.
+- [[`20_Math/real-analysis.md`]] — the direct prerequisite.
   Completeness of $\mathbb{R}$, metric spaces, and uniform
   convergence (§7, which is the Riemann analogue of the DCT)
   are all assumed here. The contraction mapping theorem (§6
   there) appears in the Hilbert-space proof of
-  Radon-Nikodym deferred to `functional-analysis.md`.
-- `20_Math/functional-analysis.md` — The $L^p$ spaces introduced
+  Radon-Nikodym deferred to [[`functional-analysis.md`]].
+- [[`20_Math/functional-analysis.md`]] — The $L^p$ spaces introduced
   here are treated as Banach and Hilbert spaces there
   (Riesz-Fischer theorem, $L^p$ duals). The Radon-Nikodym
   theorem is proved there via the Riesz representation theorem.
   The $L^2$ projection characterization of conditional
   expectation is developed there in full.
-- `20_Math/probability.md` — The direct sequel for
+- [[`20_Math/probability.md`]] — The direct sequel for
   probabilistic limit theorems: LLNs (Chebyshev, Kolmogorov,
   ergodic, mixing), CLTs (classical, Lindeberg-Feller,
   multivariate, dependent-data), the delta method, and the
   $o_P/O_P$ asymptotic framework. The modes of
   convergence of §8 and the probability foundations of §9
   here are its prerequisites.
-- `20_Math/stochastic-processes.md` — Martingale theory and
+- [[`20_Math/stochastic-processes.md`]] — Martingale theory and
   stochastic integration build on conditional expectation
   (§9) and a.s./in-probability
   convergence (§8).
-- `20_Math/optimization.md` — The applied counterpart to the
+- [[`20_Math/optimization.md`]] — The applied counterpart to the
   foundational math layer: convexity, KKT, duality, envelope
   theorem, econometric applications, numerical methods. The
   dominated convergence theorem here justifies differentiating
   under the expectation sign in the MLE score and information
   matrix discussion.
-- `10_Methods/modern-toolkit-references.md` — the
+- [[`10_Methods/modern-toolkit-references.md`]] — the
   econometrics directory. Consistency and asymptotic
   normality proofs for all estimators in the toolkit use the
   modes of convergence of §8. The moment conditions that
   appear throughout (finite second moments, bounded support,
   uniform integrability) are the domination conditions that
   make the DCT apply.
-- `10_Methods/Econometrics/instrumental-variables.md` — the
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — the
   asymptotic theory of 2SLS and the modern weak-instrument
   literature invoke convergence-in-distribution results; the
   LATE framing involves expectations that are well-defined
   only through the measure-theoretic framework here.
-- `10_Methods/Econometrics/local-projections.md` — the
+- [[`10_Methods/Econometrics/local-projections.md`]] — the
   Plagborg-Møller-Wolf equivalence and the Montiel
   Olea-Plagborg-Møller long-horizon bias correction both rest
   on asymptotic arguments in the modes-of-convergence
   language of §8.
-- `50_Workflows/run-a-regression-properly.md` — Stage 1's
+- [[`50_Workflows/run-a-regression-properly.md`]] — Stage 1's
   estimand framing invokes expectations of potential
   outcomes; Stage 4's identification discussion implicitly
   uses conditional expectations of the form $E[Y | D, X]$.
@@ -997,9 +997,9 @@ version requires additional regularity.
 ---
 
 *Last updated: 2026-04. This file builds directly on
-`real-analysis.md` (stable, April 2026). The mathematical
+[[`real-analysis.md`]] (stable, April 2026). The mathematical
 content is standard and stable. The file will be revised if
-`functional-analysis.md` or `probability.md` reveal
+[[`functional-analysis.md`]] or [[`probability.md`]] reveal
 prerequisites that belong here rather than there — most
 likely around disintegration of measures or the
 Radon-Nikodym proof — and if further econometrics work

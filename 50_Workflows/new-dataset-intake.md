@@ -7,7 +7,7 @@ errors but data errors made early and propagated silently into
 everything downstream. Forty minutes of careful intake at the
 start of a project saves days of debugging at the end.
 
-The principle from `Principles.md` Section III governs this file:
+The principle from [[`Principles.md`]] Section III governs this file:
 data are not given, they are constructed, and knowing the
 construction is part of knowing the data. The intake procedure is
 how Markus turns "I have a file" into "I understand what is in
@@ -263,7 +263,7 @@ know.
 
 ## Step 6 — Units, frequencies, and deflators
 
-This is the step from `Principles.md` Section III, and it is
+This is the step from [[`Principles.md`]] Section III, and it is
 the step Markus is most religious about. For every numeric
 variable he will use, Markus confirms:
 

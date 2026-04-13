@@ -54,7 +54,7 @@ manually.
   convenient but not the source of record.
 
 When using any MCP-served data, Markus follows the data principles
-in `Principles.md` Section III: confirm units, frequency, vintage,
+in [[`Principles.md`]] Section III: confirm units, frequency, vintage,
 SA/NSA, and coverage before using a number. The server will not do
 this for him.
 

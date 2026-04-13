@@ -7,7 +7,7 @@ related: [modern-toolkit-references, var-identification, local-projections, stoc
 
 This note assumes familiarity with stationary time series — ARMA
 processes, VARs, and the concept of a unit root as a statistical
-object. The mathematical foundations are in `stochastic-processes.md`:
+object. The mathematical foundations are in [[`stochastic-processes.md`]]:
 the Dickey-Fuller distribution as a functional of Brownian motion
 (§8.3 there), the Wold decomposition theorem (§4), and the relationship
 between integrated and stationary processes. What this note adds is
@@ -555,13 +555,13 @@ and Stata.
 the variables are cointegrated, the correct structural model is a VECM
 with identification of structural shocks. The identification content
 — Cholesky, sign restrictions, proxy SVARs — is in
-`var-identification.md`. This note provides the non-stationarity layer;
+[[`var-identification.md`]]. This note provides the non-stationarity layer;
 that note provides the identification layer. They are companions.
 
 **LP-IV and impulse responses with I(1) data.** LPs can be run on
 levels of I(1) series when the shock variable provides identification;
 the shock variation controls for common stochastic trends. See
-`local-projections.md` for the methodological discussion.
+[[`local-projections.md`]] for the methodological discussion.
 
 **Panel cointegration.** Kao, Pedroni, and Westerlund tests for
 cointegration in panels of time series. Relevant for cross-country
@@ -573,36 +573,36 @@ fractionally cointegrated systems. Specialist territory; flagged above.
 
 **Forecasting non-stationary series.** Beveridge-Nelson decompositions,
 state-space trend-cycle models for forecasting. Not covered in depth
-here; see `stochastic-processes.md` for mathematical foundations and
-`tools-and-integrations.md` for forecasting tools.
+here; see [[`stochastic-processes.md`]] for mathematical foundations and
+[[`tools-and-integrations.md`]] for forecasting tools.
 
 ---
 
 ## Cross-references
 
-- `10_Methods/Econometrics/var-identification.md` — structural
+- [[`10_Methods/Econometrics/var-identification.md`]] — structural
   identification of shocks in a VAR or VECM. When variables are
   cointegrated, the VECM is the correct specification; the
   identification content of that note applies to the VECM system.
-- `10_Methods/Econometrics/local-projections.md` — LPs as an
+- [[`10_Methods/Econometrics/local-projections.md`]] — LPs as an
   alternative to VARs for impulse response estimation. LPs do not
   require knowledge of integration order, which is a practical
   advantage over VECMs in ambiguous settings.
-- `20_Math/stochastic-processes.md` — the Dickey-Fuller distribution
+- [[`20_Math/stochastic-processes.md`]] — the Dickey-Fuller distribution
   as a functional of Brownian motion (§8.3), unit roots, cointegration,
   and the Wold decomposition that underlies the ECM representation.
   Read those sections before working with the distributional results
   for unit root tests cited here.
-- `30_Data/AI-accessible-data-sources.md` — the Turkish data sources
+- [[`30_Data/AI-accessible-data-sources.md`]] — the Turkish data sources
   (TÜİK, CBRT, SGK, BDDK) where structural breaks and integration
   ambiguities are most severe. The methodology notes there on
   structural breaks are the context for applied unit root testing on
   Turkish series.
-- `00_Identity/Principles.md` — the section on uncertainty and
+- [[`00_Identity/Principles.md]]` — the section on uncertainty and
   honesty. Treating integration order as a maintained hypothesis
   rather than an established fact is a direct application of that
   section's commitments.
-- `50_Workflows/run-a-regression-properly.md` — the unit root and
+- [[`50_Workflows/run-a-regression-properly.md`]] — the unit root and
   cointegration pre-testing step belongs in Stage 1 (question and
   setup) of the regression workflow, before any specification choices
   are made for a macro levels regression.
@@ -617,4 +617,4 @@ Stata implementation has made it accessible. The structural break
 literature — Zivot-Andrews and the multiple break extensions — is
 particularly important for emerging-market applications. Turkish data
 applications remain a recurring methodological concern; the notes in
-`AI-accessible-data-sources.md` are the practical companion.*
+[[`AI-accessible-data-sources.md`]] are the practical companion.*

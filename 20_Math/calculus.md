@@ -6,7 +6,7 @@ related: [real-analysis, optimization, functional-analysis, probability, linear-
 # Calculus
 
 This file is the multivariable extension layer of the math
-library. `real-analysis.md` introduced the total derivative
+library. [[`real-analysis.md`]] introduced the total derivative
 (Fréchet derivative) for maps $f: \mathbb{R}^n \to \mathbb{R}^m$,
 proved the 1-dimensional mean value theorem and Taylor's
 theorem, proved the inverse function theorem and the implicit
@@ -28,17 +28,17 @@ and information matrix (§5); and calculus of variations —
 the Euler-Lagrange equation, the Legendre transformation,
 and the bridge to dynamic optimization (§6).
 
-A companion file `differential-equations.md` will cover
+A companion file [[`differential-equations.md`]] will cover
 the ODE and PDE theory that calculus of variations connects
 to — the Hamilton-Jacobi-Bellman equation, phase portraits,
 and stability. This file ends at the variational level and
 hands off to that file for the PDE treatment.
 
-Prerequisites: `real-analysis.md` (all of §§1-6; especially
+Prerequisites: [[`real-analysis.md`]] (all of §§1-6; especially
 §4 for the total derivative, §5 for IFT, §6 for contraction
-mapping). `linear-algebra.md` (§§1-3 for the Jacobian as a
+mapping). [[`linear-algebra.md`]] (§§1-3 for the Jacobian as a
 matrix, PSD/PD Hessians, and the spectral theorem).
-`optimization.md` (§§2-3 for first- and second-order
+[[`optimization.md`]] (§§2-3 for first- and second-order
 conditions — §3 here gives the Taylor foundation under those
 conditions).
 
@@ -63,7 +63,7 @@ For $f: U \to \mathbb{R}^m$ (a vector-valued map), the
 **Jacobian** $Df(x) \in \mathbb{R}^{m \times n}$ has
 $(i, j)$ entry $\partial f_i / \partial x_j$. The total
 derivative $Df(x)$ is the Jacobian matrix (as established
-in `real-analysis.md` §4); the gradient is the special case
+in [[`real-analysis.md`]] §4); the gradient is the special case
 $m = 1$, transposed to a column vector by convention.
 
 The **Hessian** $\nabla^2 f(x) \in \mathbb{R}^{n \times n}$
@@ -76,7 +76,7 @@ of the gradient: $\nabla^2 f(x) = D(\nabla f)(x)$. It plays
 the same role for second-order optimality that the gradient
 plays for first-order: $\nabla^2 f(x^*) \succ 0$ at a
 critical point is the sufficient condition for a strict local
-minimum (`optimization.md` §2.3).
+minimum ([[`optimization.md`]] §2.3).
 
 **The directional derivative.** For a unit vector $v \in
 \mathbb{R}^n$, the directional derivative of $f$ at $x_0$ in
@@ -145,7 +145,7 @@ and compositions of these. The $C^2$ assumption is the
 standard working assumption in optimization (it guarantees
 the Hessian exists and is symmetric) and in the implicit
 function theorem (the $C^1$ version is stated in
-`real-analysis.md`; the $C^k$ version follows by induction
+[[`real-analysis.md`]]; the $C^k$ version follows by induction
 and gives $C^k$ implicitly-defined functions from $C^k$
 constraint functions).
 
@@ -226,7 +226,7 @@ a component of $g$ in a coordinate direction).
   dx$. The first term is the chain rule applied to the moving
   upper limit; the second is differentiation under the
   integral sign (justified by the dominated convergence
-  theorem, `measure-theory.md` §5, when $|\partial f /
+  theorem, [[`measure-theory.md`]] §5, when $|\partial f /
   \partial t|$ is dominated by an integrable function).
 
 ### 2.3 The mean value inequality for vector maps
@@ -248,7 +248,7 @@ because the intermediate point $\xi$ depends on $j$. $\blacksquare$
 
 The mean value inequality is the estimate that converts
 "bounded derivative" into "Lipschitz continuity" — used in
-the inverse function theorem proof in `real-analysis.md` §5
+the inverse function theorem proof in [[`real-analysis.md`]] §5
 and in contraction mapping arguments.
 
 ---
@@ -293,7 +293,7 @@ in the direction $h$. Positive curvature in every direction
 ($\nabla^2 f(x_0) \succ 0$) means the surface is bowl-shaped
 at $x_0$, confirming the second-order sufficient condition
 for a local minimum. The spectral theorem for symmetric
-matrices (`linear-algebra.md` §3.2) says the eigenvectors
+matrices ([[`linear-algebra.md`]] §3.2) says the eigenvectors
 of $\nabla^2 f(x_0)$ are the directions of principal
 curvature, and the eigenvalues are the corresponding
 curvatures. The condition number of the Hessian determines
@@ -310,11 +310,11 @@ $f(x^* + h) \approx f(x^*) + \frac{1}{2}h^\top \nabla^2
 f(x^*)h$. The sign of this quadratic form determines
 whether $x^*$ is a local minimum ($\succ 0$), maximum
 ($\prec 0$), or saddle (indefinite). This is exactly the
-second-order condition in `optimization.md` §2.3; the Taylor
+second-order condition in [[`optimization.md`]] §2.3; the Taylor
 theorem here is the proof that the condition is both
 necessary and sufficient at the stated level of generality.
 
-**The delta method.** The vector delta method in `probability.md`
+**The delta method.** The vector delta method in [[`probability.md`]]
 §4.2 uses the first-order Taylor expansion of a smooth
 map $g: \mathbb{R}^k \to \mathbb{R}^m$ at the true
 parameter $\theta_0$:
@@ -324,7 +324,7 @@ where $G = Dg(\theta_0)$ is the $m \times k$ Jacobian. The
 asymptotic variance $G\Sigma G^\top$ (the sandwich formula)
 follows by applying the CLT to $\sqrt{n}(\hat\theta_n -
 \theta_0)$ and using $o_P(n^{-1/2}) \cdot \sqrt{n} \to 0$.
-The second-order delta method ($G = 0$ case in `probability.md`
+The second-order delta method ($G = 0$ case in [[`probability.md`]]
 §4.1) uses the second-order Taylor expansion to get the
 chi-squared limit. Taylor's theorem is the mathematical
 machine underneath asymptotic approximations throughout
@@ -333,7 +333,7 @@ econometrics.
 **Comparative statics via Taylor.** In economic models,
 an equilibrium condition $F(x^*, p) = 0$ implicitly defines
 the equilibrium $x^*$ as a function of parameters $p$.
-The implicit function theorem (`real-analysis.md` §5) gives
+The implicit function theorem ([[`real-analysis.md`]] §5) gives
 $dx^*/dp = -(D_x F)^{-1} D_p F$. The second-order expansion
 of $F$ around $(x_0^*, p_0)$ gives the second-order
 comparative statics — how curvature of the model translates
@@ -351,10 +351,10 @@ For $f: R \to \mathbb{R}$ on a rectangle $R = [a_1, b_1]
 \times \cdots \times [a_n, b_n]$, the Riemann integral over
 $R$ is defined via partitions of the rectangle, as in
 1D. For a measurable function on a measurable set, the
-Lebesgue integral (`measure-theory.md` §4) is the more
+Lebesgue integral ([[`measure-theory.md`]] §4) is the more
 general definition. The two agree when $f$ is Riemann-integrable.
 
-The Fubini-Tonelli theorem (`measure-theory.md` §6) handles
+The Fubini-Tonelli theorem ([[`measure-theory.md`]] §6) handles
 the reduction of a multiple integral to iterated integrals:
 $$\int_{R} f\, d\lambda^n = \int_{a_n}^{b_n}
 \cdots \int_{a_1}^{b_1} f(x_1, \ldots, x_n)\, dx_1 \cdots dx_n,$$
@@ -382,7 +382,7 @@ linear $\Phi = A$ (a matrix), the formula becomes
 $\int f(Ax)|\det A|\, dx = \int f(y)\, dy$ — this is the
 change-of-basis formula for Lebesgue measure, following from
 the fact that $|\det A|$ is the volume scaling factor of $A$
-(`linear-algebra.md` §5.2 on SVD: the singular values are
+([[`linear-algebra.md`]] §5.2 on SVD: the singular values are
 the stretch factors in each direction and $|\det A| =
 \prod \sigma_i$). (ii) For general $\Phi$, the key
 approximation is that $\Phi$ looks like its derivative
@@ -420,7 +420,7 @@ function theorem and a covering argument. $\blacksquare$
   normalizing constant $(2\pi)^{n/2} |\det\Sigma|^{1/2}$
   comes from applying the change of variables with
   $\Phi(z) = \Sigma^{1/2}z + \mu$ (Cholesky factorization,
-  `linear-algebra.md` §7) to reduce to the standard
+  [[`linear-algebra.md`]] §7) to reduce to the standard
   $\mathcal{N}(0, I)$ integral.
 
 ### 4.3 Integration by parts in multiple dimensions
@@ -537,7 +537,7 @@ log-likelihood $\ell(\theta) = \log p(x; \theta)$:
 the identity $\int p(x;\theta)\, dx = 1$ with respect to
 $\theta$ once to get $\int \nabla_\theta p\, dx = 0$, i.e.,
 $E_\theta[s(\theta)] = 0$. Differentiate again: the
-dominated convergence theorem (`measure-theory.md` §5)
+dominated convergence theorem ([[`measure-theory.md`]] §5)
 licenses passing the derivative under the integral when the
 score is square-integrable. The derivative of $s(\theta)^\top$
 with respect to $\theta$ is the Hessian of $\log p$ plus
@@ -552,7 +552,7 @@ The Cramér-Rao bound states that for any unbiased estimator
 $\hat\theta$, $\mathrm{Var}(\hat\theta) \succeq
 \mathcal{I}(\theta)^{-1}$ (PSD ordering). The bound follows
 from the Cauchy-Schwarz inequality in $L^2$ space
-(`functional-analysis.md` §2). The MLE achieves this bound
+([[`functional-analysis.md`]] §2). The MLE achieves this bound
 asymptotically — the asymptotic variance of $\sqrt{n}(\hat\theta_{\mathrm{MLE}}
 - \theta_0)$ is $\mathcal{I}(\theta_0)^{-1}$.
 
@@ -578,7 +578,7 @@ $\hat\beta_{\mathrm{GLS}} = (X^\top \Omega^{-1}X)^{-1}
 X^\top\Omega^{-1}y$. The Hessian is $2X^\top\Omega^{-1}X$,
 PD when $\Omega \succ 0$ and $X$ has full column rank.
 Computing this efficiently requires Cholesky of $\Omega$
-(`linear-algebra.md` §7), not explicit inversion of $\Omega$.
+([[`linear-algebra.md`]] §7), not explicit inversion of $\Omega$.
 
 ---
 
@@ -651,7 +651,7 @@ The Euler-Lagrange equation is an ODE in $x^*(t)$ — a
 second-order ODE in general (since it involves $\ddot x^*$
 through $\frac{d}{dt}\frac{\partial L}{\partial \dot x}$).
 The ODE theory for this equation — existence, uniqueness,
-boundary value problems — belongs in `differential-equations.md`.
+boundary value problems — belongs in [[`differential-equations.md`]].
 
 ### 6.3 Transversality conditions
 
@@ -727,15 +727,15 @@ state is the gradient of the value function. The HJB is a
 first-order PDE in $V$; existence and uniqueness of its
 viscosity solutions, and its connection to the optimal
 control problem via the verification theorem, belong in
-`differential-equations.md`. The discrete-time analogue —
+[[`differential-equations.md`]]. The discrete-time analogue —
 the Bellman equation $V(x) = \min_u [r(x, u) + \beta
-V(f(x,u))]$ — is the centerpiece of `dynamic-programming.md`.
+V(f(x,u))]$ — is the centerpiece of [[`dynamic-programming.md`]].
 
 ### 6.5 The Legendre transformation
 
 The **Legendre transformation** converts between a function
 and its conjugate, and appears in both duality theory
-(`optimization.md` §4) and the passage from Lagrangian to
+([[`optimization.md`]] §4) and the passage from Lagrangian to
 Hamiltonian mechanics.
 
 For a convex $C^1$ function $f: \mathbb{R}^n \to \mathbb{R}$,
@@ -766,7 +766,7 @@ transform of the indirect utility function in the prices.
 Shephard's lemma ($\nabla_p e = x_h$, the Hicksian demand)
 and Roy's identity ($-\nabla_p v / \partial v/\partial m = x_M$,
 the Marshallian demand) are both envelope theorem results
-(proved in `optimization.md` §5) that follow from the
+(proved in [[`optimization.md`]] §5) that follow from the
 duality structure.
 
 ---
@@ -780,7 +780,7 @@ Picard-Lindelöf theorem), phase portraits, stability of
 equilibria, linear ODE systems, and the theory of PDEs
 (characteristics, boundary value problems, the heat and
 wave equations as structural macro tools) all belong in
-`differential-equations.md`.
+[[`differential-equations.md`]].
 
 **Differential geometry.** Manifolds, tangent bundles,
 exterior calculus (differential forms, Stokes' theorem in
@@ -793,75 +793,75 @@ infinite-dimensional manifold. Not covered here.
 analogue of the chain rule for Brownian motion; the HJB
 equation in continuous time is derived using Itô's lemma
 rather than the classical chain rule. Both are in
-`stochastic-processes.md` §§7-8.
+[[`stochastic-processes.md`]] §§7-8.
 
 **Subdifferential calculus and non-smooth analysis.** The
 calculus of convex functions that are not $C^1$ (kinks,
 indicator functions, the $\ell^1$ penalty in LASSO).
 Subgradients, the subdifferential, proximal operators.
 These arise in modern high-dimensional estimation; the
-treatment belongs in `optimization.md` if added, or in a
+treatment belongs in [[`optimization.md`]] if added, or in a
 future `convex-analysis.md`.
 
 ---
 
 ## Cross-references
 
-- `20_Math/real-analysis.md` — the direct prerequisite.
+- [[`20_Math/real-analysis.md]]` — the direct prerequisite.
   The total derivative / Fréchet derivative (§4 there),
   1D Taylor with Lagrange remainder (§4 there), the IFT and
   implicit function theorem (§5 there) — all assumed here.
   Clairaut's theorem (§1.2 here) and the multivariate Taylor
   (§3 here) are the extensions. The contraction mapping
   theorem (§6 there) underlies both the IFT used in §§2-3
-  here and the Picard-Lindelöf theorem in `differential-equations.md`.
-- `20_Math/optimization.md` — the Taylor expansion (§3 here)
+  here and the Picard-Lindelöf theorem in [[`differential-equations.md`]].
+- [[`20_Math/optimization.md`]] — the Taylor expansion (§3 here)
   is the proof behind the second-order conditions (§2.3 there);
   the Legendre transformation (§6.5 here) extends the duality
   section (§4 there); matrix calculus (§5 here) makes the
   score and information matrix (§6.2 there) computable.
-- `20_Math/linear-algebra.md` — the Hessian is a symmetric
+- [[`20_Math/linear-algebra.md`]] — the Hessian is a symmetric
   matrix; its spectral decomposition (§3.2 there) characterizes
   curvature directions; Cholesky (§7 there) is how GLS
   and Gaussian integrals are computed in practice; the
   Jacobian determinant formula (§4.2 here) involves the
   SVD singular values as volume-scaling factors (§5 there).
-- `20_Math/functional-analysis.md` — the Euler-Lagrange
+- [[`20_Math/functional-analysis.md`]] — the Euler-Lagrange
   equation is derived via the projection theorem in function
   space (the fundamental lemma of calculus of variations
   is a density argument); the calculus of variations problem
   is formally an optimization on an infinite-dimensional
   Hilbert space, and the projection machinery of §3 there
   is the abstract setting.
-- `20_Math/measure-theory.md` — Fubini-Tonelli (§6 there)
+- [[`20_Math/measure-theory.md`]] — Fubini-Tonelli (§6 there)
   reduces multiple integration to iterated integrals (§4.1
   here); the dominated convergence theorem (§5 there) justifies
   differentiation under the integral in the Leibniz rule
   (§2.2 here) and in the information matrix equality proof
   (§5.3 here).
-- `20_Math/probability.md` — the delta method (§4.2 there)
+- [[`20_Math/probability.md`]] — the delta method (§4.2 there)
   is the first-order Taylor expansion applied to estimators
   (§3.3 here); the score and information matrix (§5.3 here)
   are the quantities whose asymptotic behavior the CLT and
   LLN determine (§7 there).
-- `20_Math/stochastic-processes.md` — Itô's lemma
+- [[`20_Math/stochastic-processes.md`]] — Itô's lemma
   (§7.2 there) is the stochastic chain rule, corresponding
   to the deterministic chain rule (§2 here) but with a
   second-derivative correction from quadratic variation; the
   HJB equation in continuous time (§6.4 here) is derived
   using Itô's lemma.
-- `20_Math/dynamic-programming.md` — The HJB equation
+- [[`20_Math/dynamic-programming.md`]] — The HJB equation
   (§6.4 here) is the continuous-time Bellman equation;
   the discrete-time Bellman equation there is the exact
   analogue of the variational problem here. The envelope
-  theorem (`optimization.md` §5) applied to the Bellman
+  theorem ([[`optimization.md`]] §5) applied to the Bellman
   equation gives Benveniste-Scheinkman — the derivative of
   the value function at the optimum.
-- `differential-equations.md` — The Euler-Lagrange equation
+- [[`20_Math/differential-equations.md`]] — The Euler-Lagrange equation
   and HJB are ODEs and a first-order PDE respectively;
   their rigorous theory (Picard-Lindelöf, phase portraits,
   viscosity solutions) belongs there.
-- `10_Methods/Econometrics/regression-discontinuity.md` —
+- [[`10_Methods/Econometrics/regression-discontinuity.md`]] —
   the Runge's phenomenon critique of global polynomial
   approximation (§4.1 there) is a warning about the behavior
   of the $n$-th order Taylor approximation far from the

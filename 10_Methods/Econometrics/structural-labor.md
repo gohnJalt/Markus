@@ -8,7 +8,7 @@ related: [modern-toolkit-references, distributional-methods, panel-methods, inst
 This is the working note on the Abowd-Kramarz-Margolis (1999)
 model and the Kline-Saggio-Sølvsten (2020) leave-out estimator.
 It assumes you know panel fixed-effects regression —
-`panel-methods.md` covers the geometric foundations (demeaning as
+[[`panel-methods.md`]] covers the geometric foundations (demeaning as
 projection, FWL, HDFE) that underlie AKM estimation. What this
 note adds is the specific structure of the two-way FE model for
 linked employer-employee data, the statistical problem that
@@ -259,7 +259,7 @@ dominant cost of the KSS correction — more expensive than fitting
 the full AKM, but feasible for administrative panels of reasonable
 size.
 
-The connection to `linear-algebra.md`: this is exactly the hat
+The connection to [[`linear-algebra.md`]]: this is exactly the hat
 matrix diagonal problem from §2.4, now at the scale of a large
 sparse two-way FE system. The randomized algorithms for computing
 $\text{tr}(A)$ and diagonal entries of $A$ for large matrices are
@@ -350,7 +350,7 @@ requires a structural model of search and matching.
 
 ## Wage variance decompositions and the inequality literature
 
-The AKM framework connects directly to `distributional-methods.md`
+The AKM framework connects directly to [[`distributional-methods.md`]]
 but at a different level of the analysis. Where distributional
 methods ask "what is the effect of $X$ on the distribution of
 wages in the population," AKM asks "how much of the variance of
@@ -408,7 +408,7 @@ mobility?**
 - **Yes**: AKM applies. Go to Q3.
 - **No** (cross-section, employer-only panel, or employee-only
   panel): AKM is not identified. Use OB decomposition
-  (`distributional-methods.md`, §4.1) for group-level gaps, or
+  ([[`distributional-methods.md`]], §4.1) for group-level gaps, or
   industry-level wage premiums from employer-only panel data.
 
 **Q3. How many movers are there per firm?**
@@ -538,7 +538,7 @@ than AKM can control for, or with high-TFP firms operating in
 tight local labor markets.
 
 **Misinterpreting the "unexplained" as discrimination.** The same
-warning from `distributional-methods.md` applies here: the share
+warning from [[`distributional-methods.md`]] applies here: the share
 of the gender or ethnic wage gap attributable to firm effects
 (whether high-wage firms underemploy minority workers) vs. worker
 effects (minority workers have lower $\hat\alpha_i$) vs. assortative
@@ -720,40 +720,40 @@ method; it goes in a project note when needed.
 
 ## Cross-references
 
-- `10_Methods/Econometrics/panel-methods.md` — the two-way
+- [[`10_Methods/Econometrics/panel-methods.md`]] — the two-way
   FE model underlying AKM is a panel fixed-effects regression;
   FWL, HDFE estimation, and the within-estimator geometry
   there are directly applicable; §3 (HDFE and the Mundlak
   representation) and §5 (strict exogeneity) are the relevant
   sections.
-- `10_Methods/Econometrics/distributional-methods.md` — the
+- [[`10_Methods/Econometrics/distributional-methods.md`]] — the
   AKM variance decomposition is a special-purpose
   distributional decomposition for linked employer-employee
   data; the OB decomposition at the mean (§4.1) and the DFL
   reweighting (§4.2) apply to group wage gaps using AKM
   components as the summary statistics.
-- `10_Methods/Econometrics/instrumental-variables.md` — causal
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — causal
   interpretation of firm effects requires additional variation
   beyond AKM; IV designs using firm ownership changes, industry
   shocks, or minimum wage episodes as instruments for firm
   characteristics import the IV machinery directly.
-- `20_Math/linear-algebra.md` — the hat matrix diagonal
+- [[`20_Math/linear-algebra.md`]] — the hat matrix diagonal
   ($\ell_{it}$ leverages) central to the KSS bias correction
   is the projection matrix diagonal discussed in §2.4;
   randomized algorithms for computing the diagonal of large
   sparse matrices are the computational backbone of the KSS
   estimator.
-- `20_Math/dynamic-programming.md` — search and matching models
+- [[`20_Math/dynamic-programming.md`]] — search and matching models
   (Burdett-Mortensen, Postel-Vinay–Robin) that interpret AKM
   firm effects as equilibrium wage-posting outcomes are MDPs;
   the worker's value function satisfies a Bellman equation over
   employment states.
-- `30_Data/AI-accessible-data-sources.md` — SGK administrative
+- [[`30_Data/AI-accessible-data-sources.md`]] — SGK administrative
   data for Turkey (linked employer-employee panel); German IAB
   Lohnstatistik, Portuguese Quadros de Pessoal, and Swedish
   RAMS are the canonical international datasets for AKM
   research.
-- `50_Workflows/run-a-regression-properly.md` — Stage 4
+- [[`50_Workflows/run-a-regression-properly.md`]] — Stage 4
   (identification) for an AKM analysis requires stating the
   exogenous mobility assumption explicitly and reporting the
   mobility residual diagnostic; Stage 7 (robustness) should

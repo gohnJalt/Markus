@@ -6,7 +6,7 @@ related: [modern-toolkit-references, instrumental-variables, difference-in-diffe
 # Shift-Share Instruments
 
 This is the working note. It assumes you've read
-`instrumental-variables.md` — the design-based IV posture, the
+[[`instrumental-variables.md`]] — the design-based IV posture, the
 LATE framing, the modern weak-instrument machinery, and the
 exclusion-restriction-honesty section all carry over and are
 not rederived here. What this file does is the part that is
@@ -248,7 +248,7 @@ standard errors.
 
 **Q4: What is the first stage, and what does its weak-
 instrument diagnostic look like?**
-Everything in `instrumental-variables.md` on weak-instrument
+Everything in [[`instrumental-variables.md`]] on weak-instrument
 inference applies: report the Olea-Pflueger effective F, check
 against the LMMP threshold, report Anderson-Rubin intervals
 where appropriate. The shift-share literature has not
@@ -336,7 +336,7 @@ Any shift-share result Markus reports includes, at minimum:
 2. **AKM or BHJ-equivalent standard errors** as the primary
    inference.
 3. **The weak-instrument diagnostics** from
-   `instrumental-variables.md` (Olea-Pflueger F, AR intervals
+   [[`instrumental-variables.md`]] (Olea-Pflueger F, AR intervals
    where relevant).
 4. **The effective degrees of freedom** (Rotemberg-weight
    concentration or effective number of shocks, depending on
@@ -393,7 +393,7 @@ operate through the shares and t=0 is post-treatment for some
 units. The shares have to be genuinely predetermined.
 
 **Assuming monotonicity.** The LATE interpretation from
-`instrumental-variables.md` carries over: the shift-share IV
+[[`instrumental-variables.md`]] carries over: the shift-share IV
 identifies an average effect over compliers (units whose
 treatment is moved by the instrument). Monotonicity at the
 unit level is often plausible (more exposed units get more
@@ -407,7 +407,7 @@ population ATE.
 
 For a shift-share IV result, the deliverable includes
 everything on the standard IV list from
-`instrumental-variables.md`, plus:
+[[`instrumental-variables.md`]], plus:
 
 1. **The identification story**, named explicitly: GPSS
    (exogenous shares) or BHJ (exogenous shocks).
@@ -481,7 +481,7 @@ where the methodologists have invested.
 **Continuous treatment shift-share.** Recent work by Borusyak
 and Hull extends to continuous-exposure settings; the issues
 overlap with the continuous-treatment DiD literature noted in
-`difference-in-differences.md`.
+[[`difference-in-differences.md`]].
 
 **Shift-share in spatial equilibrium models.** When shift-share
 is used as the empirical counterpart to a quantitative
@@ -500,7 +500,7 @@ otherwise, standard shift-share covers most applied needs.
 **Shift-share in macro (IV-based LP, external instruments for
 SVARs).** The shift-share logic sometimes shows up as an
 external instrument in structural VAR or LP-IV work. That
-belongs in `local-projections.md` and later in a SVAR note,
+belongs in [[`local-projections.md`]] and later in a SVAR note,
 not here.
 
 These extensions get their own notes or sections when a project
@@ -510,27 +510,27 @@ demands them. Don't speculatively expand this file.
 
 ## Cross-references
 
-- `00_Identity/Principles.md` — sections on identification and
+- [[`00_Identity/Principles.md`]] — sections on identification and
   on causation. The general posture this note operationalizes,
   especially the warning against method laundering and the
   requirement that every identification strategy be defended
   on assumptions you can characterize.
-- `10_Methods/modern-toolkit-references.md` — the directory
+- [[`10_Methods/modern-toolkit-references.md`]] — the directory
   entry that points here. Update it if this file's content
   changes the recommendations.
-- `10_Methods/Econometrics/instrumental-variables.md` — the
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — the
   parent note. The LATE framing, the weak-instrument machinery,
   the exclusion-restriction honesty section, and the design-
   based IV posture all carry over. Read that file before this
   one if you haven't.
-- `10_Methods/Econometrics/difference-in-differences.md` — the
+- [[`10_Methods/Econometrics/difference-in-differences.md`]] — the
   parallel-trends-honesty section is the structural sibling of
   this file's "pick a story and defend it" posture. Same move,
   different setting.
-- `10_Methods/Econometrics/local-projections.md` — shift-share 
+[[`10_Methods/Econometrics/local-projections.md`]] — shift-share 
   instruments sometimes enter macroeconomic LP-IV settings as 
   the external instrument, and that intersection will be covered there.
-- `50_Workflows/run-a-regression-properly.md` — Stage 4
+- [[`50_Workflows/run-a-regression-properly.md`]] — Stage 4
   ("specify identification, not just the equation") is where
   the GPSS-vs-BHJ choice belongs in a real analysis.
 

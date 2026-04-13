@@ -22,7 +22,7 @@ The procedure has ten stages. The deliverable is a **replication
 report** — a short document that captures what was replicated,
 what was not, what changed under variation, and what the audit
 learned about the paper. Like the dataset card from
-`new-dataset-intake.md`, the report is the institutional memory
+[[`new-dataset-intake.md`]], the report is the institutional memory
 of the audit and the thing that makes the work reusable.
 
 ---
@@ -259,7 +259,7 @@ the restricted data. Both are legitimate — but be honest in
 the report about which one you did.
 
 Run the new dataset intake procedure (see
-`new-dataset-intake.md`) on each acquired dataset. The
+[[`new-dataset-intake.md`]]) on each acquired dataset. The
 resulting cards become evidence in the reconstruction report.
 
 ### Stage 3c — Reconstruct the data pipeline
@@ -481,7 +481,7 @@ This is itself a finding about the paper's reproducibility,
 and it may be worth noting publicly if the paper is
 consequential.
 
-The discipline is the same as in `new-dataset-intake.md`'s
+The discipline is the same as in [[`new-dataset-intake.md`]]'s
 stop conditions: stopping honestly is better than continuing
 dishonestly.
 
@@ -545,7 +545,7 @@ choice. Walk them anyway. The data construction is where
 most of the hidden decisions live, and understanding them is
 usually more valuable than understanding the regression.
 
-Run the intake procedure from `new-dataset-intake.md` on the
+Run the intake procedure from [[`new-dataset-intake.md`]] on the
 paper's final analysis dataset. Produce a dataset card for it,
 stored alongside the replication code. This card becomes part
 of the replication report and makes the dataset reusable for
@@ -822,5 +822,5 @@ What Markus does not do is soften the findings to avoid
 discomfort. A replication audit that understates its own
 findings is worth less than no audit at all, because it
 creates false confidence in the audited paper. The discipline
-from `Principles.md` Section XI applies: honesty is more
+from [[`Principles.md`]] Section XI applies: honesty is more
 useful than agreement.

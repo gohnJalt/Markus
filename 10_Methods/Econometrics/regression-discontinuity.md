@@ -15,7 +15,7 @@ Cattaneo, Idrobo, and Titiunik's Cambridge Elements volumes as
 the canonical reference — to *reason* about whether a given RD
 design is credible, what it is actually estimating, and which
 of the post-2014 tools apply. The entry in
-`modern-toolkit-references.md` is a directory; this is the
+[[`modern-toolkit-references.md`]] is a directory; this is the
 actual map.
 
 The centerpiece is the Calonico-Cattaneo-Titiunik (2014,
@@ -232,7 +232,7 @@ full population).
 ratio must be nonzero and reasonably large. Measure the
 first-stage jump: if $\Pr(D=1|X \geq c) - \Pr(D=1|X<c)$ at
 the cutoff is less than 0.1, the design is weak in a sense
-analogous to weak instruments (`instrumental-variables.md` §4).
+analogous to weak instruments ([[`instrumental-variables.md`]] §4).
 The RD analog of the first-stage F-statistic is the $t$-
 statistic on the first-stage discontinuity, computed by
 `rdrobust` when the `fuzzy` option is used. Treat a jump below
@@ -479,7 +479,7 @@ and the p-value for the test of continuity.
 
 **3. Covariate balance table.** One row per predetermined
 covariate. RD estimate, RBC standard error, p-value. No stars
-(per the convention in `run-a-regression-properly.md`);
+(per the convention in [[`run-a-regression-properly.md`]);
 confidence intervals instead.
 
 **4. The main RD estimate.** The bias-corrected estimate
@@ -574,7 +574,7 @@ estimation approach differ from single-running-variable RD.
 cross the cutoff at different times and treatment effects
 evolve, the single-period RD estimand aggregates across
 potentially heterogeneous effects. The connection to event-study
-and DiD methods (`difference-in-differences.md`) is active
+and DiD methods ([[`difference-in-differences.md`]]) is active
 research.
 
 **RD with interference.** Standard RD assumes SUTVA — the
@@ -594,29 +594,29 @@ automatically by the RD design.
 
 ## Cross-references
 
-- `10_Methods/modern-toolkit-references.md` — the directory
+- [[`10_Methods/modern-toolkit-references.md`]] — the directory
   entry for RDD with canonical papers and the RD-adjacent
   methods (IV, DiD).
-- `10_Methods/Econometrics/instrumental-variables.md` — fuzzy
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — fuzzy
   RD is local Wald estimation; the first-stage strength
   considerations and LATE interpretation there apply here at
   the cutoff. The weak-instruments discussion (§4 there) is
   the closest analog to the weak-first-stage problem in fuzzy RD.
-- `10_Methods/Econometrics/difference-in-differences.md` — RD
+- [[`10_Methods/Econometrics/difference-in-differences.md`]] — RD
   and DiD are both design-based strategies; the question of
   which is appropriate is usually answered by the data
   structure (panel + staggered treatment → DiD; running
   variable + threshold → RD).
-- `20_Math/linear-algebra.md` — the local polynomial
+- [[`20_Math/linear-algebra.md`]] — the local polynomial
   regression underlying `rdrobust` is weighted least squares;
   the hat matrix (§2.4 there) is how leverage and the bias
   estimate are computed.
-- `50_Workflows/run-a-regression-properly.md` — the
+- [[`50_Workflows/run-a-regression-properly.md`]] — the
   robustness-check convention (report checks that would change
   your mind if they failed) applies directly to bandwidth
   sensitivity; the no-stars convention applies to the balance
   table and main results.
-- `00_Identity/Principles.md` — the estimand-first posture
+- [[`00_Identity/Principles.md`]] — the estimand-first posture
   (§2 there) and the honesty about assumptions (§9 there)
   apply throughout; the "design over estimator" stance (§3
   there) is what the CCT procedure implements.

@@ -8,9 +8,9 @@ related: [modern-toolkit-references, instrumental-variables, difference-in-diffe
 This note assumes you know what a causal parameter is and why
 identification is the hard part of estimating one. It assumes
 familiarity with the Frisch-Waugh-Lovell theorem from
-`linear-algebra.md` (§2.3), with influence functions and
-semiparametric efficiency bounds from `functional-analysis.md`
-(§9), and with the asymptotic theory in `probability.md`. What
+[[`linear-algebra.md`]] (§2.3), with influence functions and
+semiparametric efficiency bounds from [[`functional-analysis.md`]]
+(§9), and with the asymptotic theory in [[`probability.md`]]. What
 it adds is the treatment of a specific problem: estimating a
 low-dimensional causal parameter $\theta$ when the confounding
 structure involves many covariates or unknown functional forms,
@@ -131,7 +131,7 @@ $$\partial_\eta \mathbb{E}[\psi(W; \theta_0, \eta_0)]
 [\eta - \eta_0] = 0 \quad \text{for all } \eta$$
 
 This is a functional derivative condition — exactly the Gateaux
-derivative in $L^2$ developed in `functional-analysis.md` (§7).
+derivative in $L^2$ developed in [[`functional-analysis.md`]] (§7).
 The condition says that the expected score $\mathbb{E}[\psi]$,
 as a function of the nuisance, is flat at the truth: small errors
 in $\eta$ produce second-order, not first-order, errors in the
@@ -168,7 +168,7 @@ score has a beautiful interpretation: it is the OLS estimating
 equation after **partialling out $W$ from both $Y$ and $D$** via
 their respective conditional expectation functions. This is the
 nonparametric generalization of the Frisch-Waugh-Lovell theorem
-(`linear-algebra.md` §2.3): in the linear case, partialling out
+([[`linear-algebra.md`]] §2.3): in the linear case, partialling out
 $W$ from $Y$ and $D$ and regressing the residuals gives the same
 answer as controlling for $W$ directly; DML generalizes this to
 nonparametric residuals.
@@ -177,7 +177,7 @@ nonparametric residuals.
 Neyman-orthogonal score for a regular semiparametric problem is
 the **efficient influence function** of the target parameter —
 the element of the tangent space that achieves the semiparametric
-efficiency bound (`functional-analysis.md` §9). DML estimators
+efficiency bound ([[`functional-analysis.md`]] §9). DML estimators
 that use the EIF as their score are semiparametrically efficient:
 they are the best possible estimators of $\theta_0$ in a
 semiparametric model, in the same sense that OLS is BLUE under
@@ -294,7 +294,7 @@ score. The Neyman-orthogonal structure here is doubly robust:
 the estimator is consistent if *either* the outcome model or the
 propensity score is consistently estimated (not necessarily both).
 This is the IRM analog of the doubly-robust Callaway-Sant'Anna
-estimator in `difference-in-differences.md`.
+estimator in [[`difference-in-differences.md`]].
 
 The propensity score in the IRM is a nuisance function estimated
 via ML classification (LASSO logistic regression, random forest
@@ -331,7 +331,7 @@ of $\theta_0$.
 The nuisance functions now include both the structural equation
 controls and the first-stage relationship $D \sim Z, W$. Cross-
 fitting proceeds as in the PLR case. Everything in
-`instrumental-variables.md` about LATE, weak instruments, and
+[[`instrumental-variables.md`]] about LATE, weak instruments, and
 the Olea-Pflueger effective F applies to the PLIV first stage —
 the ML part does not change the IV identification logic, it
 handles the high-dimensional confounding.
@@ -444,7 +444,7 @@ support on $D$ where partial effects are not well-defined.
 **Q1: Is identification from unconfoundedness (selection on observables)?**
 - Yes → DML-PLR or DML-IRM depending on treatment type. Continue.
 - No, valid instrument available → PLIV. The IV identification
-  machinery from `instrumental-variables.md` applies. DML handles
+  machinery from [[`instrumental-variables.md`]] applies. DML handles
   the high-dimensional $W$; the instrument provides identification.
 - No, and no instrument → DML cannot help. Identification is the
   problem.
@@ -627,7 +627,7 @@ justified. Causal forests via `grf` in R.
 **Distributional DML.** DML applied to distributional functionals
 (quantiles, Gini) as the target parameter, rather than the mean.
 Chernozhukov, Newey, and Singh (2022). Briefly noted in
-`distributional-methods.md`; implemented in `DoubleML`.
+[[`distributional-methods.md`]]; implemented in `DoubleML`.
 
 **DML for time series and panel data.** The cross-fitting
 assumptions need modification when observations are serially
@@ -658,41 +658,41 @@ developing.
 
 ## Cross-references
 
-- `10_Methods/Econometrics/instrumental-variables.md` — the PLIV
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] — the PLIV
   model extends IV to the DML setting. The LATE framing, weak
   instrument diagnostics, and identification-honesty from that
   note all apply. DML handles the high-dimensional $W$; the
   instrument provides identification as always.
-- `10_Methods/Econometrics/difference-in-differences.md` —
+- [[`10_Methods/Econometrics/difference-in-differences.md`]] —
   `DoubleML` implements a DML-DiD estimator that combines
   doubly-robust DiD (Callaway-Sant'Anna) with ML propensity
   scores. The identification machinery is unchanged; DML handles
   high-dimensional baseline controls.
-- `10_Methods/Econometrics/distributional-methods.md` — DML
+- [[`10_Methods/Econometrics/distributional-methods.md`]] — DML
   applied to distributional parameters (Chernozhukov-Newey-Singh
   2022) is noted there as an extension. The RIF regression approach
   in that file is the low-dimensional complement.
-- `20_Math/functional-analysis.md` — Neyman-orthogonal scores are
+- [[`20_Math/functional-analysis.md`]] — Neyman-orthogonal scores are
   Gateaux derivatives of the moment condition with respect to the
   nuisance function (§7 there). The semiparametric efficiency bound
   (§9 there) is the squared $L^2$-norm of the efficient influence
   function, which is also the Neyman-orthogonal score for
   semiparametrically efficient DML estimators.
-- `20_Math/linear-algebra.md` — the Frisch-Waugh-Lovell theorem
+- [[`20_Math/linear-algebra.md`]] — the Frisch-Waugh-Lovell theorem
   (§2.3 there) is the linear-algebra foundation for the DML
   partialling-out logic. DML is FWL with nonparametric residuals.
-- `20_Math/probability.md` — empirical process theory (Glivenko-
+- [[`20_Math/probability.md`]] — empirical process theory (Glivenko-
   Cantelli and Donsker classes, uniform LLN) underpins the
   theoretical guarantees for DML's nuisance rate conditions. The
   $o_P/O_P$ notation (§6 there) is the language in which the
   product-rate condition is stated.
-- `00_Identity/Principles.md` — the section on identification and
+- [[`00_Identity/Principles.md`]] — the section on identification and
   the section on causation. DML is a prime case where the
   methodological sophistication of the tool can obscure the
   weakness of the identification assumption. The posture from
   Principles — name the identification assumption, bound its
   violation — applies directly.
-- `50_Workflows/run-a-regression-properly.md` — DML is a
+- [[`50_Workflows/run-a-regression-properly.md`]] — DML is a
   regression; Stage 4 (specify identification) still requires
   naming the unconfoundedness assumption and defending it. The
   nuisance-fit diagnostics fit in Stage 5 (diagnostics); the

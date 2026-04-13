@@ -13,7 +13,7 @@ go beyond the conditional mean — the methods that treat
 inequality, heterogeneity, and the shape of outcome
 distributions as the primary object of interest, not as
 nuisance to be controlled for. The entry in
-`modern-toolkit-references.md` is a directory; this is the
+[[`modern-toolkit-references.md`]] is a directory; this is the
 actual map.
 
 The note has a bias toward the Firpo-Fortin-Lemieux program
@@ -746,45 +746,45 @@ Margolis (1999) decomposition of earnings into worker and
 firm effects, and the leave-out corrected estimators
 (Kline-Saggio-Sølvsten 2020). This is a special-purpose
 distributional decomposition for linked employer-employee
-data; it goes in `structural-labor.md`.
+data; it goes in [[`structural-labor.md`]].
 
 ---
 
 ## Cross-references
 
-- `10_Methods/Econometrics/difference-in-differences.md` —
+- [[`10_Methods/Econometrics/difference-in-differences.md`]] —
   distributional DiD (Callaway-Li QTT in §5.1) imports the
   ATT estimand framing, the staggered design machinery, and
   the distributional parallel trends assumption as the
   distributional analog of parallel trends.
-- `10_Methods/Econometrics/instrumental-variables.md` —
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] —
   IVQR (§5.2) imports IV identification; the rank invariance
   assumption here is the distributional analog of monotonicity
   (LATE) in the IV note; the Abadie (2003) complier
   distribution recovery uses the propensity-score reweighting
   approach from the IV note.
-- `10_Methods/Econometrics/panel-methods.md` — fixed-effects
+- [[`10_Methods/Econometrics/panel-methods.md`]] — fixed-effects
   quantile regression for panels (Canay 2011) is the panel
   analog of QR; distributional decompositions in panel
   settings require accounting for the panel structure in the
   propensity score model.
-- `10_Methods/Econometrics/regression-discontinuity.md` —
+- [[`10_Methods/Econometrics/regression-discontinuity.md`]] —
   distributional RD (sharp RD at each quantile of the outcome
   distribution) uses the same local polynomial and bandwidth
   machinery as mean RD; implement via `rdrobust` with the
   transformed outcome $\mathbf{1}[Y \le y]$ for a grid of $y$.
-- `20_Math/probability.md` — the delta method (§5) underlies
+- [[`20_Math/probability.md`]] — the delta method (§5) underlies
   the sandwich inference for QR and the asymptotic theory for
   RIF estimators; the quantile process asymptotics draw on the
   functional CLT (Donsker's theorem, §8).
-- `20_Math/functional-analysis.md` — the influence function
+- [[`20_Math/functional-analysis.md`]] — the influence function
   is a Fréchet derivative in the space of distributions (§7);
   the $L^2$ projection theorem underlies the conditional mean
   framing that OB decomposes.
-- `30_Data/AI-accessible-data-sources.md` — distributional
+- [[`30_Data/AI-accessible-data-sources.md`]] — distributional
   analysis requires micro data; WID.world for top shares;
   LIS for comparative micro; TÜİK HBIM and SGK for Turkey.
-- `50_Workflows/run-a-regression-properly.md` — the
+- [[`50_Workflows/run-a-regression-properly.md`]] — the
   regression workflow governs the estimation step; for
   distributional analysis, Stage 4 (identification) and
   Stage 7 (robustness) should include the distributional-
@@ -800,6 +800,6 @@ decompositions through DiNardo-Fortin-Lemieux (1996) and
 Chernozhukov-Fernández-Val-Melly (2013), and causal
 distributional effects through Callaway-Li (2019) and
 Chernozhukov-Hansen (2005, 2008). AKM and earnings
-decompositions deferred to `structural-labor.md`. High-
+decompositions deferred to [[`structural-labor.md`]]. High-
 dimensional distributional regression deferred to
-`double-machine-learning.md`.*
+[[`double-machine-learning.md`]].*

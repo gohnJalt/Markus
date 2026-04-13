@@ -5,14 +5,14 @@ related: [real-analysis, measure-theory, functional-analysis, optimization, stoc
 
 # Probability
 
-This file is built on top of `measure-theory.md` and
-`functional-analysis.md`. It picks up where those files stop.
-`measure-theory.md` gave the probability space
+This file is built on top of [[`measure-theory.md`]] and
+[[`functional-analysis.md`]]. It picks up where those files stop.
+[[`measure-theory.md`]] gave the probability space
 $(\Omega, \mathcal{F}, P)$, random variables as measurable
 functions, expectation as Lebesgue integration, the five modes
 of convergence and the hierarchy among them, and the
 foundational properties of conditional expectation.
-`functional-analysis.md` gave conditional expectation its
+[[`functional-analysis.md`]] gave conditional expectation its
 geometric interpretation as $L^2$ projection. This file adds
 the limit theorems — the laws of large numbers, the central
 limit theorems, the delta method — and the asymptotic notation
@@ -27,14 +27,14 @@ these theorems at the level where you can read and check a
 proof — not just cite them — is what separates an
 econometrician who can audit arguments from one who cannot.
 
-Prerequisites: `measure-theory.md` (all of it; especially §§8-9)
-and `functional-analysis.md` (§§1-3, for $L^p$ completeness
-and the projection theorem). `real-analysis.md` (§4, mean value
+Prerequisites: [[`measure-theory.md`]] (all of it; especially §§8-9)
+and [[`functional-analysis.md`]] (§§1-3, for $L^p$ completeness
+and the projection theorem). [[`real-analysis.md`]] (§4, mean value
 theorem) is used in the delta method proof.
 
 The file stops before martingale theory, stochastic processes,
 unit root asymptotics, and empirical process theory — all of
-which go in `stochastic-processes.md`. Pointers are in §8.
+which go in [[`stochastic-processes.md`]]. Pointers are in §8.
 
 ---
 
@@ -238,7 +238,7 @@ The **Borel-Cantelli lemma**: if $\sum_n P(A_n) < \infty$, then
 $P(A_n \text{ i.o.}) = 0$. This follows directly from
 $P(\limsup A_n) = P(\bigcap_n \bigcup_{k \geq n} A_k)
 \leq \lim_n \sum_{k \geq n} P(A_k) = 0$, using continuity
-from above (from `measure-theory.md` §2). Borel-Cantelli is
+from above (from [[`measure-theory.md`]] §2). Borel-Cantelli is
 the fundamental tool for almost sure results.
 
 ### 2.3 LLNs for dependent data
@@ -260,7 +260,7 @@ sample space into a non-trivial invariant set). This is the
 LLN for stationary time series: it justifies sample-moment
 estimators in time-series models and underlies the asymptotics
 of VAR and LP estimators. The proof belongs in
-`stochastic-processes.md` because it requires the ergodic
+[[`stochastic-processes.md`]] because it requires the ergodic
 decomposition theorem and the martingale convergence theorem.
 The result is stated here because it is assumed throughout
 the econometrics layer.
@@ -467,7 +467,7 @@ $$
 where $k(\cdot)$ is a kernel (Bartlett: $k(x) = 1 - |x|$)
 and $H_T$ is the bandwidth. The choice of $H_T$ and kernel
 involves a bias-variance tradeoff; the Montiel
-Olea–Plagborg-Møller correction in `local-projections.md` is
+Olea–Plagborg-Møller correction in [[`local-projections.md`]] is
 one modern approach to this problem at long horizons.
 
 **CLT for α-mixing sequences.** Under summable mixing
@@ -507,7 +507,7 @@ The martingale difference CLT is the right tool for GMM score
 functions in time-series settings, where the moment conditions
 $g(X_t, \theta_0)$ are martingale differences with respect to
 the natural filtration. The proof belongs in
-`stochastic-processes.md`; the result is used throughout
+[[`stochastic-processes.md`]]; the result is used throughout
 the econometrics layer.
 
 ---
@@ -533,7 +533,7 @@ is differentiable at $\theta_0$. Then:
   $$n(g(\hat{\theta}_n) - g(\theta_0)) \xrightarrow{d}
   \frac{g''(\theta_0)}{2}\,\sigma^2\,\chi^2_1.$$
 
-**Proof.** By the mean value theorem (from `real-analysis.md`
+**Proof.** By the mean value theorem (from [[`real-analysis.md`]]
 §4):
 
 $$
@@ -728,7 +728,7 @@ to $g(\hat{\theta}_n)$ once the remainder is $o_P(n^{-1/2})$.
 
 ## 6. Weak convergence and tightness
 
-The modes of convergence from `measure-theory.md` §8 are for
+The modes of convergence from [[`measure-theory.md`]] §8 are for
 sequences of real-valued random variables. Weak convergence of
 probability measures on metric spaces is the framework for
 functional limit theorems — the setting where the limiting
@@ -812,7 +812,7 @@ distribution by the CMT applied in $C[0,1]$:
 
 The formal framework for Donsker's theorem is weak convergence
 in metric spaces (Billingsley 1968). The proofs belong in
-`stochastic-processes.md`.
+[[`stochastic-processes.md`]].
 
 ---
 
@@ -901,12 +901,12 @@ Examples:
   estimator has a non-normal limit in this local-to-zero
   specification — the ratio of two correlated normals.
   Anderson-Rubin inference is robust to this; see
-  `instrumental-variables.md`.
+  [[`instrumental-variables.md`]].
 - **Bandwidth-indexed estimators**: a kernel estimator with
   bandwidth $h_n \to 0$ is a triangular array. The
   bias-variance tradeoff in bandwidth selection is a
   finite-sample question; the asymptotic theory (including
-  the CCT optimal bandwidth in `regression-discontinuity.md`)
+  the CCT optimal bandwidth in [[`regression-discontinuity.md`]])
   is Lindeberg-Feller applied to weighted sums where the
   weights depend on $n$.
 
@@ -946,7 +946,7 @@ $O_P(1)$. Sample moments diverge. Regressions involving
 non-stationary series produce spurious results at standard
 significance levels. The correct asymptotic framework is
 local-to-unity, with limiting distributions expressed as
-functionals of Brownian motion — see `stochastic-processes.md`.
+functionals of Brownian motion — see [[`stochastic-processes.md`]].
 
 **4. Non-standard identification.** When the parameter of
 interest is set-identified rather than point-identified, the
@@ -970,7 +970,7 @@ $\chi^2$ tests are unreliable.
 **Martingale theory.** Filtrations and adapted processes,
 martingale convergence theorems (both a.s. and in $L^2$),
 the optional stopping theorem, the Doob decomposition — all
-belong in `stochastic-processes.md`. The martingale difference
+belong in [[`stochastic-processes.md`]]. The martingale difference
 CLT (mentioned in §3.4) is the key result for GMM asymptotics
 in time series; the proof goes there.
 
@@ -980,7 +980,7 @@ process with a linear component is an infinite-order MA),
 ARMA and their state-space representations, unit root
 asymptotics (local-to-unity, the Dickey-Fuller distribution),
 stochastic integration (Itô calculus) — all in
-`stochastic-processes.md`.
+[[`stochastic-processes.md`]].
 
 **Empirical process theory.** Vapnik-Chervonenkis classes
 and covering numbers, Glivenko-Cantelli and Donsker classes,
@@ -989,7 +989,7 @@ bootstrap as a consequence of the functional CLT — not covered
 here. The standard references are Pollard's *Empirical
 Processes* and van der Vaart and Wellner's *Weak Convergence
 and Empirical Processes*. These tools appear in the asymptotic
-theory of DML and semiparametric estimation; `double-machine-learning.md`
+theory of DML and semiparametric estimation; [[`double-machine-learning.md`]]
 will use them.
 
 **Bayesian asymptotics.** The Bernstein-von Mises theorem
@@ -1011,41 +1011,41 @@ Econometrics* is the reference.
 
 ## Cross-references
 
-- `20_Math/measure-theory.md` — the direct prerequisite.
+- [[`20_Math/measure-theory.md`]] — the direct prerequisite.
   Probability spaces, random variables, expectation, the
   five modes of convergence (§8 there), Slutsky's theorem,
   the CMT, conditional expectation (§9 there) — all assumed
   here without re-derivation. This file adds the limit
   theorems that §10 of that file promises.
-- `20_Math/real-analysis.md` — the mean value theorem (§4)
+- [[`20_Math/real-analysis.md`]] — the mean value theorem (§4)
   is used in the delta method proof; Bolzano-Weierstrass
   and compactness (§3) underlie the ULLN; the Borel-Cantelli
   argument in §2.2 uses continuity from above (a consequence
-  of countable additivity from `measure-theory.md` §2).
-- `20_Math/functional-analysis.md` — the $L^2$ projection
+  of countable additivity from [[`measure-theory.md`]] §2).
+- [[`20_Math/functional-analysis.md]]` — the $L^2$ projection
   characterization of conditional expectation (§9 there) is
   the geometric picture behind the orthogonality conditions
   that define efficient estimators; the spectral theorem for
   compact self-adjoint operators (§8 there) underlies the
   CLT in function spaces.
-- `20_Math/optimization.md` — the score function
+- [[`20_Math/optimization.md`]] — the score function
   $\partial \log f(X; \theta)/\partial\theta$ and the
   information matrix $I(\theta) = E[-\partial^2 \log f
   /\partial\theta^2]$ appear in MLE asymptotics; the
   asymptotic variance of MLE is $I(\theta_0)^{-1}$, the
   Cramér-Rao lower bound.
-- `20_Math/stochastic-processes.md` — martingale CLT, Birkhoff
+- [[`20_Math/stochastic-processes.md`]] — martingale CLT, Birkhoff
   ergodic theorem (§2.3), Donsker's theorem in full (§6.3),
   unit root asymptotics (§7.4), Itô calculus.
-- `10_Methods/Econometrics/instrumental-variables.md` —
+- [[`10_Methods/Econometrics/instrumental-variables.md`]] —
   weak instrument asymptotics (§7.3 here) is the theoretical
   backdrop for why $F > 10$ is insufficient (the local-to-zero
   specification) and why Anderson-Rubin inference is robust.
-- `10_Methods/Econometrics/local-projections.md` — the
+- [[`10_Methods/Econometrics/local-projections.md`]] — the
   long-run variance formula (§3.4 here) is the theoretical
   foundation for HAC standard errors and the Montiel
   Olea–Plagborg-Møller long-horizon bias correction.
-- `10_Methods/Econometrics/difference-in-differences.md` —
+- [[`10_Methods/Econometrics/difference-in-differences.md`]] —
   clustered inference extends the Lindeberg-Feller CLT to
   sums of within-cluster sums; the formal version of
   clustering asymptotics is the framework in §7.1 applied
@@ -1059,4 +1059,4 @@ proofs), $o_P/O_P$ notation, weak convergence and Prokhorov,
 Donsker's theorem (stated), and the asymptotic foundations of
 the standard econometric argument. Martingale theory,
 stochastic processes, and empirical process theory are
-deferred to `stochastic-processes.md`.*
+deferred to [[`stochastic-processes.md`]].*

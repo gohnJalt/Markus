@@ -6,7 +6,7 @@ related: [real-analysis, functional-analysis, optimization, probability, modern-
 # Linear Algebra
 
 This file is the finite-dimensional companion to
-`functional-analysis.md`. That file developed the general
+[[`functional-analysis.md`]]. That file developed the general
 theory of normed spaces, Hilbert spaces, bounded operators, and
 the spectral theorem for compact self-adjoint operators in
 arbitrary (including infinite-dimensional) spaces. This file
@@ -29,10 +29,10 @@ systems (§7), and the numerical linear algebra discipline that
 separates trustworthy implementations from ones that silently
 return garbage (§8).
 
-This file is downstream of `functional-analysis.md` for the
-abstract structure and upstream of `probability.md` (covariance
+This file is downstream of [[`functional-analysis.md`]] for the
+abstract structure and upstream of [[`probability.md`]] (covariance
 matrices, the delta method via matrix calculus, the Cramér-Rao
-bound) and `stochastic-processes.md` (VAR stability via
+bound) and [[`stochastic-processes.md`]] (VAR stability via
 companion matrices, state-space representations via matrix
 exponentials). The cross-references at the end specify these
 dependencies precisely.
@@ -67,7 +67,7 @@ represented by a matrix $A \in \mathbb{R}^{m \times n}$ via
 $Tx = Ax$. Composition of linear maps is matrix multiplication.
 Every linear map between finite-dimensional spaces is bounded
 (continuous), so all the operator-norm results from
-`functional-analysis.md` §4 apply automatically.
+[[`functional-analysis.md`]] §4 apply automatically.
 
 **Four fundamental subspaces.** For $A \in \mathbb{R}^{m \times n}$:
 - $\mathrm{col}(A) = \{Ax : x \in \mathbb{R}^n\} \subseteq \mathbb{R}^m$ — the column space (range of $A$)
@@ -202,7 +202,7 @@ Since $\lambda_1 \neq \lambda_2$, we get $v_1^\top v_2 = 0$.
 
 **(3) Orthogonal diagonalizability.** This follows by induction on $n$ (always produce one eigenvector, restrict to its orthogonal complement, which is also invariant under a symmetric matrix, and apply induction) combined with the Gram-Schmidt process to orthonormalize eigenvectors within each eigenspace. $\blacksquare$
 
-The spectral expansion $A = Q\Lambda Q^\top = \sum_{i=1}^n \lambda_i q_i q_i^\top$ expresses $A$ as a sum of rank-1 projections onto its eigenvectors, scaled by eigenvalues. This is the finite-dimensional case of the spectral theorem for compact self-adjoint operators proved in `functional-analysis.md` §8.2.
+The spectral expansion $A = Q\Lambda Q^\top = \sum_{i=1}^n \lambda_i q_i q_i^\top$ expresses $A$ as a sum of rank-1 projections onto its eigenvectors, scaled by eigenvalues. This is the finite-dimensional case of the spectral theorem for compact self-adjoint operators proved in [[`functional-analysis.md`]] §8.2.
 
 ### 3.3 Positive (semi)definite matrices
 
@@ -599,7 +599,7 @@ factor models and in machine learning. Not covered here.
 semicircle, and the Tracy-Widom distribution describe the
 eigenvalue behavior of large random matrices and are relevant
 for high-dimensional asymptotics (the "big $p$, big $n$"
-regime). These go in `probability.md` or a future file.
+regime). These go in [[`probability.md`]] or a future file.
 
 **Matrix calculus.** Derivatives of scalar-valued functions of
 matrices ($\partial \log\det A / \partial A = A^{-\top}$,
@@ -614,25 +614,25 @@ demands it.
 
 ## Cross-references
 
-- `20_Math/functional-analysis.md` — the abstract foundation
+- [[`20_Math/functional-analysis.md`]] — the abstract foundation
   for this file. The projection theorem (§3.2 there) and the
   Riesz representation theorem (§3.4 there) specialized to
   finite-dimensional Hilbert spaces give the geometric content
   of §2 here; the spectral theorem for compact self-adjoint
   operators (§8.2 there) specialized to $\mathbb{R}^n$ gives
   the spectral theorem of §3.2 here.
-- `20_Math/real-analysis.md` — the condition-number discussion
+- [[`20_Math/real-analysis.md`]] — the condition-number discussion
   (§8.1 here) uses the operator norm (bounded from below by
   the inverse function theorem's Jacobian condition from §5
   there); matrix exponentiation and the Neumann series connect
   to the contraction mapping theorem (§6 there).
-- `20_Math/optimization.md` — OLS as a convex quadratic
+- [[`20_Math/optimization.md`]] — OLS as a convex quadratic
   program (§6.1 there); the Hessian of a quadratic form is a
   symmetric matrix, and its eigenvalues determine the
   second-order condition (PD Hessian iff unique minimizer);
   the QR-based solve (§4.3 here) is the numerically correct
   implementation of the OLS formula in §6.1 there.
-- `20_Math/probability.md` — The covariance matrix is the key
+- [[`20_Math/probability.md`]] — The covariance matrix is the key
   symmetric PSD matrix in probability; the Cramér-Rao bound
   is $I(\theta_0)^{-1}$ (inverse of the information matrix,
   a PSD matrix); the vector delta method (§4.2 there) uses
@@ -640,27 +640,27 @@ demands it.
   sandwich formula); the multivariate CLT (§3.3 there) uses
   the multivariate normal, whose density involves $\Sigma^{-1}$
   (computed via Cholesky, §7 here).
-- `20_Math/stochastic-processes.md` — VAR stability via
+- [[`20_Math/stochastic-processes.md`]] — VAR stability via
   eigenvalues of the companion matrix (§3.4 here); the
   state-space representation of ARMA processes uses matrix
   exponentiation; the Kalman filter involves Cholesky
   (§7 here) for the covariance prediction step.
-- `10_Methods/Econometrics/panel-methods.md` — *to be written*.
-  The within-transformation (demeaning) is a projection matrix
+- [[`10_Methods/Econometrics/panel-methods.md`]] —
+  the within-transformation (demeaning) is a projection matrix
   $M_{D_\alpha}$ where $D_\alpha$ is the matrix of group
   indicators; Arellano-Bond uses a specific weighting matrix
   for the GMM objective.
-- `10_Methods/Econometrics/structural-labor.md` — AKM
+- [[`10_Methods/Econometrics/structural-labor.md`]] — AKM
   estimation requires solving a large sparse linear system
   (the normal equations for the two-way fixed effects model);
   the leave-out estimator uses the diagonal
   of the hat matrix (leverages, §2.4 here).
-- `10_Methods/Econometrics/double-machine-learning.md` —
+- [[`10_Methods/Econometrics/double-machine-learning.md`]] —
   The Frisch-Waugh-Lovell theorem (§2.3 here) is the
   linear-algebra motivation for the DML partialling-out approach:
   DML generalizes Frisch-Waugh from linear residuals to
   nonparametric residuals.
-- `50_Workflows/run-a-regression-properly.md` — Stage 3
+- [[`50_Workflows/run-a-regression-properly.md`]] — Stage 3
   (specification) of the regression workflow uses the FWL
   theorem (§2.3) for thinking about partial effects; Stage 7
   (estimation) relies on numerical stability considerations

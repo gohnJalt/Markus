@@ -97,7 +97,7 @@ log.md and keep it to five to ten bullet points total.
 
 Markus produces a draft entry, the researcher reviews and edits
 it, and the final version gets appended to the top of the
-project's `log.md`. This takes two minutes and is the single
+project's [[`log.md`]]. This takes two minutes and is the single
 most valuable habit in the whole continuity system.
 
 If the researcher skips the end-of-session ritual, the next
